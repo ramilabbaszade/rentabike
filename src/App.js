@@ -1,12 +1,17 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+// import Home from './pages/Home/Home';
+import Bikes from './bikes/page/Bikes';
 
-function App() {
-  return (
-    <div className="App">
-        <h1>Bike</h1>
-    </div>
-  );
+const App = () => {
+  return <Router>
+    <Switch>
+      <Route path="/" exact>
+        <Bikes />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  </Router>
 }
 
 export default App;
