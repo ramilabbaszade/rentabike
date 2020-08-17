@@ -16,7 +16,7 @@ const DUMMY_AD = [
         address: "CWC8+JP Baku, Azerbaijan",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
         city: "Sumgayit",
-        size: 24,
+        size: 25,
         price: 3,
         location: {
             lat: 40.4216151,
