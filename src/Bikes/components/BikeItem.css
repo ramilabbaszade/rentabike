@@ -6,7 +6,7 @@
 .bike-item:hover{
     transform: scale(1.03);
     transition: .3s;
-    z-index: 99;
+    z-index: 98;
 }
 .bike-item__image{
     width: 100%;
@@ -27,7 +27,7 @@
     background-color: rgba(10, 9, 9, 0.596);
     width: 100%;
     display: flex;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
     color: rgb(240, 240, 240);
     transition: .4s;
@@ -40,15 +40,10 @@
 
 .bike-item__content-subtext{
     line-height: 20px;
+    margin-left: 5px;
 }
 
 /*Bike item content renter image */
-.bike-item__content-renterImg{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 .bike-item__content-text{
     margin: 0 5px;
     width: 100%;

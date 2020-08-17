@@ -1,0 +1,21 @@
+.main-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #393f4d;
+    padding: .5rem 1rem;
+    z-index: 99;
+  }
+  
+  main {
+    margin-top: 3rem; 
+  }
+  
+  @media (min-width: 768px) {
+    .main-header {
+      justify-content: space-between;
+    }
+  }
