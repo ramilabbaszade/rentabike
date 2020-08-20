@@ -13,11 +13,11 @@ const App = () => {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/:bikeId">
-          <BikeAd />
-        </Route>
         <Route path="/list" exact>
           <Bikes />
+        </Route>
+        <Route path="/:bikeId">
+          <BikeAd />
         </Route>
         <Redirect to="/" />
       </Switch>
