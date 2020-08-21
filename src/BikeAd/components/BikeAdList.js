@@ -12,6 +12,7 @@ const BikeAdList = (props) => {
                     imageUrl={bike.image}
                     price={bike.price}
                     size={bike.size}
+                    creator={bike.creator}
                 />
             })}
         </div>

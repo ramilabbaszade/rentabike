@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Bikes from './Bikes/page/Bikes';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import BikeAd from './BikeAd/pages/BikeAd';
+import Footer from './pages/Footer/Footer';
 
 const App = () => {
   return <Router>
@@ -22,6 +23,7 @@ const App = () => {
         <Redirect to="/" />
       </Switch>
     </main>
+    <Footer/>
   </Router>
 }
 

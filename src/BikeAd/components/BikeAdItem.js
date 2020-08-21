@@ -22,8 +22,8 @@ const BikeAdItem = (props) => {
             </div>
             <div className="bike-ad__details-more container">
                 <div className="bike-ad__details-more__sellerInfo">
-                    <Avatar className="avatar-middle" imageUrl="" />
-                    <h2>Ramil A.</h2>
+                    <Avatar className="avatar-middle" imageUrl={props.creator.creatorImg} />
+                    <h2> {props.creator.name} </h2>
                 </div>
             </div>
         </>

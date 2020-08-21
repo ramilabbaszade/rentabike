@@ -19,6 +19,7 @@ const BikesList = props => {
                     city = {bike.city}
                     size = {bike.size}
                     price = {bike.price}
+                    creator = {bike.creator}
                 />
             ))}
         </ul>

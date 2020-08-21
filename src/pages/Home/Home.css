@@ -16,7 +16,7 @@
   background: linear-gradient(
       to bottom,
       #00050aaf,
-      #00ebc881
+      var(--primarycolor)
     ),
     url("../../assets/img/road-2562568_1920.jpg");
     background-size: cover;

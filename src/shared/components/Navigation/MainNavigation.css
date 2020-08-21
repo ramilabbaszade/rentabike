@@ -18,16 +18,7 @@
   color: var(--text);
 }
 
-.main-navigation__title {
-  color: var(--text);
-}
 
-.main-navigation__title a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 28px;
-  font-family: 'Comfortaa', cursive;
-}
 
 .main-navigation__header-nav {
   display: none;

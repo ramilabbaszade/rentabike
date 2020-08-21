@@ -50,7 +50,10 @@
     display: flex;
     justify-content: space-between;
 }
-.bike-item__content-price::first-letter{
+.bike-item__content-price{
+    font-size: 18px;
+}
+.bike-item__content-price b{
     font-size: 26px;
 }
 

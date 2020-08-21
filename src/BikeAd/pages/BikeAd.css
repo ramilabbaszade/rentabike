@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--text);
 }
 .bike-ad__details-in__right{
     display: flex;

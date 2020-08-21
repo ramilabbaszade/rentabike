@@ -1,0 +1,9 @@
+.main-navigation__title {
+    color: var(--text);
+}
+
+.main-navigation__title a {
+    color: var(--text);
+    font-size: 28px;
+    font-family: 'Comfortaa', cursive;
+}

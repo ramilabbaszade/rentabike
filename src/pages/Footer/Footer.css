@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    margin-top: 1rem;
+    background-color: var(--primarycolor);
+    border-top: 3px solid var(--text);
+    color: white;
+}
+
+.footer-in__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.footer__social i {
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+}
+.footer__copyright{
+    text-align: right;
+    font-size: 14px;
+}
