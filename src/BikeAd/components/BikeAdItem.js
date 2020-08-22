@@ -26,7 +26,7 @@ const BikeAdItem = (props) => {
                     <Avatar className="avatar-middle" imageUrl={props.creator.creatorImg} />
                     <h2> {props.creator.name} </h2>
                 </div>
-                <MapContainer singleCoord={props.location}/>
+                <MapContainer singleCoord={props.location} mapStyle={{height:"30vh"}}/>
             </div>
         </>
     )

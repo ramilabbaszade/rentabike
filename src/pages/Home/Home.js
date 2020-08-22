@@ -22,8 +22,8 @@ const BIKES = [
             lng: 49.6102323
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv'
+            id: 'u9',
+            creatorImg: 'https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv'
         }
     },
     {
@@ -40,8 +40,8 @@ const BIKES = [
             lng: 48.9136099
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -58,8 +58,8 @@ const BIKES = [
             lng: 49.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg'
+            id: 'u9',
+            creatorImg: 'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg'
         }
     },
     {
@@ -73,11 +73,11 @@ const BIKES = [
         price: 10,
         location: {
             lat: 40.4216151,
-            lng: 49.9146403
+            lng: 47.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -91,11 +91,11 @@ const BIKES = [
         price: 10,
         location: {
             lat: 40.4216151,
-            lng: 49.9146403
+            lng: 46.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -109,11 +109,11 @@ const BIKES = [
         price: 10,
         location: {
             lat: 40.4216151,
-            lng: 49.9146403
+            lng: 49.4146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b7",
@@ -125,12 +125,12 @@ const BIKES = [
         size: 26,
         price: 10,
         location: {
-            lat: 40.4216151,
-            lng: 49.9146403
+            lat: 39.4216151,
+            lng: 48.5546403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b8",
@@ -142,12 +142,12 @@ const BIKES = [
         size: 26,
         price: 10,
         location: {
-            lat: 40.4216151,
-            lng: 49.9146403
+            lat: 41.4216151,
+            lng: 48.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b9",
@@ -160,11 +160,11 @@ const BIKES = [
         price: 10,
         location: {
             lat: 40.4216151,
-            lng: 49.9146403
+            lng: 47.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b10",
@@ -176,12 +176,12 @@ const BIKES = [
         size: 26,
         price: 10,
         location: {
-            lat: 40.4216151,
-            lng: 49.9146403
+            lat: 40.8216151,
+            lng: 46.9146403
         },
         creator: {
-            id:'u9',
-            creatorImg:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            id: 'u9',
+            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }
 ]
@@ -227,7 +227,7 @@ const Home = () => {
                     <h1 className="title-header">Find bikes on the map</h1>
                     <hr className="small-line-hr" />
                 </div>
-                <MapContainer coords={BIKES}/>
+                <MapContainer coords={BIKES} mapStyle={{height:"50vh"}} />
             </div>
         </div>
     )
