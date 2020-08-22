@@ -1,5 +1,6 @@
 import React from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
+import MapContainer from '../../shared/components/UIElements/MapContainer'
 
 const BikeAdItem = (props) => {
     return (
@@ -25,6 +26,7 @@ const BikeAdItem = (props) => {
                     <Avatar className="avatar-middle" imageUrl={props.creator.creatorImg} />
                     <h2> {props.creator.name} </h2>
                 </div>
+                <MapContainer singleCoord={props.location}/>
             </div>
         </>
     )

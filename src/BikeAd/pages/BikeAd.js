@@ -16,8 +16,8 @@ const DUMMY_AD = [
         size: 26,
         price: 10,
         location: {
-            lat: 40.4216151,
-            lng: 49.9146403
+            lat: 41.4216151,
+            lng: 48.9146403
         },
         creator: {
             id:'u9',

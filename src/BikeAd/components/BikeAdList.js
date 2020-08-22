@@ -13,6 +13,7 @@ const BikeAdList = (props) => {
                     price={bike.price}
                     size={bike.size}
                     creator={bike.creator}
+                    location={bike.location}
                 />
             })}
         </div>

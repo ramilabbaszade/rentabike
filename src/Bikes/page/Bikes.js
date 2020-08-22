@@ -2,12 +2,13 @@ import React from 'react'
 import BikesList from '../components/BikesList'
 
 import './Bikes.css'
+import MapContainer from '../../shared/components/UIElements/MapContainer'
 
 const Bikes = () => {
     const BIKES = [
         {
             id: "b1",
-            title: "Super velosiped",
+            title: "Mohtesem velik",
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
             description: "Bla bla yeah best bike and now you can buy it",
             address: "CWC8+JP Baku, Azerbaijan",
@@ -15,8 +16,8 @@ const Bikes = () => {
             size: 26,
             price: 10,
             location: {
-                lat: 40.4216151,
-                lng: 49.9146403
+                lat: 40.6122942,
+                lng: 49.6102323
             },
             creator: {
                 id:'u9',
@@ -33,8 +34,8 @@ const Bikes = () => {
             size: 26,
             price: 10,
             location: {
-                lat: 40.4216151,
-                lng: 49.9146403
+                lat: 40.5175948,
+                lng: 48.9136099
             },
             creator: {
                 id:'u9',
@@ -182,11 +183,10 @@ const Bikes = () => {
             }
         }
     ]
-    // return <BikesList items={BIKES}/>
     return <div className="bikes-page">
         <BikesList items={BIKES} />
         <div className="bikes-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d6077.017865924469!2d49.80943812852878!3d40.39757501746932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x40308778b9b607a1%3A0xc595257d375223b2!2sTbilisi%20avenue%2C%20Baku%2C%20Azerbaijan!3m2!1d40.3975751!2d49.8138155!5e0!3m2!1sen!2s!4v1597427682151!5m2!1sen!2s" title="map" frameborder="0" allowfullscreen="" aria-hidden="false" tabIndex="0" />
+            <MapContainer coords={BIKES}/>
         </div>
     </div>
 }
