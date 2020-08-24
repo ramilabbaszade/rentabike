@@ -29,7 +29,7 @@ const MainNavigation = (props) => {
 
         <MainHeader>
             <button className="main-navigation__menu-btn" onClick={openDrawer}>
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
             </button>
             <BrandLogo/>
             <nav className="main-navigation__header-nav">

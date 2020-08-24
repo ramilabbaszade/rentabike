@@ -2,9 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import BikeAdList from '../components/BikeAdList'
 
-import './BikeAd.css'
-
-
 const DUMMY_AD = [
     {
         id: "b1",

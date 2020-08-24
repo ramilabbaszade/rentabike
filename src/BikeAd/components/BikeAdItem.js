@@ -2,6 +2,8 @@ import React from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
 import MapContainer from '../../shared/components/UIElements/MapContainer'
 
+import './BikeAdItem.css'
+
 const BikeAdItem = (props) => {
     return (
         <>

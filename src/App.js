@@ -5,6 +5,7 @@ import Bikes from './Bikes/page/Bikes';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import BikeAd from './BikeAd/pages/BikeAd';
 import Footer from './pages/Footer/Footer';
+import NewBike from './BikeAd/pages/NewBike';
 
 const App = () => {
   return <Router>
@@ -16,6 +17,9 @@ const App = () => {
         </Route>
         <Route path="/list" exact>
           <Bikes />
+        </Route>
+        <Route path="/bikes/new" exact>
+          <NewBike />
         </Route>
         <Route path="/:bikeId">
           <BikeAd />
