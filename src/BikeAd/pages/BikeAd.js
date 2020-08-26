@@ -18,7 +18,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv'
+            name: 'James',
+            avatar: 'https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv'
         }
     },
     {
@@ -36,7 +37,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -54,7 +56,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg'
+            name: 'James',
+            avatar: 'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg'
         }
     },
     {
@@ -72,7 +75,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -90,7 +94,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     },
     {
@@ -108,7 +113,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b7",
@@ -125,7 +131,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b8",
@@ -142,7 +149,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b9",
@@ -159,7 +167,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }, {
         id: "b10",
@@ -176,7 +185,8 @@ const DUMMY_AD = [
         },
         creator: {
             id: 'u9',
-            creatorImg: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+            name: 'James',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
         }
     }
 ]

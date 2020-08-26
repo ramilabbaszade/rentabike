@@ -1,0 +1,14 @@
+[
+    {
+        "title":"",
+        "description":"",
+        "image":"fileUrl",
+        "price":{"first":2,"second":3,"third":2},
+        "size":24,
+        "accesuares":[],
+        "type":"Road",
+        "city":"Sumgayit",
+        "address":"smkasds",
+        "location":["lng","lat"]
+    }
+]

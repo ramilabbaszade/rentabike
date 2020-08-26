@@ -7,14 +7,14 @@ import './BikeAdItem.css'
 const BikeAdItem = (props) => {
     return (
         <>
-            <div className="bike-ad__header-image">
+            <div className="bike-ad__header-image container">
                 <img src={props.imageUrl} alt="img" />
             </div>
             <div className="bike-ad__details">
                 <div className="bike-ad__details-in container">
                     <div className="bike-ad__details-in__left">
                         <h2>Bike - Road - {props.size}^</h2>
-                        <p>Çatdırılma varmı? - Xeyr</p>
+                        <p>Yerinə çatdırılma varmı? - Vaxt və yer uyğundursa</p>
                     </div>
                     <div className="bike-ad__details-in__right">
                         <h2>{props.price}AZN/1.saat</h2>
@@ -25,7 +25,7 @@ const BikeAdItem = (props) => {
             </div>
             <div className="bike-ad__details-more container">
                 <div className="bike-ad__details-more__sellerInfo">
-                    <Avatar className="avatar-middle" imageUrl={props.creator.creatorImg} />
+                    <Avatar className="avatar-middle" imageUrl={props.creator.avatar} />
                     <h2> {props.creator.name} </h2>
                 </div>
                 <MapContainer singleCoord={props.location} mapStyle={{height:"30vh"}}/>

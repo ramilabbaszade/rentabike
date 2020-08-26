@@ -8,4 +8,6 @@
     border-radius: 6px;
     background: white;
     margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
 }

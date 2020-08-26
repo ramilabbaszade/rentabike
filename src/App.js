@@ -13,7 +13,7 @@ const App = () => {
     <main>
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Home />z
         </Route>
         <Route path="/list" exact>
           <Bikes />
