@@ -145,6 +145,7 @@ const BikeAdItem = (props) => {
       <div className='bike-ad__map'>
         <MapContainer
           singleCoord={props.location}
+          title={props.title}
           mapStyle={{ height: "30vh" }}
         />
       </div>

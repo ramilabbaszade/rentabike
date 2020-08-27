@@ -1,0 +1,9 @@
+.popup{
+    width: 15rem;
+    height: 150px;
+}
+.popup-container img{
+    width: 12rem;
+    height: 150px;
+    object-fit: cover;
+}

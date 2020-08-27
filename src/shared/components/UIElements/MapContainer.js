@@ -3,6 +3,9 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet'
 import iconBike from '../../../assets/icons/bike1con.png'
 
+import './MapContainer.css'
+import { Link } from 'react-router-dom';
+
 const biker = new Icon({
     iconUrl: iconBike,
     iconSize: [38, 43]
@@ -23,8 +26,11 @@ const MapContainer = (props) => {
                         return <Marker
                             position={[mark.location.lat, mark.location.lng]}
                             icon={biker} >
-                            <Popup>
-                                <div> {mark.title} </div>
+                            <Popup className="popup">
+                                <Link to={`/${mark.id}`} className="popup-container">
+                                    <img src={mark.image} alt={mark.title}/>
+                                    <div> {mark.title} ~ {mark.size}" ~ {mark.price}azn/s </div>
+                                </Link>
                             </Popup>
                         </Marker>
                     }) : null
@@ -36,7 +42,7 @@ const MapContainer = (props) => {
                         icon={biker}
                     >
                         <Popup>
-                            <div> {props.singleCoord.title} </div>
+                            <div> {props.title} </div>
                         </Popup>
                     </Marker> : null
             }
