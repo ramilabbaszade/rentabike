@@ -6,7 +6,7 @@
 .bike-item:hover{
     transform: scale(1.03);
     transition: .3s;
-    z-index: 98;
+    z-index: 96;
 }
 .bike-item__image{
     width: 100%;

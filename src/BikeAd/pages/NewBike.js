@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./NewBike.css";
 
-const bikeTypes = ["Road","Children's","BMX","Electric","Single Speed"]
+// const bikeTypes = ["Road","Children's","BMX","Electric","Single Speed"]
 
 const NewBike = () => {
   const [state, setState] = useState({

@@ -5,11 +5,11 @@ import BikeAdList from '../components/BikeAdList'
 const DUMMY_AD = [
     {
         id: "b1",
-        title: "Mohtesem velik",
+        title: "Mohtesem velik super eladi ",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
-        description: "Bla bla yeah best bike and now you can buy it",
-        address: "CWC8+JP Baku, Azerbaijan",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         city: "Sumgayit",
+        address: "Jafar Jabbarli str. 110",
         size: 26,
         price: 10,
         location: {
@@ -27,8 +27,8 @@ const DUMMY_AD = [
         title: "Super velosiped",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXWtUti7qoUdDWAf9R5jgRdh1roxvJ1AA1tg&usqp=CAU",
         description: "Bla bla yeah best bike and now you can buy it",
-        address: "CWC8+JP Baku, Azerbaijan",
         city: "Sumgayit",
+        address: "Jafar Jabbarli str. 110",
         size: 26,
         price: 10,
         location: {
@@ -174,7 +174,7 @@ const DUMMY_AD = [
         id: "b10",
         title: "Super velosiped",
         image: "https://images.squarespace-cdn.com/content/v1/5a57931bcf81e0dc327d5801/1515780274818-DIUFL1KDP4LTUP28YUCR/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/skiperaj159.JPG?format=2500w",
-        description: "Bla bla yeah best bike and now you can buy it",
+        description: "Bla bla yeah best bike and now you can buy it . Bla bla yeah best bike and now you can buy it. Bla bla yeah best bike and now you can buy it",
         address: "CWC8+JP Baku, Azerbaijan",
         city: "Sumgayit",
         size: 26,
@@ -194,7 +194,7 @@ const DUMMY_AD = [
 const User = () => {
     const bikeId = useParams().bikeId;
     const loadedBikes = DUMMY_AD.filter(bike => bike.id === bikeId)
-    return ( <BikeAdList items={loadedBikes}/>
+    return (<BikeAdList items={loadedBikes} />
     )
 }
 

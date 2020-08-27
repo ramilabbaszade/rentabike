@@ -1,45 +1,167 @@
-.bike-ad__details-in{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text);
-}
-.bike-ad__details-in__right{
-    display: flex;
-    justify-content: space-between;
-}
-.bike-ad__details-in__right h2{
-    margin-left: 15px;
-    font-size: 16px;
-}
-.bike-ad__details-in__right h2::first-letter{
-    font-size:30px;
+/* Bike header */
+.bike-ad__header {
+    height: 60vh;
+    position: relative;
 }
 
-.bike-ad__header-image{
-    position: relative;
-    width: 50%;
-    height: 50vh;
-}
-.bike-ad__header-image img{
+.bike-ad__header-image img {
     width: 100%;
-    height: 100%;
+    height: 60vh;
     object-fit: cover;
 }
 
-.bike-ad__details{
-    background-color: var(--green);
-    padding: 1rem 0;
+.bike-ad__header__gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.137), transparent, transparent, rgba(0, 0, 0, 0.822));
 }
 
-/* Details info */
-.bike-ad__details-more{
-    margin-top: 1rem;
+.bike-ad__header__title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+    padding: 1rem;
 }
-.bike-ad__details-more__sellerInfo{
+
+/* DETAILS */
+.bike-ad__details-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+.bike-ad__details-in__right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-ad__details-in__right h2 {
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.bike-ad__details {
+    background-color: rgba(0, 0, 0, 0.849);
+    padding: 1rem;
+}
+
+/* Body info */
+.bike-ad__body {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 1rem;
+}
+
+.bike-ad__body__sellerInfo {
     display: flex;
     align-items: center;
 }
-.bike-ad__details-more__sellerInfo h2{
-    margin-left: 5px;
+
+.bike-ad__body__sellerInfo h2 {
+    margin-left: 10px;
+}
+
+/* Accesuare icons */
+.bike-ad__body__bike-accesuares {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+}
+
+.bike-ad__body__bike-accesuares li {
+    display: flex;
+    align-items: center;
+}
+
+.bike-ad__body__bike-accesuares li img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin: 0 2rem;
+}
+
+/* Price */
+.bike-ad__details-price {
+    font-size: 18px;
+    padding: 0 1rem;
+}
+
+.bike-ad__details-price b {
+    font-size: 27px;
+}
+
+/* MAP */
+.bike-ad__map {
+    margin: 2rem 0;
+}
+
+.bike-ad__description p{
+    padding: 1rem 0;
+}
+
+/* LAST RECOMENDED BIKES */
+
+.bike-ad__last-bikes {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 3px;
+}
+
+.bike-ad__recommendation {
+    margin: 2rem 0;
+}
+
+.bike-ad__recommendation__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 757px) {
+    .bike-ad__header {
+        height: 30vh;
+    }
+
+    .bike-ad__header-image img {
+        height: 30vh;
+    }
+
+    .bike-ad__header__title {
+        font-size: 1.5rem;
+    }
+    /* ----------- */
+    .bike-ad__details-in {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .bike-ad__last-bikes {
+        display: grid;
+        grid-template-columns: auto;
+        column-gap: 3px;
+    }
+
+    .bike-ad__body {
+        grid-template-columns: auto;
+    }
+
+    .bike-ad__body__bike-accesuares {
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        margin-top: 2rem;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+
+    .bike-ad__body__sellerInfo {
+        flex-direction: column;
+    }
 }

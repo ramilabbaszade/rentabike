@@ -9,11 +9,14 @@ const BikeAdList = (props) => {
                     key={bike.id}
                     id={bike.id}
                     title={bike.title}
+                    description={bike.description}
                     imageUrl={bike.image}
                     price={bike.price}
                     size={bike.size}
-                    creator={bike.creator}
+                    city={bike.city}
+                    address={bike.address}
                     location={bike.location}
+                    creator={bike.creator}
                 />
             })}
         </div>
