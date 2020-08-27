@@ -140,7 +140,7 @@ const BikeAdItem = (props) => {
         <hr />
         <p> {props.description} </p>
         <h3> {props.city} </h3>
-        <label> Address: <i>{props.address}</i>  </label>
+        <label> Addres: <i>{props.address}</i>  </label>
       </div>
       <div className='bike-ad__map'>
         <MapContainer
