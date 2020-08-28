@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
@@ -9,15 +9,18 @@ import part3 from "../../assets/icons/bike-parts-icons/delivery-bike.png";
 import part4 from "../../assets/icons/bike-parts-icons/music-and-multimedia.png";
 import part5 from "../../assets/icons/bike-parts-icons/tail-light.png";
 
-import "./BikeAdItem.css";
 import { Link } from "react-router-dom";
+import Lightbox from "react-image-lightbox";
+
+import "./BikeAdItem.css";
+import "react-image-lightbox/style.css";
 
 const BIKES = [
   {
     id: "b1",
     title: "Mohtesem velik",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/props.image?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
     description: "Bla bla yeah best bike and now you can buy it",
     address: "CWC8+JP Baku, Azerbaijan",
     city: "Sumgayit",
@@ -30,14 +33,14 @@ const BIKES = [
     creator: {
       id: "u9",
       creatorImg:
-        "https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv",
+        "https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_props.image/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv",
     },
   },
   {
     id: "b2",
     title: "Super velosiped",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXWtUti7qoUdDWAf9R5jgRdh1roxvJ1AA1tg&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/props.image?q=tbn%3AANd9GcRXWtUti7qoUdDWAf9R5jgRdh1roxvJ1AA1tg&usqp=CAU",
     description: "Bla bla yeah best bike and now you can buy it",
     address: "CWC8+JP Baku, Azerbaijan",
     city: "Sumgayit",
@@ -75,14 +78,33 @@ const BIKES = [
   },
 ];
 
+
 const BikeAdItem = (props) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const images = ["https://images.squarespace-cdn.com/content/v1/5a57931bcf81e0dc327d5801/1515780274818-DIUFL1KDP4LTUP28YUCR/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/skiperaj159.JPG?format=2500w", "https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?ixlib=rb-1.2.1&w=1000&q=80"]
+
   return (
     <>
       <div className='bike-ad__header'>
         <div className='bike-ad__header-image'>
-          <img src={props.imageUrl} alt='img' />
+          <img src={props.images[0]} alt={props.title} />
         </div>
-        <div className='bike-ad__header__gradient'></div>
+        <div className='bike-ad__header__gradient' onClick={() => setIsOpen(true)}></div>
+        {isOpen &&
+          <Lightbox
+            mainSrc={images[photoIndex]}
+            nextSrc={images[(photoIndex + 1) % images.length]}
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            onCloseRequest={()=>{
+              setIsOpen(false)
+            }}
+            onMovePrevRequest={() =>
+              setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+            onMoveNextRequest={() =>
+              setPhotoIndex((photoIndex + 1) % images.length)}
+          />
+        }
         <div className='bike-ad__header__title'>
           <div className='container'>{props.title}</div>
         </div>
@@ -161,6 +183,7 @@ const BikeAdItem = (props) => {
               return (
                 <BikeItem
                   id={item.id}
+                  key={item.id}
                   image={item.image}
                   title={item.title}
                   price={item.price}
