@@ -12,7 +12,9 @@ const BikeItem = props => {
                     <img src={props.image} alt="" />
                 </div>
                 <div className="bike-item__content">
-                    <Avatar className="avatar-small" imageUrl={props.creator.avatar} />
+                    <Link to={`/user/${props.creator.id}`}>
+                        <Avatar className="avatar-small" creatorImg={props.creator.avatar} />
+                    </Link>
                     <div className="bike-item__content-text">
                         <div className="bike-item__content-subtext">
                             <h3>{props.title}</h3>

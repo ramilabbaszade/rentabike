@@ -76,7 +76,7 @@ const BikeAdItem = (props) => {
       </div>
       <div className='bike-ad__body container'>
         <div className='bike-ad__body__sellerInfo'>
-          <Avatar className='avatar-middle' imageUrl={props.creator.avatar} />
+          <Avatar className='avatar-middle' creatorImg={props.creator.avatar} />
           <h2> {props.creator.name} </h2>
         </div>
         <ul className='bike-ad__body__bike-accesuares'>
