@@ -7,7 +7,7 @@ import './BikeItem.css'
 const BikeItem = props => {
     return (
         <div className="bike-item">
-            <Link to={`/${props.id}`}>
+            <Link to={`/bike/${props.id}`}>
                 <div className="bike-item__image">
                     <img src={props.image} alt="" />
                 </div>

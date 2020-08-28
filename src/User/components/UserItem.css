@@ -1,0 +1,13 @@
+.user-item__header{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.user-item__header_main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+.user-item__header__city i{
+    margin-right: 5px;
+}

@@ -6,22 +6,26 @@ import MainNavigation from './shared/components/Navigation/MainNavigation';
 import BikeAd from './BikeAd/pages/BikeAd';
 import Footer from './pages/Footer/Footer';
 import NewBike from './BikeAd/pages/NewBike';
+import User from './User/pages/User';
 
-const App = () => {
+const App = () => {    
   return <Router>
     <MainNavigation />
     <main>
       <Switch>
         <Route path="/" exact>
-          <Home />z
+          <Home />
         </Route>
         <Route path="/list" exact>
           <Bikes />
         </Route>
+        <Route path="/user/:userId">
+          <User />
+        </Route>
         <Route path="/bikes/new" exact>
           <NewBike />
         </Route>
-        <Route path="/:bikeId">
+        <Route path="/bike/:bikeId">
           <BikeAd />
         </Route>
         <Redirect to="/" />
