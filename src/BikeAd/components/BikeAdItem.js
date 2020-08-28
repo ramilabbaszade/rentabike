@@ -8,81 +8,20 @@ import part2 from "../../assets/icons/bike-parts-icons/bike.png";
 import part3 from "../../assets/icons/bike-parts-icons/delivery-bike.png";
 import part4 from "../../assets/icons/bike-parts-icons/music-and-multimedia.png";
 import part5 from "../../assets/icons/bike-parts-icons/tail-light.png";
+import part6 from "../../assets/icons/bike-parts-icons/refletor.png";
 
 import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
+import {BIKES} from '../../data'
 
 import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
 
-const BIKES = [
-  {
-    id: "b1",
-    title: "Mohtesem velik",
-    image:
-      "https://encrypted-tbn0.gstatic.com/props.image?q=tbn%3AANd9GcSAvAqrd3nrpG8l378_oLzfrSCJ4vvpHRdUCw&usqp=CAU",
-    description: "Bla bla yeah best bike and now you can buy it",
-    address: "CWC8+JP Baku, Azerbaijan",
-    city: "Sumgayit",
-    size: 26,
-    price: 10,
-    location: {
-      lat: 40.6122942,
-      lng: 49.6102323,
-    },
-    creator: {
-      id: "u9",
-      creatorImg:
-        "https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_props.image/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv",
-    },
-  },
-  {
-    id: "b2",
-    title: "Super velosiped",
-    image:
-      "https://encrypted-tbn0.gstatic.com/props.image?q=tbn%3AANd9GcRXWtUti7qoUdDWAf9R5jgRdh1roxvJ1AA1tg&usqp=CAU",
-    description: "Bla bla yeah best bike and now you can buy it",
-    address: "CWC8+JP Baku, Azerbaijan",
-    city: "Sumgayit",
-    size: 26,
-    price: 10,
-    location: {
-      lat: 40.5175948,
-      lng: 48.9136099,
-    },
-    creator: {
-      id: "u9",
-      creatorImg:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg",
-    },
-  },
-  {
-    id: "b3",
-    title: "Super velosiped",
-    image:
-      "https://cdn.bimbimbikes.com/media/cache/city_overview/uploads/location/bike/image/5ccee9031eb93_20190505_150154.jpg",
-    description: "Bla bla yeah best bike and now you can buy it",
-    address: "CWC8+JP Baku, Azerbaijan",
-    city: "Sumgayit",
-    size: 26,
-    price: 10,
-    location: {
-      lat: 40.4216151,
-      lng: 49.9146403,
-    },
-    creator: {
-      id: "u9",
-      creatorImg:
-        "https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg",
-    },
-  },
-];
-
 
 const BikeAdItem = (props) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
-  const images = ["https://images.squarespace-cdn.com/content/v1/5a57931bcf81e0dc327d5801/1515780274818-DIUFL1KDP4LTUP28YUCR/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/skiperaj159.JPG?format=2500w", "https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?ixlib=rb-1.2.1&w=1000&q=80"]
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const images = props.images;
 
   return (
     <>
@@ -90,21 +29,25 @@ const BikeAdItem = (props) => {
         <div className='bike-ad__header-image'>
           <img src={props.images[0]} alt={props.title} />
         </div>
-        <div className='bike-ad__header__gradient' onClick={() => setIsOpen(true)}></div>
-        {isOpen &&
+        <div
+          className='bike-ad__header__gradient'
+          onClick={() => setIsOpen(true)}></div>
+        {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={()=>{
-              setIsOpen(false)
+            onCloseRequest={() => {
+              setIsOpen(false);
             }}
             onMovePrevRequest={() =>
-              setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+              setPhotoIndex((photoIndex + images.length - 1) % images.length)
+            }
             onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % images.length)}
+              setPhotoIndex((photoIndex + 1) % images.length)
+            }
           />
-        }
+        )}
         <div className='bike-ad__header__title'>
           <div className='container'>{props.title}</div>
         </div>
@@ -112,21 +55,22 @@ const BikeAdItem = (props) => {
       <div className='bike-ad__details '>
         <div className='bike-ad__details-in container'>
           <div className='bike-ad__details-in__left'>
-            <h2>Bike - Road - {props.size}^</h2>
+            <h2>{props.type} - {props.size}"</h2>
           </div>
           <div className='bike-ad__details-in__right'>
             <div className='bike-ad__details-price'>
-              {" "}
-              <b>{props.price}</b>azn/s{" "}
+              <b>{props.price.first}</b>azn/1s
             </div>
-            <div className='bike-ad__details-price'>
-              {" "}
-              <b>{props.price}</b>azn/s{" "}
-            </div>
-            <div className='bike-ad__details-price'>
-              {" "}
-              <b>{props.price}</b>azn/s{" "}
-            </div>
+            {props.price.second>0 && (
+              <div className='bike-ad__details-price'>
+                <b>{props.price.second}</b>azn/2s
+              </div>
+            )}
+            {props.price.third>0 && (
+              <div className='bike-ad__details-price'>
+                <b>{props.price.third}</b>azn/3s
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -136,33 +80,40 @@ const BikeAdItem = (props) => {
           <h2> {props.creator.name} </h2>
         </div>
         <ul className='bike-ad__body__bike-accesuares'>
-          <li htmlFor='iconTitle'>
+          {props.accesuares.helmet && <li htmlFor='iconTitle'>
             <img src={part1} alt='icon' />
             Başlıq
-          </li>
-          <li htmlFor='iconTitle'>
+          </li>}
+          {props.accesuares.lock && <li htmlFor='iconTitle'>
             <img src={part2} alt='icon' />
             Kilid
-          </li>
-          <li htmlFor='iconTitle'>
+          </li>}
+          {props.accesuares.basket && <li htmlFor='iconTitle'>
             <img src={part3} alt='icon' />
             Səbət
-          </li>
-          <li htmlFor='iconTitle'>
+          </li>}
+          {props.accesuares.bell && <li htmlFor='iconTitle'>
             <img src={part4} alt='icon' />
             Siqnal
-          </li>
-          <li htmlFor='iconTitle'>
+          </li>}
+          {props.accesuares.lights && <li htmlFor='iconTitle'>
             <img src={part5} alt='icon' />
             Fənər
-          </li>
+          </li>}
+          {props.accesuares.reflector && <li htmlFor='iconTitle'>
+            <img src={part6} alt='icon' />
+            Reflektor
+          </li>}
         </ul>
       </div>
       <div className='bike-ad__description container'>
         <hr />
         <p> {props.description} </p>
         <h3> {props.city} </h3>
-        <label> Addres: <i>{props.address}</i>  </label>
+        <label>
+          {" "}
+          Addres: <i>{props.address}</i>{" "}
+        </label>
       </div>
       <div className='bike-ad__map'>
         <MapContainer
@@ -184,9 +135,9 @@ const BikeAdItem = (props) => {
                 <BikeItem
                   id={item.id}
                   key={item.id}
-                  image={item.image}
+                  image={item.images[0]}
                   title={item.title}
-                  price={item.price}
+                  price={item.price[0]}
                   size={item.size}
                   creator={item.creator}
                   city={item.city}

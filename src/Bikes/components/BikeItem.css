@@ -49,6 +49,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .bike-item__content-price{
     font-size: 18px;

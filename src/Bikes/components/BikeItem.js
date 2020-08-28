@@ -12,11 +12,11 @@ const BikeItem = props => {
                     <img src={props.image} alt="" />
                 </div>
                 <div className="bike-item__content">
-                    <Avatar className="avatar-small" imageUrl={props.creator.creatorImg} />
+                    <Avatar className="avatar-small" imageUrl={props.creator.avatar} />
                     <div className="bike-item__content-text">
                         <div className="bike-item__content-subtext">
                             <h3>{props.title}</h3>
-                            {props.city}, {props.size}*
+                            {props.city}, {props.size}"
                     </div>
                         <div className="bike-item__content-price"> <b>{props.price}</b>azn/s </div>
                     </div>

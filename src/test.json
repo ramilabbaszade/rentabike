@@ -5,7 +5,7 @@
         "image":"fileUrl",
         "price":{"first":2,"second":3,"third":2},
         "size":24,
-        "accesuares":[],
+        "accesuares":{"helmet":true,"lock":true,"lights":true,"bell":false,"basket":false,"reflector":true},
         "type":"Road",
         "city":"Sumgayit",
         "address":"smkasds",

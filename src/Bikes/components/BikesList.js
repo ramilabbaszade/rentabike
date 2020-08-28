@@ -14,11 +14,11 @@ const BikesList = props => {
                 <BikeItem
                     key={bike.id}
                     id = {bike.id}
-                    image = {bike.image}
+                    image = {bike.images[0]}
                     title = {bike.title}
                     city = {bike.city}
                     size = {bike.size}
-                    price = {bike.price}
+                    price = {bike.price.first}
                     creator = {bike.creator}
                 />
             ))}
