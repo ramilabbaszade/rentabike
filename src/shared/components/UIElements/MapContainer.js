@@ -25,12 +25,12 @@ const MapContainer = (props) => {
                     props.coords.map(mark => {
                         return <Marker
                             position={[mark.location.lat, mark.location.lng]}
-                            icon={biker}
-                            key={mark.id} >
-                            <Popup className="popup">
+                            icon={biker} >
+                            <Popup className="popup" 
+                            key={mark.id}>
                                 <Link to={`/${mark.id}`} className="popup-container">
-                                    <img src={mark.image} alt={mark.title}/>
-                                    <div> {mark.title} ~ {mark.size}" ~ {mark.price}azn/s </div>
+                                    <img src={mark.images[0]} alt={mark.title}/>
+                                    <div> {mark.title} ~ {mark.size}" ~ {mark.price.first}azn/s </div>
                                 </Link>
                             </Popup>
                         </Marker>

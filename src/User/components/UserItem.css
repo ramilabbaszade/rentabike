@@ -1,13 +1,32 @@
-.user-item__header{
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-}
-.user-item__header_main{
+.user-item__header {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    align-items: center;
 }
-.user-item__header__city i{
+
+.user-item__header_main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user-item__header__city i {
     margin-right: 5px;
+}
+
+.user-item__body {
+    margin-top: 2rem;
+}
+
+.user-item__body__bike-list {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 5px;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 757px) {
+    .user-item__body__bike-list {
+        grid-template-columns: auto;
+    }
 }

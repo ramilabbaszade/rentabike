@@ -1,6 +1,5 @@
 .footer {
     display: flex;
-    margin-top: 1rem;
     background-color: var(--primarycolor);
     border-top: 3px solid var(--text);
     color: white;

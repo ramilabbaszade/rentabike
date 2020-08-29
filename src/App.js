@@ -19,13 +19,13 @@ const App = () => {
         <Route path="/list" exact>
           <Bikes />
         </Route>
-        <Route path="/user/:userId">
-          <User />
-        </Route>
         <Route path="/bikes/new" exact>
           <NewBike />
         </Route>
-        <Route path="/bike/:bikeId">
+        <Route path="/user/:userId">
+          <User />
+        </Route>
+        <Route path="/:bikeId">
           <BikeAd />
         </Route>
         <Redirect to="/" />

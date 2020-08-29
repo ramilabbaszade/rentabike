@@ -12,7 +12,7 @@ import part6 from "../../assets/icons/bike-parts-icons/refletor.png";
 
 import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
-import {BIKES} from '../../data'
+import { BIKES } from '../../data'
 
 import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
@@ -61,12 +61,12 @@ const BikeAdItem = (props) => {
             <div className='bike-ad__details-price'>
               <b>{props.price.first}</b>azn/1s
             </div>
-            {props.price.second>0 && (
+            {props.price.second > 0 && (
               <div className='bike-ad__details-price'>
                 <b>{props.price.second}</b>azn/2s
               </div>
             )}
-            {props.price.third>0 && (
+            {props.price.third > 0 && (
               <div className='bike-ad__details-price'>
                 <b>{props.price.third}</b>azn/3s
               </div>
@@ -76,7 +76,7 @@ const BikeAdItem = (props) => {
       </div>
       <div className='bike-ad__body container'>
         <div className='bike-ad__body__sellerInfo'>
-          <Avatar className='avatar-middle' creatorImg={props.creator.avatar} />
+          <Avatar redirect={`user/${props.creator.id}`} className='avatar-middle' creatorImg={props.creator.avatar} />
           <h2> {props.creator.name} </h2>
         </div>
         <ul className='bike-ad__body__bike-accesuares'>

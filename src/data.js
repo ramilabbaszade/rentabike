@@ -213,119 +213,195 @@ export const USERS = [
         fullName: "Sonia Jacklings",
         bio: "nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "sjacklings0@cisco.com",
         password: "PEG0d4VmT6C",
         contacts: {
             mobile: "922-134-3378"
-        }
+        },
+        bikes: [
+            {
+                id: "b10",
+                title: "Super velosiped",
+                images: ["https://images.squarespace-cdn.com/content/v1/5a57931bcf81e0dc327d5801/1515780274818-DIUFL1KDP4LTUP28YUCR/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/skiperaj159.JPG?format=2500w", "data:image/jpeg;base64,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"],
+                description: "Bla bla yeah best bike and now you can buy it",
+                address: "CWC8+JP Baku, Azerbaijan",
+                city: "Sumgayit",
+                size: 26,
+                type: "Road",
+                accesuares: { helmet: true, lock: true, lights: true, bell: false, basket: false, reflector: true },
+                price: { first: 2, second: 3, third: 2 },
+                location: {
+                    lat: 40.8216151,
+                    lng: 46.9146403
+                },
+                creator: {
+                    id: 'u10',
+                    name: "Jake",
+                    avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+                }
+            },
+            {
+                id: "b2",
+                title: "Super velosiped",
+                images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXWtUti7qoUdDWAf9R5jgRdh1roxvJ1AA1tg&usqp=CAU", "data:image/jpeg;base64,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"],
+                description: "Bla bla yeah best bike and now you can buy it",
+                address: "CWC8+JP Baku, Azerbaijan",
+                city: "Sumgayit",
+                size: 26,
+                type: "Road",
+                accesuares: { helmet: false, lock: true, lights: false, bell: false, basket: true, reflector: true },
+                price: { first: 3, second: 2, third: 2 },
+                location: {
+                    lat: 40.5175948,
+                    lng: 48.9136099
+                },
+                creator: {
+                    id: 'u2',
+                    name: "Jake",
+                    avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+                }
+            },
+            {
+                id: "b7",
+                title: "Super velosiped",
+                images: ["http://nextjuggernaut.com/wp-content/uploads/2016/02/spokefly-e1455605866974.jpg", "data:image/jpeg;base64,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"],
+                description: "Bla bla yeah best bike and now you can buy it",
+                address: "CWC8+JP Baku, Azerbaijan",
+                city: "Sumgayit",
+                size: 26,
+                type: "Road",
+                accesuares: { helmet: true, lock: true, lights: true, bell: false, basket: false, reflector: true },
+                price: { first: 2, second: 3, third: 2 },
+                location: {
+                    lat: 39.4216151,
+                    lng: 48.5546403
+                },
+                creator: {
+                    id: 'u7',
+                    name: "Jake",
+                    avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg'
+                }
+            }
+        ]
     },
     {
         id: "u2",
         fullName: "Lucia Wyldbore",
         bio: "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "lwyldbore1@gov.uk",
         password: "KAZ4Lqt0CYLQ",
         contacts: {
             mobile: "295-765-5731"
-        }
+        },
+        bikes: [
+            
+        ]
     },
     {
         id: "u3",
         fullName: "Brittne Bellison",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
         bio: "fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus",
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "bbellison2@prweb.com",
         password: "ji8j51b5P9lw",
         contacts: {
             mobile: "313-554-2856"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u4",
         fullName: "Trish Roach",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
         bio: "urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius",
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "troach3@webnode.com",
         password: "je9CL9QulQ",
         contacts: {
             mobile: "322-235-8322"
-        }
-    }, 
+        },
+        bikes:[]
+    },
     {
         id: "u5",
         fullName: "Ursola Skeemor",
         bio: "sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "uskeemor4@com.com",
         password: "mE5Fn92zGMHg",
         contacts: {
             mobile: "269-190-0084"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u6",
         fullName: "Rosene De Domenici",
         bio: "fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "rde5@fema.gov",
         password: "GRUjJz",
         contacts: {
             mobile: "171-331-6407"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u7",
         fullName: "Dulciana Tute",
         bio: "sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "dtute6@aboutads.info",
         password: "wwdKG39p2",
         contacts: {
             mobile: "502-370-6808"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u8",
         fullName: "Shantee Cissen",
         bio: "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "scissen7@com.com",
         password: "cO7xV64l",
         contacts: {
             mobile: "521-744-8655"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u9",
         fullName: "Athene Craigg",
         bio: "suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "acraigg8@berkeley.edu",
         password: "QMWkiVqU",
         contacts: {
             mobile: "746-721-6012"
-        }
+        },
+        bikes:[]
     },
     {
         id: "u10",
         fullName: "Cherin Muddiman",
         bio: "pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit",
         avatar: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg',
-        city:"Sumgayit",
+        city: "Sumgayit",
         email: "cmuddiman9@seesaa.net",
         password: "zpaMdQ19Q3T",
         contacts: {
             mobile: "951-397-5419"
-        }
+        },
+        bikes:[]
     }
 ]

@@ -15,6 +15,7 @@ const UserContainer = (props) => {
             bio={user.bio}
             avatar={user.avatar}
             city={user.city}
+            bikes={user.bikes}
           />
         );
       })}

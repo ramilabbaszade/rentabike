@@ -7,23 +7,21 @@ import './BikeItem.css'
 const BikeItem = props => {
     return (
         <div className="bike-item">
-            <Link to={`/bike/${props.id}`}>
-                <div className="bike-item__image">
+            <div className="bike-item__image">
+                <Link to={`/${props.id}`}>
                     <img src={props.image} alt="" />
-                </div>
-                <div className="bike-item__content">
-                    <Link to={`/user/${props.creator.id}`}>
-                        <Avatar className="avatar-small" creatorImg={props.creator.avatar} />
-                    </Link>
-                    <div className="bike-item__content-text">
-                        <div className="bike-item__content-subtext">
-                            <h3>{props.title}</h3>
-                            {props.city}, {props.size}"
+                </Link>
+            </div>
+            <div className="bike-item__content">
+                <Avatar redirect={`/user/${props.creator.id}`} className="avatar-small" creatorImg={props.creator.avatar} />
+                <div className="bike-item__content-text">
+                    <div className="bike-item__content-subtext">
+                        <h3>{props.title}</h3>
+                        {props.city}, {props.size}"
                     </div>
-                        <div className="bike-item__content-price"> <b>{props.price}</b>azn/s </div>
-                    </div>
+                    <div className="bike-item__content-price"> <b>{props.price}</b>azn/s </div>
                 </div>
-            </Link>
+            </div>
         </div>
     )
 }
