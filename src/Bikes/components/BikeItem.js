@@ -12,6 +12,7 @@ const BikeItem = props => {
                     <img src={props.image} alt="" />
                 </Link>
             </div>
+            <div className="bike-item__image-gradient"></div>
             <div className="bike-item__content">
                 <Avatar redirect={`/user/${props.creator.id}`} className="avatar-small" creatorImg={props.creator.avatar} />
                 <div className="bike-item__content-text">

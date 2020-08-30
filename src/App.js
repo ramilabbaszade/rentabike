@@ -7,6 +7,8 @@ import BikeAd from './BikeAd/pages/BikeAd';
 import Footer from './pages/Footer/Footer';
 import NewBike from './BikeAd/pages/NewBike';
 import User from './User/pages/User';
+import Register from './pages/Auth/Register';
+import Login from './pages/Auth/Login';
 
 const App = () => {    
   return <Router>
@@ -21,6 +23,12 @@ const App = () => {
         </Route>
         <Route path="/bikes/new" exact>
           <NewBike />
+        </Route>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
+        <Route path="/register" exact>
+          <Register />
         </Route>
         <Route path="/user/:userId">
           <User />

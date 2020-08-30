@@ -17,6 +17,14 @@
     height: 100%;
     object-fit: cover;
 }
+.bike-item__image-gradient{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(transparent,transparent,rgb(0, 0, 0));
+    transition: all 2s;
+}
 
 /* Bike Item Content */
 
@@ -24,18 +32,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(10, 9, 9, 0.596);
     width: 100%;
     display: flex;
     padding: 10px;
     align-items: center;
     color: rgb(240, 240, 240);
     transition: .4s;
-}
-.bike-item:hover .bike-item__content{
-    background-color: rgba(10, 9, 9, 0.609);
-    color: white;
-    transition: .3s;
 }
 
 .bike-item__content-subtext{

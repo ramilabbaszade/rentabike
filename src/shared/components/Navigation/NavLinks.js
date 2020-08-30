@@ -16,7 +16,7 @@ const NavLinks = () => {
                 <NavLink to='/bikes/new'>Add bike</NavLink>
             </li>
             <li>
-                <NavLink to='/signup'>Join</NavLink>
+                <NavLink to='/register'>Register</NavLink>
             </li>
         </ul>
     )
