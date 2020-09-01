@@ -8,7 +8,7 @@ const UserItem = (props) => {
   return (
     <div className='user-item'>
       <div className='user-item__header'>
-        <Avatar creatorImg={props.avatar} className='avatar-large' />
+        <Avatar redirect={"#"} creatorImg={props.avatar} className='avatar-large' />
         <div className='user-item__header_main'>
           <h1>{props.fullName}</h1>
           {props.city && (
