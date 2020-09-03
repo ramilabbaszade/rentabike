@@ -14,17 +14,30 @@ const Input = (props) => {
         value={props.value}
       />
     ) : props.element === "select" ? (
-      <select name='select' >
-        {props.options}
+      <select name={props.name} ref={props.register}>
+        <option value="">Seçin</option>
+        {props.children}
       </select>
-    ) : (
-          <textarea
+    ) :
+        props.type === "checkbox" ? (
+          <input
+            ref={props.register}
             id={props.id}
-            rows={props.rows || 3}
-            value={props.value}
+            type={props.type}
             name={props.name}
+            value={props.value}
           />
-        );
+        ) :
+          (
+            <textarea
+              id={props.id}
+              ref={props.register}
+              rows={props.rows || 3}
+              value={props.value}
+              name={props.name}
+              placeholder={props.placeholder}
+            />
+          );
 
   return (
     <div

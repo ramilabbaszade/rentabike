@@ -1,3 +1,7 @@
+export const BikeTypes = ["Road","Electric","Child","BMX"]
+export const BikeSize = [12,16,20,24,28]
+export const BikeAccesuares = ["helmet", "lock", 'lights', "bell", "basket", "reflector"]
+
 export const BIKES = [
     {
         id: "b1",
