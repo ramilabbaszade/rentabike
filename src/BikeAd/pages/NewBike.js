@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
+import Button from "../../shared/components/FormElements/Button";
 import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
 import cities from '../../az.json'
+import DraggableMap from "../../shared/components/UIElements/DraggableMap";
 
 import "./NewBike.css";
-import Button from "../../shared/components/FormElements/Button";
-
 const NewBike = () => {
   const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
@@ -15,13 +15,24 @@ const NewBike = () => {
   const onSubmit = (data, e) => {
     const formData = new FormData()
     formData.append("image", data.picture[2])
+    formData.append("marker", marker)
     console.log(data);
 
     // e.target.reset();
   };
 
+  const [marker, setMarker] = useState({
+    lat: 40.500,
+    lng: 49.800
+  })
+
+  const showMeFunction = () => {
+    console.log("test: "+marker)
+  }
+
   return (
     <div className='new-bike_form container'>
+      {showMeFunction()}
       <form className='bike-form' onSubmit={handleSubmit(onSubmit)}>
         <Input
           register={register({ required: true, maxLength: 52 })}
@@ -120,7 +131,7 @@ const NewBike = () => {
         </div>
         <br />
         <hr />
-        <br/>
+        <br />
         <h2>Location</h2>
         <Input
           element='select'
@@ -142,6 +153,13 @@ const NewBike = () => {
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
         />
+        <DraggableMap
+          register={register()}
+          marker={marker}
+          setMarker={setMarker}
+          name="marker"
+        />
+        <button onClick={showMeFunction} >Show</button>
 
         <Button type='submit'>
           Submit

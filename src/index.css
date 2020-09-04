@@ -22,6 +22,10 @@ body {
   height: 100vh;
   z-index: 98;
 }
+.leaflet-draggable{
+  width: 100%;
+  height: 50vh;
+}
 
 a {
   text-decoration: none;
