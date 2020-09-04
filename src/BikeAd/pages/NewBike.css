@@ -7,3 +7,8 @@
     justify-content: space-between;
     width: 50%;
 }
+.extra-price-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

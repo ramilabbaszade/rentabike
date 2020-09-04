@@ -14,7 +14,7 @@ const Input = (props) => {
         value={props.value}
       />
     ) : props.element === "select" ? (
-      <select name={props.name} ref={props.register}>
+      <select key={props.key} name={props.name} ref={props.register}>
         <option value="">Seçin</option>
         {props.children}
       </select>
