@@ -20,7 +20,7 @@ const DraggableMap = (props) => {
     const markerPosition = [props.marker.lat, props.marker.lng]
 
     return (
-        <Map ref={props.register} className="leaflet-draggable" center={position} zoom={7}>
+        <Map id={props.name} ref={props.register} className="leaflet-draggable" center={position} zoom={7}>
             <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,8 +29,9 @@ const DraggableMap = (props) => {
                 draggable={draggable}
                 onDragend={updatePosition}
                 position={markerPosition}
+                leaflet
                 ref={refmarker}>
-                <Popup attribution={props.name}  minWidth={90} >
+                <Popup minWidth={90} >
                     <span onClick={toggleDraggable}>
                         {draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
                     </span>

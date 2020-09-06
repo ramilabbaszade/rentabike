@@ -7,6 +7,7 @@ import cities from '../../az.json'
 import DraggableMap from "../../shared/components/UIElements/DraggableMap";
 
 import "./NewBike.css";
+import Search from "../../shared/components/FormElements/Search";
 const NewBike = () => {
   const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
@@ -27,7 +28,7 @@ const NewBike = () => {
   })
 
   const showMeFunction = () => {
-    console.log("test: "+marker)
+    console.log("test: " + marker)
   }
 
   return (
@@ -156,10 +157,11 @@ const NewBike = () => {
         <DraggableMap
           register={register()}
           marker={marker}
-          setMarker={setMarker}
           name="marker"
+          setMarker={setMarker}
         />
-        <button onClick={showMeFunction} >Show</button>
+
+        {/* <Search items={cities.map(item=>{return item.city})} register={register()} name="marker" /> */}
 
         <Button type='submit'>
           Submit
