@@ -8,34 +8,45 @@ import DraggableMap from "../../shared/components/UIElements/DraggableMap";
 
 import "./NewBike.css";
 import Search from "../../shared/components/FormElements/Search";
+import { control } from "leaflet";
 const NewBike = () => {
-  const { register, handleSubmit, errors, watch } = useForm({
+  const [data, setData] = useState({});
+  const setValues = (values) => {
+    setData(prevData => ({
+      ...prevData,
+      ...values
+    }))
+  }
+  const { register, control, handleSubmit, errors, watch } = useForm({
+    defaultValues:{
+      marker:data.markers
+    },
     mode: "onBlur",
   });
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
-    formData.append("image", data.picture[2])
-    formData.append("marker", marker)
+    // formData.append("image", data.picture[2])
+    formData.append("markers", markers)
     console.log(data);
 
     // e.target.reset();
   };
 
-  const [marker, setMarker] = useState({
+  const [markers, setMarkers] = useState({
     lat: 40.500,
     lng: 49.800
   })
 
   const showMeFunction = () => {
-    console.log("test: " + marker)
+    console.log("test: " + markers)
   }
 
   return (
     <div className='new-bike_form container'>
       {showMeFunction()}
       <form className='bike-form' onSubmit={handleSubmit(onSubmit)}>
-        <Input
+        {/* <Input
           register={register({ required: true, maxLength: 52 })}
           element='input'
           id='title'
@@ -153,12 +164,13 @@ const NewBike = () => {
           type='text'
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
-        />
+        /> */}
         <DraggableMap
-          register={register()}
-          marker={marker}
-          name="marker"
-          setMarker={setMarker}
+          register={register}
+          markers={markers}
+          name="markers"
+          setMarkers={setMarkers}
+          control={control}
         />
 
         {/* <Search items={cities.map(item=>{return item.city})} register={register()} name="marker" /> */}

@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, forwardRef } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Controller } from 'react-hook-form'
 
-const DraggableMap = (props) => {
+const DraggableMap = (props,{control}) => {
     const [draggable, setDraggable] = useState(true)
     let refmarker = useRef(<Marker />)
 
@@ -17,27 +18,34 @@ const DraggableMap = (props) => {
         }
     }
     const position = [40.500, 48.500]
-    const markerPosition = [props.marker.lat, props.marker.lng]
+    const markerPosition = [props.markers.lat, props.markers.lng]
 
     return (
-        <Map id={props.name} ref={props.register} className="leaflet-draggable" center={position} zoom={7}>
-            <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker
-                draggable={draggable}
-                onDragend={updatePosition}
-                position={markerPosition}
-                leaflet
-                ref={refmarker}>
-                <Popup minWidth={90} >
-                    <span onClick={toggleDraggable}>
-                        {draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
-                    </span>
-                </Popup>
-            </Marker>
-        </Map>
+        <Controller
+            control={control}
+            name={props.name}
+            defaultValue={[]}
+            render={() => {
+                return <Map id={props.name} ref={props.register} className="leaflet-draggable" center={position} zoom={7}>
+                    <TileLayer
+                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker
+                        draggable={draggable}
+                        onDragend={updatePosition}
+                        position={markerPosition}
+                        ref={refmarker}>
+                        <Popup minWidth={90} >
+                            <span onClick={toggleDraggable}>
+                                {draggable ? 'DRAG MARKER' : 'MARKER FIXED'}
+                            </span>
+                        </Popup>
+                    </Marker>
+                </Map>
+            }}
+        />
+
     )
 }
 

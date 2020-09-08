@@ -9,6 +9,7 @@ import NewBike from './BikeAd/pages/NewBike';
 import User from './User/pages/User';
 import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
+import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 
 const App = () => {    
   return <Router>
@@ -29,6 +30,9 @@ const App = () => {
         </Route>
         <Route path="/register" exact>
           <Register />
+        </Route>
+        <Route path="/me">
+          <ProfileDashboard />
         </Route>
         <Route path="/user/:userId">
           <User />

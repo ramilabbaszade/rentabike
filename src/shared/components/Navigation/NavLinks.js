@@ -10,7 +10,7 @@ const NavLinks = () => {
                 <NavLink to='/list' exact>List</NavLink>
             </li>
             <li>
-                <NavLink to='/u1/bikes'>Dashboard</NavLink>
+                <NavLink to='/me'>Me</NavLink>
             </li>
             <li>
                 <NavLink to='/bikes/new'>Add bike</NavLink>
