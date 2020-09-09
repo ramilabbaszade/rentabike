@@ -13,31 +13,45 @@ const ProfileContainer = (props) => {
                     <Avatar creatorImg={props.avatar} className="avatar-large" />
                     <div className="profile-header__info">
                         <h2> {props.name} </h2>
-                        <p> {props.bio} </p>
-                        <p> {props.city} </p>
+                        <p className="profile-header__city"> <i className='fas fa-map-marker-alt'></i> {props.city} </p>
+                        <p className='profile-header__bio'> {props.bio} </p>
                     </div>
                 </div>
-                <Link  to='/me/edit'>
+                <Link className="profile-header__edit-btn" to='/me/edit'>
                     Edit
-                    <i style={{marginLeft:'10px'}} className="fas fa-user-edit"></i>
+                    <i style={{ marginLeft: '10px' }} className="fas fa-user-edit"></i>
                 </Link>
             </div>
 
             <div className="profile-body">
-                <h3>Shared Bikes</h3>
+                <h3 className='profile-body__title'>Shared Bikes</h3>
                 <div className="profile-body__shared-bikes">
-                    {props.bikes.map(bike=>{
-                        return <BikeItem
-                            id={bike.id}
-                            key={bike.id}
-                            title={bike.title}
-                            size={bike.size}
-                            city={bike.city}
-                            price={bike.price.first}
-                            creator={bike.creator}
-                            image={bike.images[0]}
-                        />
-                    })}
+                    {props.bikes.length === 0 ? (
+                        <h4>Bike not found</h4>
+                    ) : (
+                            props.bikes.map(bike => {
+                                return <BikeItem
+                                    id={bike.id}
+                                    key={bike.id}
+                                    title={bike.title}
+                                    size={bike.size}
+                                    city={bike.city}
+                                    price={bike.price.first}
+                                    creator={bike.creator}
+                                    image={bike.images[0]}
+                                    actionicons
+                                >
+                                    <div className="bike-item__action-icons">
+                                        <Link to="/" className="bike-item__action-icon icon-edit">
+                                            <i class="fas fa-pen"></i>
+                                        </Link>
+                                        <Link to='/' className="bike-item__action-icon icon-remove">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </Link>
+                                    </div>
+                                </BikeItem>
+                            }))}
+
                 </div>
             </div>
 

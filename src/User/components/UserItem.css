@@ -1,32 +1,76 @@
-.user-item__header {
+.user-dashboard {
+    margin-top: 5rem;
+}
+
+.user-header {
     display: flex;
-    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+    border: 2px solid var(--gray);
+    padding: 1rem;
     align-items: center;
 }
 
-.user-item__header_main {
+.user-header__i {
+    display: flex;
+    align-items: center;
+}
+
+.user-header__info {
+    margin-left: 1rem;
+}
+
+.user-body {
     display: flex;
     flex-direction: column;
-    text-align: center;
-}
-
-.user-item__header__city i {
-    margin-right: 5px;
-}
-
-.user-item__body {
-    margin-top: 2rem;
-}
-
-.user-item__body__bike-list {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap: 5px;
+    border: 2px solid var(--gray);
+    padding: 1rem;
     margin-top: 1rem;
 }
 
+.user-body h3 {
+    margin-bottom: .5rem;
+}
+
+.user-header__city{
+    margin: 8px 0;
+}
+
+.user-header__edit-btn {
+    display: flex;
+}
+
+.user-body__shared-bikes {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 5px;
+}
+
 @media only screen and (max-width: 757px) {
-    .user-item__body__bike-list {
+    .user-header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .user-header__i {
+        flex-direction: column;
+    }
+
+    .user-header__info {
+        margin: 0;
+        justify-content: center;
+    }
+
+    .user-header__city {
+        margin: 1rem 0;
+    }
+
+    .user-header__bio {
+        margin: 0 auto;
+    }
+
+    .user-body__shared-bikes {
         grid-template-columns: auto;
     }
 }

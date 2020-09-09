@@ -6,7 +6,7 @@ export const BikePrices = [1, 2, 3]
 export const USER = {
     id: 'u1',
     name: "Jake",
-    bio: "Bla bla yeah best bike and now you can buy it",
+    bio: "Bla bla yeah best bike and now you can buy it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, blanditiis voluptates vel ipsum odio aspernatur, sint reiciendis rem nam quasi sunt in doloremque architecto necessitatibus ab vero accusamus cum. Dolor.",
     avatar: 'https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv',
     city: "Sumgayit",
     bikes: [
