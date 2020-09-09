@@ -1,7 +1,7 @@
 .auth-page {
     display: grid;
     grid-template-columns: 50% 50%;
-    height: 90vh;
+    height: 100vh;
     border: .5px solid rgba(192, 192, 192, 0.315);
     box-shadow: .2px .4px 4px .5px rgba(0, 0, 0, 0.164);
     margin-bottom: 2rem;

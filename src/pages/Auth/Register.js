@@ -21,10 +21,10 @@ const Login = () => {
                     <img src={image1} alt='login' />
                 </div>
                 <div className='auth-page__login'>
-                    <h1>Sign Up</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className='form-login'>
+                        <h1>Sign Up</h1>
                         <Input
-                            register={register({ required: true, maxLength:20,minLength:3 })}
+                            register={register({ required: true, maxLength: 20, minLength: 3 })}
                             element="input"
                             id='userName'
                             label="Username"
