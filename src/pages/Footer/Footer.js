@@ -10,13 +10,13 @@ const Footer = () => {
                 <div className="footer-in__main">
                     <BrandLogo />
                     <div className="footer__social">
-                        <Link to="/">
+                        <Link style={{backgroundColor:'#DB4437'}} to="/">
                             <i className="fas fa-envelope"></i>
                         </Link>
-                        <Link to="/">
+                        <Link style={{backgroundColor:'#c13584'}} to="/">
                             <i className="fab fa-instagram"></i>
                         </Link>
-                        <Link to="/">
+                        <Link style={{backgroundColor:'#4267B2'}} to="/">
                             <i className="fab fa-facebook-square"></i>
                         </Link>
                     </div>
