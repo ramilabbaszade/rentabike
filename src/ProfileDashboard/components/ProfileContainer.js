@@ -17,7 +17,7 @@ const ProfileContainer = (props) => {
                         <p className='profile-header__bio'> {props.bio} </p>
                     </div>
                 </div>
-                <Link className="profile-header__edit-btn" to='/me/edit'>
+                <Link className="profile-header__edit-btn" to='/profile/edit'>
                     Edit
                     <i style={{ marginLeft: '10px' }} className="fas fa-user-edit"></i>
                 </Link>

@@ -10,6 +10,7 @@ import User from './User/pages/User';
 import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
 import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
+import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 
 const App = () => {    
   return <Router>
@@ -30,6 +31,9 @@ const App = () => {
         </Route>
         <Route path="/register" exact>
           <Register />
+        </Route>
+        <Route path="/profile/edit">
+          <ProfileEdit />
         </Route>
         <Route path="/me">
           <ProfileDashboard />

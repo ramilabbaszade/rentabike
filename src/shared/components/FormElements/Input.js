@@ -9,6 +9,9 @@ const Input = (props) => {
         id={props.id}
         ref={props.register}
         name={props.name}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
+        defaultValue={props.defaultValue}
         type={props.type}
         placeholder={props.placeholder}
         value={props.value}
@@ -41,8 +44,7 @@ const Input = (props) => {
 
   return (
     <div
-      className={`form-control ${
-        props.errors && "form-control--invalid"
+      className={`form-control ${props.errors && "form-control--invalid"
         }`}>
       <label htmlFor={props.id}>{props.label}</label>
       {element}

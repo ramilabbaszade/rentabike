@@ -1,7 +1,6 @@
 import React from "react";
 import Avatar from "../../shared/components/UIElements/Avatar";
 import BikeItem from "../../Bikes/components/BikeItem";
-import { Link } from "react-router-dom";
 
 import "./UserItem.css";
 
