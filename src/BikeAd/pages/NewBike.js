@@ -1,50 +1,35 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
 import cities from '../../az.json'
 import DraggableMap from "../../shared/components/UIElements/DraggableMap";
+import Search from "../../shared/components/FormElements/Search";
 
 import "./NewBike.css";
-import Search from "../../shared/components/FormElements/Search";
-import { control } from "leaflet";
+
 const NewBike = () => {
-  const [data, setData] = useState({});
-  const setValues = (values) => {
-    setData(prevData => ({
-      ...prevData,
-      ...values
-    }))
-  }
-  const { register, control, handleSubmit, errors, watch } = useForm({
-    defaultValues:{
-      marker:data.markers
-    },
+  const { register, handleSubmit, errors, watch, control } = useForm({
     mode: "onBlur",
   });
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
     // formData.append("image", data.picture[2])
-    formData.append("markers", markers)
     console.log(data);
+    console.log('markers:' + marker)
 
-    // e.target.reset();
+    e.target.reset();
   };
 
-  const [markers, setMarkers] = useState({
-    lat: 40.500,
-    lng: 49.800
+  const [marker, setMarker] = useState({
+      lat: 40.500,
+      lng: 49.800
   })
-
-  const showMeFunction = () => {
-    console.log("test: " + markers)
-  }
 
   return (
     <div className='new-bike_form container'>
-      {showMeFunction()}
       <form className='bike-form' onSubmit={handleSubmit(onSubmit)}>
         {/* <Input
           register={register({ required: true, maxLength: 52 })}
@@ -165,13 +150,22 @@ const NewBike = () => {
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
         /> */}
-        <DraggableMap
-          register={register}
-          markers={markers}
-          name="markers"
-          setMarkers={setMarkers}
+        <Controller
+          name="marker"
           control={control}
+          defaultValue={marker}
+          value={marker}
+          render={() => {
+            return (
+              <DraggableMap
+                markers={marker}
+                value={marker}
+                setMarkers={setMarker}
+              />
+            )
+          }}
         />
+
 
         {/* <Search items={cities.map(item=>{return item.city})} register={register()} name="marker" /> */}
 

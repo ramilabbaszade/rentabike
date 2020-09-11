@@ -11,6 +11,7 @@ import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
 import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
+import Inbox from './pages/Chat/pages/Inbox';
 
 const App = () => {    
   return <Router>
@@ -34,6 +35,9 @@ const App = () => {
         </Route>
         <Route path="/profile/edit">
           <ProfileEdit />
+        </Route>
+        <Route path="/inbox">
+          <Inbox />
         </Route>
         <Route path="/me">
           <ProfileDashboard />

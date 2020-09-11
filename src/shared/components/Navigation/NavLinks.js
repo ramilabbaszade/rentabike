@@ -13,6 +13,9 @@ const NavLinks = () => {
                 <NavLink to='/me'>Me</NavLink>
             </li>
             <li>
+                <NavLink to='/inbox'>Inbox</NavLink>
+            </li>
+            <li>
                 <NavLink to='/bikes/new'>Add bike</NavLink>
             </li>
             <li>
