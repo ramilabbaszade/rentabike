@@ -1,66 +1,49 @@
 /* Bike Item */
-.bike-item{
-    position: relative;
-    transition: .3s;
+.bike-bottom-line{
+    margin-top: 2rem;
+    color:rgba(168, 168, 168, 0.13);
 }
-.bike-item:hover{
-    transform: scale(1.03);
-    transition: .3s;
-    z-index: 96;
+.bike-item-title__bottom-line{
+    width: 40px;
+    color:var(--gray3);
+    margin:6px 0;
 }
-.bike-item__image{
-    width: 100%;
-    height: 250px;
+.bike-item {
+    display: flex;
+}
+
+.bike-item__container {
+    margin: 1rem 0;
+}
+
+.bike-item__image {
+    width: 320px;
+    height: 200px;
 }
 .bike-item__image img {
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 200px;
+    border-radius: 7px;
+    border: .2px solid var(--gray3);
     object-fit: cover;
 }
-.bike-item__image-gradient{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(transparent,transparent,rgb(0, 0, 0));
-    transition: all 2s;
-}
+
 /* Bike Item Content */
 
 .bike-item__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.bike-item__content__price{
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    color: rgb(240, 240, 240);
-    transition: .4s;
+    right: 0;
 }
-
-.bike-item__content-subtext{
-    line-height: 20px;
-    margin-left: 5px;
-}
-
-/*Bike item content renter image */
-.bike-item__content-text{
-    margin: 0 5px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.bike-item__content-price{
-    font-size: 18px;
-}
-.bike-item__content-price b{
-    font-size: 26px;
-}
-
-@media only screen and (max-width: 757px) {
-    .bike-item:hover{
-        transform:none;
-    }
+.small-text{
+    color: var(--gray2);
+    font-size: 15px;
 }

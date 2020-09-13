@@ -1,12 +1,12 @@
 .bikes-page {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
 }
 .bikes-map {
     position: fixed;
     top: 3rem;
     right: 0;
-    width: 50%;
+    width: 40%;
     height: 100%;
 }
 

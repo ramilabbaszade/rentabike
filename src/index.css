@@ -3,6 +3,8 @@
   --yellow: #fde24f;
   --text: #00214d;
   --gray: #f6f6f6;
+  --gray2:rgba(116, 116, 116, 0.842);
+  --gray3:rgba(194, 194, 194, 0.466);
   --white: #fffffe;
   --black: black;
   --red:#d11a2a;
@@ -18,7 +20,6 @@
 body {
   font-family: 'Roboto', 'Open Sans', sans-serif;
 }
-
 .leaflet-container {
   width: 100%;
   height: 100vh;
@@ -28,7 +29,11 @@ body {
   width: 100%;
   height: 50vh;
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-weight: 100;
+  color: rgb(37, 37, 37);
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
 a {
   text-decoration: none;
   color: black;
