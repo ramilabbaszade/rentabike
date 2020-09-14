@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-family: 'Nunito','Montserrat', sans-serif;
 }
 .leaflet-container {
   width: 100%;
@@ -30,9 +30,7 @@ body {
   height: 50vh;
 }
 h1,h2,h3,h4,h5,h6{
-  font-weight: 100;
-  color: rgb(37, 37, 37);
-  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 a {
   text-decoration: none;

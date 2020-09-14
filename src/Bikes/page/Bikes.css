@@ -8,6 +8,7 @@
     right: 0;
     width: 40%;
     height: 100%;
+    margin-top: .5rem;
 }
 
 /* Responsives */
@@ -26,3 +27,11 @@
     }
 }
 
+@media only screen and (min-width: 1355px) {
+    .bikes-page {
+        grid-template-columns: 50% 50%;
+    }
+    .bikes-map{
+        width: 50%;
+    }
+}

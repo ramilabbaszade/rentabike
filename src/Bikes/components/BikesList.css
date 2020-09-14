@@ -3,6 +3,9 @@
     flex-direction: column;
     padding: 1rem;
 }
-@media only screen and (max-width: 995px) {
-    
+@media only screen and (max-width: 757px) {
+    .bikes-list {
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -30,7 +30,10 @@ const MapContainer = (props) => {
                             <Popup className="popup">
                                 <Link to={`/${mark.id}`} className="popup-container">
                                     <img src={mark.images[0]} alt={mark.title} />
-                                    <div> {mark.title} ~ {mark.size}" ~ {mark.price.first}azn/s </div>
+                                    <div className="popup-container__title">
+                                        <h3> {mark.title} </h3>
+                                        {mark.size}" · {mark.price.first}azn/s
+                                    </div>
                                 </Link>
                             </Popup>
                         </Marker>

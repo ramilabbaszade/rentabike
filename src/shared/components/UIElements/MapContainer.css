@@ -1,9 +1,22 @@
 .popup{
-    width: 15rem;
-    height: 150px;
+    width: 200px;
+    color: black;
 }
 .popup-container img{
-    width: 12rem;
+    width: 200px;
     height: 150px;
+    border-radius: 10px 10px 0 0;
     object-fit: cover;
+}
+.popup-container__title{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 2px;
+    color: black;
+}
+.leaflet-popup-content-wrapper{
+    text-align: center;
+}
+.leaflet-popup-content{
+    margin: 0;
 }
