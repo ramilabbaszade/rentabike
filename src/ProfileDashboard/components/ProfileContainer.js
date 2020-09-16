@@ -7,25 +7,46 @@ import './ProfileContainer.css'
 
 const ProfileContainer = (props) => {
     return (
-        <div>
+        <div className="profile_container">
             <div className="profile-header">
                 <div className="profile-header__i">
                     <Avatar creatorImg={props.avatar} className="avatar-large" />
-                    <div className="profile-header__info">
-                        <h2> {props.name} </h2>
-                        <p className="profile-header__city"> <i className='fas fa-map-marker-alt'></i> {props.city} </p>
-                        <p className='profile-header__bio'> {props.bio} </p>
+
+                    <div className="profile-header__confirmed">
+                        <div className="profile-header__info_icon-container">
+                            <i class="far fa-smile"></i>
+                            <span> Yeni üzv </span>
+                        </div>
+                        <div className="profile-header__info_icon-container">
+                            <i class="fas fa-check"></i>
+                            <span>Hesab təsdiqləndi</span>
+                        </div>
+                    </div>
+
+                    <div className="profile-header__editBtn">
+                        <Link to='/'>
+                            Edit Profile
+                        </Link>
                     </div>
                 </div>
-                <Link className="profile-header__edit-btn" to='/profile/edit'>
-                    Edit
-                    <i style={{ marginLeft: '10px' }} className="fas fa-user-edit"></i>
-                </Link>
             </div>
 
             <div className="profile-body">
-                <h3 className='profile-body__title'>Shared Bikes</h3>
+                <section className="profile-body__section1">
+                    <h1> {props.name} </h1>
+                    <small className="small-text">Qoşuldu: 01.08.2020</small>
+                </section>
+                <section className="profile-body__section2">
+                    <h1 className="profile-body__section2_title">Haqqında</h1>
+                    <p >{props.bio}</p>
+                    <div className="icon-container">
+                        <i class="fas fa-street-view"></i>
+                        <div>{props.city}</div>
+                    </div>
+                </section>
+                <hr className="bike-bottom-line" />
                 <div className="profile-body__shared-bikes">
+                    <h2 className='profile-body__title'>Aktiv elanlar</h2>
                     {props.bikes.length === 0 ? (
                         <h4>Bike not found</h4>
                     ) : (

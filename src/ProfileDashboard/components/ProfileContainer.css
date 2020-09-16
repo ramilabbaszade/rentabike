@@ -1,97 +1,70 @@
 .profile-dashboard {
-    margin-top: 5rem;
+    margin-top: 6rem;
+}
+
+.profile_container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
 }
 
 .profile-header {
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    border: 2px solid var(--gray);
+    border: 1px solid var(--gray3);
+    border-radius: 10px;
     padding: 1rem;
-    align-items: center;
+    height: min-content;
 }
 
-.profile-header__i {
-    display: flex;
-    align-items: center;
-}
-
-.profile-header__info {
-    margin-left: 1rem;
-}
-
-.profile-body {
+.profile-header__i{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--gray);
-    padding: 1rem;
-    margin-top: 1rem;
-}
-.profile-header__bio{
-    width: 90%;
-}
-.profile-header__city{
-    margin: 5px 0;
-}
-.profile-header__edit-btn{
-    display: flex;
-}
-.profile-body__shared-bikes {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap: 5px;
-}
-.profile-body__title{
-    margin-bottom: 1rem;
-}
-/* Action Icons */
-.bike-item__action-icons{
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: .5rem;
-
 }
-.bike-item__action-icon{
-    background-color: rgba(255, 255, 255, 0.815);
-    padding: 10px;
-    text-align: center;
-    border-radius: 50%;
-    margin-left: 5px;
+.profile-header__info_icon-container{
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+    gap: 8px;
+    font-size: 20px;
 }
-.bike-item__action-icons .icon-remove{
-    color: var(--red);
+.profile-header__confirmed{
+    margin: 1rem 0;
 }
-.bike-item__action-icons .icon-edit{
-    color: var(--green);
+.profile-header__editBtn{
+    background: var(--green);
+    padding: .3rem 2rem;
 }
 
-@media only screen and (max-width: 757px) {
-    .profile-header {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
+/* profile Body */
 
-    .profile-header__i {
-        flex-direction: column;
-    }
+.profile-body {
+    padding: 0 3rem;
+}
+.profile-body__section2{
+    margin: 2rem 0;
+}
+.profile-body__section2_title{
+    margin: 1rem 0;
+}
+.icon-container{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 1rem 0;
+    font-size: 17px;
+}
 
-    .profile-header__info {
-        margin: 0;
-        justify-content: center;
-    }
+.profile-body__shared-bikes{
+    margin: 2rem 0;
+}
 
-    .profile-header__city {
-        margin: 1rem 0;
+@media only screen and (max-width: 767px) {
+    .profile_container {
+        grid-template-columns: 100%;
     }
-    .profile-header__bio{
-        margin: 0 auto;
-    }
-
-    .profile-body__shared-bikes {
-        grid-template-columns: auto;
+    .profile-body {
+        padding: 0 1rem;
     }
 }
