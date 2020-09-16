@@ -1,71 +1,77 @@
 .user-dashboard {
-    margin-top: 5rem;
+    margin-top: 6rem;
+}
+
+.user_container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
 }
 
 .user-header {
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    border: 2px solid var(--gray);
+    border: 1px solid var(--gray3);
+    border-radius: 10px;
     padding: 1rem;
-    align-items: center;
+    height: min-content;
 }
 
 .user-header__i {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.user-header__info {
-    margin-left: 1rem;
+.user-header__info_icon-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+    gap: 8px;
+    font-size: 20px;
 }
+
+.user-header__confirmed {
+    margin: 1rem 0;
+}
+
+.user-header__editBtn {
+    background: var(--green);
+    padding: .3rem 2rem;
+}
+
+/* user Body */
 
 .user-body {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--gray);
-    padding: 1rem;
-    margin-top: 1rem;
-}
-.user-header__city{
-    margin: 8px 0;
+    padding: 0 3rem;
 }
 
-.user-header__edit-btn {
+.user-body__section2 {
+    margin: 2rem 0;
+}
+
+.user-body__section2_title {
+    margin: 1rem 0;
+}
+
+.icon-container {
     display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 1rem 0;
+    font-size: 17px;
 }
 
 .user-body__shared-bikes {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap: 5px;
+    margin: 2rem 0;
 }
 
-@media only screen and (max-width: 757px) {
-    .user-header {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
+@media only screen and (max-width: 767px) {
+    .user_container {
+        grid-template-columns: 100%;
     }
 
-    .user-header__i {
-        flex-direction: column;
-    }
-
-    .user-header__info {
-        margin: 0;
-        justify-content: center;
-    }
-
-    .user-header__city {
-        margin: 1rem 0;
-    }
-
-    .user-header__bio {
-        margin: 0 auto;
-    }
-
-    .user-body__shared-bikes {
-        grid-template-columns: auto;
+    .user-body {
+        padding: 0 1rem;
     }
 }
