@@ -2,43 +2,34 @@
 .bike-ad__header {
     height: 60vh;
     position: relative;
+    border-radius: 0 0 30px 30px;
 }
 
 .bike-ad__header-image img {
     width: 100%;
     height: 60vh;
+    border-radius: 0 0 30px 30px;
     object-fit: cover;
 }
 
 .bike-ad__header__gradient {
     position: absolute;
     top: 0;
+    border-radius: 0 0 30px 30px;
+
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.137), transparent, transparent, rgba(0, 0, 0, 0.822));
-}
-
-.bike-ad__header__title {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: white;
-    padding: 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.137), transparent, transparent, rgba(0, 0, 0, 0.116));
 }
 
 /* DETAILS */
-.bike-ad__details-in {
+.bike-ad__details-in{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: var(--white);
 }
-
 .bike-ad__details-in__right {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .bike-ad__details-in__right h2 {
@@ -46,21 +37,11 @@
     font-size: 16px;
 }
 
-.bike-ad__details {
-    background-color: rgba(0, 0, 0, 0.849);
-    padding: 1rem;
-}
-
 /* Body info */
-.bike-ad__body {
+.bike-ad__grid{
     display: grid;
-    grid-template-columns: 30% 70%;
-    padding: 1rem;
-}
-
-.bike-ad__body__sellerInfo {
-    display: flex;
-    align-items: center;
+    grid-template-columns: 65% 35%;
+    margin-top: 2rem;
 }
 
 .bike-ad__body__sellerInfo h2 {
@@ -71,25 +52,28 @@
 .bike-ad__body__bike-accesuares {
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: end;
+    gap: 18px;
+    justify-content: start;
+    margin-top: 2rem;
 }
 
 .bike-ad__body__bike-accesuares li {
     display: flex;
     align-items: center;
+    margin-right: 8px;
 }
 
 .bike-ad__body__bike-accesuares li img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: cover;
-    margin: 0 2rem;
+    margin-right: 8px;
+    opacity: .7;
 }
 
 /* Price */
 .bike-ad__details-price {
     font-size: 18px;
-    padding: 0 1rem;
 }
 
 .bike-ad__details-price b {
@@ -123,6 +107,27 @@
     align-items: center;
     padding: 5px;
 }
+.write-renter{
+    padding: 1rem 2rem;
+    margin-left: 4rem;
+    border: 1px solid var(--gray3);
+    border-radius: 28px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: var(--gray3) 3px 1px 2px 1px;
+}
+.write-btn{
+    margin-top: 1rem;
+    border: 1px solid var(--primarycolor);
+    padding: 1rem 0;
+    border-radius: 28px;
+}
+.write-btn:hover{
+    background-color: var(--primarycolor);
+    color: white;
+}
 
 @media only screen and (max-width: 757px) {
     .bike-ad__header {
@@ -131,11 +136,9 @@
 
     .bike-ad__header-image img {
         height: 30vh;
+        border-radius: 0;
     }
 
-    .bike-ad__header__title {
-        font-size: 1.5rem;
-    }
     /* ----------- */
     .bike-ad__details-in {
         flex-direction: column;
@@ -147,8 +150,9 @@
         column-gap: 3px;
     }
 
-    .bike-ad__body {
+    .bike-ad__grid{
         grid-template-columns: auto;
+        text-align: center;
     }
 
     .bike-ad__body__bike-accesuares {
@@ -160,8 +164,7 @@
         grid-template-columns: auto auto;
         justify-content: center;
     }
-
-    .bike-ad__body__sellerInfo {
-        flex-direction: column;
+    .write-renter{
+        margin: 0;
     }
 }

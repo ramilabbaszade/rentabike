@@ -12,11 +12,10 @@ import part6 from "../../assets/icons/bike-parts-icons/refletor.png";
 
 import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
-import { BIKES } from '../../data'
+import { BIKES } from "../../data";
 
 import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
-
 
 const BikeAdItem = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,82 +47,105 @@ const BikeAdItem = (props) => {
             }
           />
         )}
-        <div className='bike-ad__header__title'>
-          <div className='container'>{props.title}</div>
-        </div>
-      </div>
-      <div className='bike-ad__details '>
-        <div className='bike-ad__details-in container'>
-          <div className='bike-ad__details-in__left'>
-            <h2>{props.type} - {props.size}"</h2>
-          </div>
-          <div className='bike-ad__details-in__right'>
-            <div className='bike-ad__details-price'>
-              <b>{props.price.first}</b>azn/1s
-            </div>
-            {props.price.second > 0 && (
-              <div className='bike-ad__details-price'>
-                <b>{props.price.second}</b>azn/2s
-              </div>
-            )}
-            {props.price.third > 0 && (
-              <div className='bike-ad__details-price'>
-                <b>{props.price.third}</b>azn/3s
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className='bike-ad__body container'>
-        <div className='bike-ad__body__sellerInfo'>
-          <Avatar redirect={`user/${props.creator.id}`} className='avatar-middle' creatorImg={props.creator.avatar} />
-          <h2> {props.creator.name} </h2>
-        </div>
-        <ul className='bike-ad__body__bike-accesuares'>
-          {props.accesuares.helmet && <li htmlFor='iconTitle'>
-            <img src={part1} alt='icon' />
-            Başlıq
-          </li>}
-          {props.accesuares.lock && <li htmlFor='iconTitle'>
-            <img src={part2} alt='icon' />
-            Kilid
-          </li>}
-          {props.accesuares.basket && <li htmlFor='iconTitle'>
-            <img src={part3} alt='icon' />
-            Səbət
-          </li>}
-          {props.accesuares.bell && <li htmlFor='iconTitle'>
-            <img src={part4} alt='icon' />
-            Siqnal
-          </li>}
-          {props.accesuares.lights && <li htmlFor='iconTitle'>
-            <img src={part5} alt='icon' />
-            Fənər
-          </li>}
-          {props.accesuares.reflector && <li htmlFor='iconTitle'>
-            <img src={part6} alt='icon' />
-            Reflektor
-          </li>}
-        </ul>
-      </div>
-      <div className='bike-ad__description container'>
-        <hr />
-        <p> {props.description} </p>
-        <h3> {props.city} </h3>
-        <label>
-          {" "}
-          Addres: <i>{props.address}</i>{" "}
-        </label>
-      </div>
-      <div className='bike-ad__map'>
-        <MapContainer
-          singleCoord={props.location}
-          title={props.title}
-          mapStyle={{ height: "30vh" }}
-        />
       </div>
 
-      <div className='bike-ad__recommendation_cont container'>
+      <div className='bike-ad__grid'>
+        <div className='bike-ad__body'>
+          <div className='bike-ad__details '>
+            <div className='bike-ad__details-in'>
+              <div className='bike-ad__details-in__left'>
+                <h1>{props.title}</h1>
+                <h3>
+                  Velosiped - {props.type} - {props.size}"
+                </h3>
+              </div>
+                <Avatar
+                  redirect={`user/${props.creator.id}`}
+                  className='avatar-middle'
+                  creatorImg={props.creator.avatar}
+                />
+            </div>
+          </div>
+
+
+          <div className='bike-ad__description'>
+            <h3 className="small-text"> <i class="far fa-compass"></i> {props.city} </h3>
+            <p> {props.description} </p>
+          </div>
+
+          <ul className='bike-ad__body__bike-accesuares'>
+            {props.accesuares.helmet && (
+              <li htmlFor='iconTitle'>
+                <img src={part1} alt='icon' />
+                Başlıq
+              </li>
+            )}
+            {props.accesuares.lock && (
+              <li htmlFor='iconTitle'>
+                <img src={part2} alt='icon' />
+                Kilid
+              </li>
+            )}
+            {props.accesuares.basket && (
+              <li htmlFor='iconTitle'>
+                <img src={part3} alt='icon' />
+                Səbət
+              </li>
+            )}
+            {props.accesuares.bell && (
+              <li htmlFor='iconTitle'>
+                <img src={part4} alt='icon' />
+                Siqnal
+              </li>
+            )}
+            {props.accesuares.lights && (
+              <li htmlFor='iconTitle'>
+                <img src={part5} alt='icon' />
+                Fənər
+              </li>
+            )}
+            {props.accesuares.reflector && (
+              <li htmlFor='iconTitle'>
+                <img src={part6} alt='icon' />
+                Reflektor
+              </li>
+            )}
+          </ul>
+
+          <div className='bike-ad__map'>
+            <MapContainer
+              singleCoord={props.location}
+              title={props.title}
+              mapStyle={{ height: "30vh" }}
+            />
+          </div>
+        </div>
+
+        <div className="write-renter">
+          <div className='write-renter_price'>
+            <div className='bike-ad__details-in__right'>
+              <div className='bike-ad__details-price'>
+                <b>{props.price.first}</b>azn/1s
+                </div>
+              {props.price.second > 0 && (
+                <div className='bike-ad__details-price'>
+                  <b>{props.price.second}</b>azn/2s
+                </div>
+              )}
+              {props.price.third > 0 && (
+                <div className='bike-ad__details-price'>
+                  <b>{props.price.third}</b>azn/3s
+                </div>
+              )}
+            </div>
+          </div>
+          <Link to='/' className="write-btn">
+                Müraciət et
+          </Link>
+        </div>
+      </div>
+
+      <div className='bike-ad__recommendation_cont'>
         <div className='bike-ad__recommendation'>
           <div className='bike-ad__recommendation__title'>
             <h2>Latest bikes</h2>

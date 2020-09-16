@@ -3,7 +3,7 @@ import BikeAdItem from './BikeAdItem'
 
 const BikeAdList = (props) => {
     return (
-        <div className="bike-ad">
+        <div className="bike-ad container">
             {props.items.map((bike) => {
                 return <BikeAdItem
                     key={bike.id}
