@@ -53,7 +53,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 18px;
-    justify-content: start;
+    justify-content: flex-start;
     margin-top: 2rem;
 }
 
@@ -93,8 +93,8 @@
 
 .bike-ad__last-bikes {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    column-gap: 3px;
+    grid-template-columns: auto auto;
+    gap: 10px;
 }
 
 .bike-ad__recommendation {
@@ -105,7 +105,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
 }
 .write-renter{
     padding: 1rem 2rem;

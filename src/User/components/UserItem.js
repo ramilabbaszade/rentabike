@@ -10,14 +10,14 @@ const UserItem = (props) => {
     <div className="user_container">
       <div className="user-header">
         <div className="user-header__i">
-          <Avatar creatorImg={props.avatar} className="avatar-large" />
+          <Avatar redirect="#" creatorImg={props.avatar} className="avatar-large" />
           <div className="user-header__confirmed">
             <div className="user-header__info_icon-container">
-              <i class="far fa-smile"></i>
+              <i className="far fa-smile"></i>
               <span> Yeni üzv </span>
             </div>
             <div className="user-header__info_icon-container">
-              <i class="fas fa-check"></i>
+              <i className="fas fa-check"></i>
               <span>Hesab təsdiqləndi</span>
             </div>
           </div>
@@ -39,7 +39,7 @@ const UserItem = (props) => {
           <h1 className="user-body__section2_title">Haqqında</h1>
           <p >{props.bio}</p>
           <div className="icon-container">
-            <i class="fas fa-street-view"></i>
+            <i className="fas fa-street-view"></i>
             <div>{props.city}</div>
           </div>
         </section>
@@ -47,7 +47,7 @@ const UserItem = (props) => {
         <div className="user-body__shared-bikes">
           <h2 className='user-body__title'>Aktiv elanlar</h2>
           {props.bikes.length === 0 ? (
-            <h4>Bike not found</h4>
+            <h4>Elan tapılmadı</h4>
           ) : (
               props.bikes.map(bike => {
                 return <BikeItem
@@ -63,10 +63,10 @@ const UserItem = (props) => {
                 >
                   <div className="bike-item__action-icons">
                     <Link to="/" className="bike-item__action-icon icon-edit">
-                      <i class="fas fa-pen"></i>
+                      <i className="fas fa-pen"></i>
                     </Link>
                     <Link to='/' className="bike-item__action-icon icon-remove">
-                      <i class="fas fa-trash-alt"></i>
+                      <i className="fas fa-trash-alt"></i>
                     </Link>
                   </div>
                 </BikeItem>

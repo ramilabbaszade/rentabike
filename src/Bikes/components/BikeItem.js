@@ -20,12 +20,14 @@ const BikeItem = props => {
                     </div>
 
                     <div className="bike-item__content__footer">
-                        <div className="small-text bike-item__content__city"><i class="far fa-compass"></i> {props.city} </div>
+                        <div className="small-text bike-item__content__city"><i className="far fa-compass"></i> {props.city} </div>
                         <div className="bike-item__content__price"><b style={{ fontSize: '24px' }}>${props.price}</b>/s</div>
                     </div>
                 </div>
             </div >
-            <hr className="bike-bottom-line" />
+            {!props.nonLine &&
+                < hr className="bike-bottom-line" />
+            }
         </li>
     )
 }

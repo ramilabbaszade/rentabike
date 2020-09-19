@@ -10,15 +10,14 @@ const ProfileContainer = (props) => {
         <div className="profile_container">
             <div className="profile-header">
                 <div className="profile-header__i">
-                    <Avatar creatorImg={props.avatar} className="avatar-large" />
-
+                    <Avatar redirect="#" creatorImg={props.avatar} className="avatar-large" />
                     <div className="profile-header__confirmed">
                         <div className="profile-header__info_icon-container">
-                            <i class="far fa-smile"></i>
+                            <i className="far fa-smile"></i>
                             <span> Yeni üzv </span>
                         </div>
                         <div className="profile-header__info_icon-container">
-                            <i class="fas fa-check"></i>
+                            <i className="fas fa-check"></i>
                             <span>Hesab təsdiqləndi</span>
                         </div>
                     </div>
@@ -40,7 +39,7 @@ const ProfileContainer = (props) => {
                     <h1 className="profile-body__section2_title">Haqqında</h1>
                     <p >{props.bio}</p>
                     <div className="icon-container">
-                        <i class="fas fa-street-view"></i>
+                        <i className="fas fa-street-view"></i>
                         <div>{props.city}</div>
                     </div>
                 </section>
@@ -64,10 +63,10 @@ const ProfileContainer = (props) => {
                                 >
                                     <div className="bike-item__action-icons">
                                         <Link to="/" className="bike-item__action-icon icon-edit">
-                                            <i class="fas fa-pen"></i>
+                                            <i className="fas fa-pen"></i>
                                         </Link>
                                         <Link to='/' className="bike-item__action-icon icon-remove">
-                                            <i class="fas fa-trash-alt"></i>
+                                            <i className="fas fa-trash-alt"></i>
                                         </Link>
                                     </div>
                                 </BikeItem>

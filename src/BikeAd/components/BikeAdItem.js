@@ -151,18 +151,20 @@ const BikeAdItem = (props) => {
             <h2>Latest bikes</h2>
             <Link to='/list'>View more</Link>
           </div>
+          <hr className="bike-bottom-line"/>
           <div className='bike-ad__last-bikes'>
-            {BIKES.slice(0, 3).map((item) => {
+            {BIKES.slice(0, 4).map((item) => {
               return (
                 <BikeItem
                   id={item.id}
                   key={item.id}
                   image={item.images[0]}
                   title={item.title}
-                  price={item.price[0]}
+                  price={item.price.first}
                   size={item.size}
                   creator={item.creator}
                   city={item.city}
+                  nonLine
                 />
               );
             })}

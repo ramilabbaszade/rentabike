@@ -5,7 +5,7 @@ import "./Avatar.css";
 
 const Avatar = (props) => {
   return (
-    <Link to={props.redirect}>
+    <Link to={`${props.redirect}`}>
       <img
         className={`${props.className}`}
         src={props.creatorImg || userIcon}
