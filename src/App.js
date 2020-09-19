@@ -13,45 +13,49 @@ import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
 
-const App = () => {    
+const App = () => {
   return <Router>
-    <MainNavigation />
-    <main>
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/list" exact>
-          <Bikes />
-        </Route>
-        <Route path="/bikes/new" exact>
-          <NewBike />
-        </Route>
-        <Route path="/login" exact>
-          <Login />
-        </Route>
-        <Route path="/register" exact>
-          <Register />
-        </Route>
-        <Route path="/profile/edit">
-          <ProfileEdit />
-        </Route>
-        <Route path="/inbox">
-          <Inbox />
-        </Route>
-        <Route path="/me">
-          <ProfileDashboard />
-        </Route>
-        <Route path="/user/:userId">
-          <User />
-        </Route>
-        <Route path="/:bikeId">
-          <BikeAd />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </main>
-    <Footer/>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+    </Switch>
+    <div>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/list" exact>
+            <Bikes />
+          </Route>
+          <Route path="/bikes/new" exact>
+            <NewBike />
+          </Route>
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="/register" exact>
+            <Register />
+          </Route>
+          <Route path="/profile/edit">
+            <ProfileEdit />
+          </Route>
+          <Route path="/inbox">
+            <Inbox />
+          </Route>
+          <Route path="/me">
+            <ProfileDashboard />
+          </Route>
+          <Route path="/user/:userId">
+            <User />
+          </Route>
+          <Route path="/:bikeId">
+            <BikeAd />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
+    </div>
+    <Footer />
   </Router>
 }
 
