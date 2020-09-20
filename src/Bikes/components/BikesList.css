@@ -3,6 +3,9 @@
     flex-direction: column;
     padding: 1rem;
 }
+.bike-filter{
+    padding: 1rem;
+}
 .bike-filter select{
     margin-right: 1rem;
 }

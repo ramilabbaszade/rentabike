@@ -69,7 +69,7 @@ const BikeAdItem = (props) => {
 
 
           <div className='bike-ad__description'>
-            <h3 className="small-text"> <i class="far fa-compass"></i> {props.city} </h3>
+            <h3 className="small-text"> <i className="far fa-compass"></i> {props.city} </h3>
             <p> {props.description} </p>
           </div>
 
