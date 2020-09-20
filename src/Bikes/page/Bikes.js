@@ -9,7 +9,7 @@ const Bikes = () => {
     return <div className="bikes-page">
         <BikesList items={BIKES} />
         <div className="bikes-map">
-            <MapContainer coords={BIKES} mapZoom={9}/>
+            <MapContainer style={{height:'50rem'}} coords={BIKES} mapZoom={9}/>
         </div>
     </div>
 }

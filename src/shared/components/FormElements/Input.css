@@ -38,3 +38,17 @@
     border-color: red;
     background: #ffd1d1;
 }
+
+select{
+    border: 1px solid var(--gray2);
+    padding: 10px 10px;
+    background: white;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+select::-ms-expand{
+    display: none;
+}

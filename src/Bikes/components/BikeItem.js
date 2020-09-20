@@ -26,7 +26,7 @@ const BikeItem = props => {
                 </div>
             </div >
             {!props.nonLine &&
-                < hr className="bike-bottom-line" />
+                <hr className="bike-bottom-line" />
             }
         </li>
     )
