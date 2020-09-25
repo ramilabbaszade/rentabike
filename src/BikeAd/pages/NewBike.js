@@ -16,7 +16,7 @@ const NewBike = () => {
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
-    // formData.append("image", data.picture[2])
+    formData.append("image", data.picture[2])
     console.log(data);
     console.log('markers:' + marker)
 
@@ -31,7 +31,7 @@ const NewBike = () => {
   return (
     <div className='new-bike_form container'>
       <form className='bike-form' onSubmit={handleSubmit(onSubmit)}>
-        {/* <Input
+        <Input
           register={register({ required: true, maxLength: 52 })}
           element='input'
           id='title'
@@ -56,7 +56,7 @@ const NewBike = () => {
           label='Type'
           errors={errors.type && "Type is required"}>
           {BikeTypes.map((item, i) => {
-            return <option key={i} value={item}> {item} </option>;
+            return <option key={i} value={item[0]}> {item[1]} </option>;
           })}
         </Input>
         <Input
@@ -149,8 +149,8 @@ const NewBike = () => {
           type='text'
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
-        /> */}
-        <Controller
+        />
+        {/* <Controller
           name="marker"
           control={control}
           defaultValue={marker}
@@ -164,10 +164,10 @@ const NewBike = () => {
               />
             )
           }}
-        />
+        /> */}
 
 
-        {/* <Search items={cities.map(item=>{return item.city})} register={register()} name="marker" /> */}
+        <Search register={register()} name="marker" />
 
         <Button type='submit'>
           Submit
