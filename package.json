@@ -2,7 +2,7 @@
   "name": "rentabike",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ramilabbaszade.github.io/rentabike",
+  "homepage": "https://ramilabbaszade.github.io/rentabike/",
   "dependencies": {
     "cra-template": "1.0.3",
     "leaflet": "^1.7.1",
