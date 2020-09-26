@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BikesList from '../components/BikesList'
 import MapContainer from '../../shared/components/UIElements/MapContainer'
-import { BIKES, BikeTypes, BikeSize, BikePrices } from '../../data'
+import { BIKES, BikeTypes, BikeSize } from '../../data'
 import cities from '../../az.json'
 
 import './Bikes.css'
@@ -46,7 +46,6 @@ const Bikes = () => {
                 </select>
                 <select name="" id="">
                     <option onClick={handleTypeFilter} value="All">Ölçü</option>
-                    <option onClick={handleTypeFilter} value="Baku">A</option>
                     {
                         BikeSize.map((item, i) => {
                             return <option key={i} onClick={handleTypeFilter} value={item}>{item}</option>

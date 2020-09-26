@@ -19,7 +19,6 @@
 
 .inbox-messages__body__form{
     width: 100%;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,6 +28,7 @@
     border: none;
     background: none;
     margin-right: 15px;
+    cursor: pointer;
 }    
 .inbox-messages__body__form button i{
     font-size: 20px;
@@ -36,6 +36,7 @@
 .inbox-messages__body__form input{
     height: 100%;
     width: 100%;
+    padding:0 10px;
     outline: none;
     border: none;
 }

@@ -11,6 +11,7 @@
 .inbox-users-list__header-title{
     background-color: teal;
     color: white;
+    padding: 1rem 5px;
 }
 
 /* scroll-bar-style */
@@ -31,9 +32,17 @@
 .inbox-users-list li {
     width: 100%;
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--gray3);
     padding: 10px 1px 10px 5px;
 }
+
+.inbox-users-list li:hover,
+.inbox-users-list li:active{
+    background: var(--gray3);
+    cursor: pointer;
+}
+
+
 .inbox-users-list__title{
     margin-left: 5px;
 }
