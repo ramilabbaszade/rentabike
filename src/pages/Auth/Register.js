@@ -21,7 +21,7 @@ const Login = () => {
                     <img src={image1} alt='login' />
                 </div>
                 <div className='auth-page__login'>
-                    <form onSubmit={handleSubmit(onSubmit)} className='form-login'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='form-login form-control'>
                         <h1>Sign Up</h1>
                         <Input
                             register={register({ required: true, maxLength: 20, minLength: 3 })}

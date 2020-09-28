@@ -30,7 +30,7 @@ const NewBike = () => {
 
   return (
     <div className='new-bike_form container'>
-      <form className='bike-form' onSubmit={handleSubmit(onSubmit)}>
+      <form className='bike-form form-control' onSubmit={handleSubmit(onSubmit)}>
         <Input
           register={register({ required: true, maxLength: 52 })}
           element='input'
@@ -126,9 +126,7 @@ const NewBike = () => {
             )
           }
         </div>
-        <br />
-        <hr />
-        <br />
+        
         <h2>Location</h2>
         <Input
           element='select'
@@ -167,7 +165,7 @@ const NewBike = () => {
         /> */}
 
 
-        <Search register={register()} name="marker" />
+        {/* <Search register={register()} name="marker" /> */}
 
         <Button type='submit'>
           Submit
