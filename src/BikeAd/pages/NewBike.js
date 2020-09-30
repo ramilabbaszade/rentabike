@@ -5,7 +5,7 @@ import Button from "../../shared/components/FormElements/Button";
 import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
 import cities from '../../az.json'
 import DraggableMap from "../../shared/components/UIElements/DraggableMap";
-import Search from "../../shared/components/FormElements/Search";
+import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
 
 import "./NewBike.css";
 
@@ -16,17 +16,11 @@ const NewBike = () => {
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
-    formData.append("image", data.picture[2])
+    // formData.append("image", data.picture[2])
     console.log(data);
-    console.log('markers:' + marker)
 
     e.target.reset();
   };
-
-  const [marker, setMarker] = useState({
-      lat: 40.500,
-      lng: 49.800
-  })
 
   return (
     <div className='new-bike_form container'>
@@ -126,7 +120,7 @@ const NewBike = () => {
             )
           }
         </div>
-        
+
         <h2>Location</h2>
         <Input
           element='select'
@@ -147,7 +141,8 @@ const NewBike = () => {
           type='text'
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
-        />
+        /> 
+        
         {/* <Controller
           name="marker"
           control={control}
@@ -162,10 +157,28 @@ const NewBike = () => {
               />
             )
           }}
-        /> */}
+        />
 
 
         {/* <Search register={register()} name="marker" /> */}
+        <AutoSuggest
+          register={register({ required: true })}
+          name="address"
+          errors={errors.address && "Address is required"}
+          suggestions={[
+            "Alligator",
+            "Bask",
+            "Crocodilian",
+            "Death Roll",
+            "Eggs",
+            "Jaws",
+            "Reptile",
+            "Solitary",
+            "Tail",
+            "Wetlands"
+          ]}
+        />
+
 
         <Button type='submit'>
           Submit
