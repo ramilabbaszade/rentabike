@@ -1,22 +1,21 @@
-import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import React from "react";
+import { useForm } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
 import cities from '../../az.json'
-import DraggableMap from "../../shared/components/UIElements/DraggableMap";
 import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
 
 import "./NewBike.css";
 
 const NewBike = () => {
-  const { register, handleSubmit, errors, watch, control } = useForm({
+  const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
   });
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
-    // formData.append("image", data.picture[2])
+    formData.append("image", data.picture[2])
     console.log(data);
 
     e.target.reset();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import illus1 from "../../assets/illustrations/undraw_map_1r69.png";
 import illus2 from "../../assets/illustrations/undraw_chat_1wo5.png";
@@ -9,7 +9,7 @@ import { BIKES } from "../../data";
 import "./Home.css";
 
 const Home = () => {
-  const [info, setInfo] = useState([]);
+  // const [info, setInfo] = useState([]);
   // useEffect(() => {
   //     const url = "http://api.gomap.az/Main.asmx/getFreeWaysList";
   //     const xhr = new XMLHttpRequest();
@@ -74,11 +74,6 @@ const Home = () => {
         </div>
       </div>
       <div className='home-body container'>
-
-        <div>{info.map((item,i)=>{
-          return <div key={i}> {item.data} </div>
-        })}</div>
-
         <div className='home-how_it_works'>
           <div className='title-header_container'>
             <h1 className='title-header'>How it works?</h1>

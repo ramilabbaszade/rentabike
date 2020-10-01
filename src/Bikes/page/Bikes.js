@@ -7,15 +7,14 @@ import cities from '../../az.json'
 import './Bikes.css'
 
 const Bikes = () => {
-    const [bikes, setBikes] = useState(BIKES);
-    const [filteredDataState, setFilteredDataState] = useState(bikes)
+    const [filteredDataState, setFilteredDataState] = useState(BIKES)
     const handleTypeFilter = e => {
         console.log(e.target.value)
         let filteredData;
         if (e.target.value === 'All') {
-            filteredData = bikes;
+            filteredData = BIKES;
         } else {
-            filteredData = bikes.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
+            filteredData = BIKES.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
         }
         setFilteredDataState(filteredData)
     }
@@ -57,7 +56,7 @@ const Bikes = () => {
             <BikesList items={filteredDataState} />
         </div>
         <div className="bikes-map">
-            <MapContainer style={{ height: '50rem' }} coords={bikes} mapZoom={9} />
+            <MapContainer style={{ height: '50rem' }} coords={BIKES} mapZoom={9} />
         </div>
     </div>
 }

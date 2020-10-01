@@ -1,6 +1,5 @@
 import React from 'react'
 import InboxUsers from './InboxUsers'
-import Button from '../../../shared/components/FormElements/Button'
 
 import './InboxContainer.css'
 import InboxChat from './InboxChat'
