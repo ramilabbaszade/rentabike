@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
@@ -8,7 +8,30 @@ import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
 
 import "./NewBike.css";
 
+// const accessToken = 'getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az'
+
 const NewBike = () => {
+  const [suggestions, setSuggestions] = useState(null)
+  const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew'
+
+  // var data = JSON.stringify({
+  //   'guid': '979dc109ed404151a50108bf4a61ffd7',
+  //   'region': "Baku",
+  // });
+  useEffect(() => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: JSON.stringify({region:'Baku',guid: '979dc109ed404151a50108bf4a61ffd7',lng:'az'})
+    };
+    fetch(apiUrl, requestOptions)
+      .then(response => {response.json()})
+      .then(data => setSuggestions(data))
+      .catch(error => console.log(error))
+  }, [])
+
   const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
   });
@@ -140,8 +163,8 @@ const NewBike = () => {
           type='text'
           placeholder='Price of bike per hour'
           errors={errors.address && "Title is required (max 52 character)"}
-        /> 
-        
+        />
+
         {/* <Controller
           name="marker"
           control={control}
@@ -161,23 +184,20 @@ const NewBike = () => {
 
         {/* <Search register={register()} name="marker" /> */}
         <AutoSuggest
-          register={register({ required: true })}
+          takeInputValue={register({ required: true })}
           name="address"
           errors={errors.address && "Address is required"}
-          suggestions={[
-            "Alligator",
-            "Bask",
-            "Crocodilian",
-            "Death Roll",
-            "Eggs",
-            "Jaws",
-            "Reptile",
-            "Solitary",
-            "Tail",
-            "Wetlands"
-          ]}
+          suggestions={suggestions}
         />
 
+        <div>
+          {/* {suggestions.map(sug => {
+            return <div>
+              {sug}
+            </div>
+          })} */}
+          {console.log(suggestions)}
+        </div>
 
         <Button type='submit'>
           Submit

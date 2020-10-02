@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "https://ramilabbaszade.github.io/rentabike/",
   "dependencies": {
+    "axios": "^0.20.0",
     "cra-template": "1.0.3",
     "leaflet": "^1.7.1",
     "react": "^16.13.1",
-    "react-autocomplete": "^1.8.1",
     "react-dom": "^16.13.1",
     "react-geolocated": "^3.0.1",
     "react-hook-form": "^6.8.4",

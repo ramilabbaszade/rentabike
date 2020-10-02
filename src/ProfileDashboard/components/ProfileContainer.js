@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
 import { Link } from 'react-router-dom'
 import BikeItem from '../../Bikes/components/BikeItem'
 
 import './ProfileContainer.css'
+import Button from '../../shared/components/FormElements/Button'
 
 const ProfileContainer = (props) => {
+    const [clickedOutside, setClickedOutside] = useState(false);
+    const myRef = useRef();
+    const handleClickOutside = e => {
+        if (!myRef.current.contains(e.target)) {
+            setClickedOutside(true);
+        }
+    };
+    const handleClickInside = () => setClickedOutside(false);
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    });
+
+
     return (
         <div className="profile_container">
             <div className="profile-header">
@@ -59,16 +74,20 @@ const ProfileContainer = (props) => {
                                     price={bike.price.first}
                                     creator={bike.creator}
                                     image={bike.images[0]}
-                                    actionicons
                                 >
-                                    <div className="bike-item__action-icons">
-                                        <Link to="/" className="bike-item__action-icon icon-edit">
-                                            <i className="fas fa-pen"></i>
-                                        </Link>
-                                        <Link to='/' className="bike-item__action-icon icon-remove">
-                                            <i className="fas fa-trash-alt"></i>
-                                        </Link>
+                                    <div className="bike-item__children_expired-time">
+                                        <small>15 gün</small>
                                     </div>
+                                    <div className="bike-item__children_actions">
+                                        <i ref={myRef} onClick={handleClickInside} class="fas fa-ellipsis-v"></i>
+                                    </div>
+                                    {
+                                        !clickedOutside ? null :
+                                            <ul className={`bike-item__children_actions_list`}>
+                                                <li > Düzəliş et </li>
+                                                <li > Sil </li>
+                                            </ul>
+                                    }
                                 </BikeItem>
                             }))}
 

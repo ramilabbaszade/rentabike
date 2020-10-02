@@ -104,7 +104,7 @@ class AutoSuggest extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul class="suggestions">
+          <ul className="suggestions">
             {filteredSuggestions.map((suggestion, index) => {
               let className;
 
@@ -127,7 +127,7 @@ class AutoSuggest extends Component {
         );
       } else {
         suggestionsListComponent = (
-          <div class="no-suggestions">
+          <div className="no-suggestions">
             <em>No suggestions, you're on your own!</em>
           </div>
         );
@@ -147,7 +147,7 @@ class AutoSuggest extends Component {
           value={userInput}
           required
           name={this.props.name}
-          register={this.props.register}
+          ref={this.props.takeInputValue}
         />
         {suggestionsListComponent}
       </Fragment>

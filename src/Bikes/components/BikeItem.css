@@ -15,6 +15,7 @@
 }
 
 .bike-item__container {
+    position: relative;
     margin: 1rem 0;
 }
 
