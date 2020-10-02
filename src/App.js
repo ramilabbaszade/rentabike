@@ -15,15 +15,12 @@ import Inbox from './pages/Chat/pages/Inbox';
 
 const App = () => {
   return <Router>
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-    </Switch>
-    <div>
       <MainNavigation />
       <main>
         <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
           <Route path="/list" exact>
             <Bikes />
           </Route>
@@ -54,8 +51,7 @@ const App = () => {
           <Redirect to="/" />
         </Switch>
       </main>
-    </div>
-    <Footer />
+      <Footer />
   </Router>
 }
 

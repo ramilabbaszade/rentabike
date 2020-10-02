@@ -1,5 +1,5 @@
 .profile-dashboard {
-    margin-top: 1rem;
+    margin-top: 6rem;
 }
 
 .profile_container {
@@ -73,15 +73,17 @@
     display: flex;
     gap: 5px;
 }
-.bike-item__children_actions_list{
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: var(--gray);
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.bike-item__children_actions_remove{
+    background-color: var(--red);
+}
+.bike-item__children_actions_edit{
+    background-color: var(--green);
+}
+.bike-item_actions_icon{
+    text-align: center;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 50%;
 }
 
 .bike-item__children_expired-time {
@@ -108,7 +110,6 @@
     .bike-item__children_actions{
         justify-content: space-between;
     }
-    
     .bike-item__children_expired-time small {
         background-color: white;
     }
