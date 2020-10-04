@@ -1,110 +1,183 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import illus1 from "../../assets/illustrations/undraw_map_1r69.png";
-import illus2 from "../../assets/illustrations/undraw_chat_1wo5.png";
-import illus3 from "../../assets/illustrations/undraw_Ride_a_bicycle_2yok.png";
-import MapContainer from "../../shared/components/UIElements/MapContainer";
-import { BIKES } from "../../data";
+import { Link } from 'react-router-dom'
+import illus1 from "../../assets/img/road-2562568_1920.jpg";
+import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
+import illus3 from "../../assets/img/cruiser-bikes-at-university-bicycles.jpg";
+import rentImage from "../../assets/img/main.jpg";
+import Button from '../../shared/components/FormElements/Button'
+import { BIKES, HomeCityHighlights } from "../../data";
 
+import BikeItem from "../../Bikes/components/BikeItem";
+import Slider from "react-slick";
 import "./Home.css";
 
 const Home = () => {
-  // const [info, setInfo] = useState([]);
-  // useEffect(() => {
-  //     const url = "http://api.gomap.az/Main.asmx/getFreeWaysList";
-  //     const xhr = new XMLHttpRequest();
-  //     xhr.open("POST", url)
-  //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  //     xhr.onreadystatechange = () => {
-  //         if (xhr.readyState === 4) {
-  //             const numbers = xhr.responseText
-  //             console.log(typeof(numbers))
-  //             // const numbers1 = JSON.parse(numbers)
-  //             const nums = numbers.split(' ')
-  //             console.log(nums)
-  //             console.log(typeof(nums))
-
-  //             JSON.stringify(nums)
-
-  //             // let myData = JSON.parse(text)
-  //             // const cData = myData.rows[1].districts;
-  //             // console.log(myData.rows[1].districts)
-  //             setInfo(nums)
-  //         }
-  //     }
-  //     let data = "getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az";
-  //     xhr.send(data)
-
-  // }, [])
-  // useEffect(() => {
-  //   let payload = {
-  //     "region": "Baku",
-  //     "guid": "979dc109ed404151a50108bf4a61ffd7",
-  //     "lng": "az",
-  //   };
-  //   fetch("http://api.gomap.az/Main.asmx/getRegionsNew", {
-  //     method: "POST",
-  //     mode: 'no-cors',
-  //     headers: {
-  //       "Content-type": "multipart/form-data",
-  //       "Accept": "application/json",
-  //       "type": "formData"
-  //     },
-  //     body: JSON.stringify(payload),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setInfo(data);
-  //       console.log("Data: ", data);
-  //     }).catch(err=>{
-  //         console.log("Error:"+err)
-  //     });
-  // }, []);
-
+  const settings = {
+    dots: false,
+    infinite: true,
+    draggable: true,
+    speed: 1000,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          draggable: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  const settings1 = {
+    dots: false,
+    slidesToShow: 4,
+    rows: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          draggable: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
   return (
     <div>
       <div className='home-header'>
-        <div className='home-header__content'>
-          <h1>Rent a bike near of you..</h1>
-          <input
-            className='home-header__search'
-            type='text'
-            placeholder='Search for cities, street..'
-          />
+        <div className='home-header__content container'>
+          <h1 className="home-header__content__header">Ən yaxın velosipedi tap</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam.
+          </p>
+          <Button to='/list' style={{ borderRadius: '20px' }} white >
+            Axtar
+          </Button>
         </div>
       </div>
-      <div className='home-body container'>
-        <div className='home-how_it_works'>
-          <div className='title-header_container'>
-            <h1 className='title-header'>How it works?</h1>
-            <hr className='small-line-hr' />
+
+      <section className='home-how_it_works container'>
+        <div className='home-cards-info'>
+          <Link to="/list" className='home-cards-info__card'>
+            <img src={illus1} alt='' />
+            <div className="home-cards-info__card_text">
+              <h4>Search for the nearest location to you</h4>
+            </div>
+          </Link>
+          <Link to="/list" className='home-cards-info__card'>
+            <img src={illus2} alt='' />
+            <div className="home-cards-info__card_text">
+              <h4>Search for the nearest location to you</h4>
+            </div>
+          </Link>
+          <Link to="/list" className='home-cards-info__card'>
+            <img src={illus3} alt='' />
+            <div className="home-cards-info__card_text">
+              <h4>Search for the nearest location to you</h4>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <section className="home-bikes">
+        <div className="home-bikes_in container">
+          <div className="home-bikes_header">
+            <h1>Ən yeni elanlar</h1>
+            <hr className="section-hr" />
           </div>
-          <div className='home-cards-info'>
-            <div className='home-cards-info__card'>
-              <img src={illus1} alt='' />
-              <h4>Search for the nearest location to you</h4>
-            </div>
-            <div className='home-cards-info__card'>
-              <img src={illus2} alt='' />
-              <h4>Search for the nearest location to you</h4>
-            </div>
-            <div className='home-cards-info__card'>
-              <img src={illus3} alt='' />
-              <h4>Search for the nearest location to you</h4>
-            </div>
+          <Slider className="home-bikes__body" {...settings}>
+            {BIKES.map((bike) => (
+              <BikeItem
+                key={bike.id}
+                id={bike.id}
+                image={bike.images[0]}
+                title={bike.title}
+                city={bike.city}
+                size={bike.size}
+                price={bike.price.first}
+                creator={bike.creator}
+                vertical
+                nonLine
+                marginR
+              />
+            ))}
+          </Slider>
+        </div>
+      </section>
+
+      <section className="rent-your-bike">
+        <div className="rent-your-bike_in container">
+          <div className="rent-your-bike_in__text">
+            <h1>Velosipedinizi icarəyə verin</h1>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, quis!
+            </p>
+            <Button to="/register" style={{ borderRadius: '20px' }} white >
+              Elan yerləşdir
+          </Button>
+          </div>
+          <div className="rent-your-bike_in__image">
+            <img src={rentImage} alt="" />
           </div>
         </div>
-        <Link to='/'>
-          <div className='btn'>Rent a bike</div>
-        </Link>
-      </div>
-      <div className='map-section'>
-        <div className='title-header_container'>
-          <h1 className='title-header'>Find bikes on the map</h1>
-          <hr className='small-line-hr' />
+      </section>
+
+
+      <section className="home-cities-cards">
+        <div className="home-cities-cards_header container">
+          <h2>Önə çıxan şəhərlər</h2>
+          <hr className="bike-item-title__bottom-line"/>
         </div>
-        <MapContainer coords={BIKES} mapStyle={{ height: "50vh" }} />
-      </div>
+        <div className="container">
+          <Slider className="home-cities-cards_in" {...settings1}>
+            {
+              HomeCityHighlights.map(item => {
+                return <Link to="/" key={item.id} className="home-city-card">
+                  <h3>{item.city}</h3>
+                </Link>
+              })
+            }
+          </Slider>
+        </div>
+      </section>
+
+
     </div>
   );
 };

@@ -3,6 +3,42 @@ export const BikeSize = ["12", "16", "20", "24", "26", "28", "32"]
 export const BikeAccesuares = ["helmet", "lock", 'lights', "bell", "basket", "reflector"]
 export const BikePrices = [1, 2, 3]
 
+export const HomeCityHighlights = [
+    {
+        id:1,
+        city:'Bakı'
+    },
+    {
+        id:2,
+        city:'Gəncə'
+    },
+    {
+        id:3,
+        city:'Sumqayıt'
+    },
+    {
+        id:4,
+        city:'Lənkəran'
+    },
+    {
+        id:5,
+        city:'Quba'
+    },
+    {
+        id:6,
+        city:'Navçıvan'
+    },
+    {
+        id:7,
+        city:'Şəki'
+    },
+    {
+        id:8,
+        city:'Xankəndi'
+    },
+]
+
+
 export const USER = {
     id: 'u1',
     name: "Jake",

@@ -7,8 +7,8 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
     margin-top: 0.5rem;
+    display: inline-block;
 }
 
 .button:focus {
@@ -52,7 +52,11 @@
     border-color: #ccc;
     cursor: not-allowed;
 }
-
+.button--white{
+    background-color: white;
+    color: black;
+    border: none;
+}
 .button--small {
     font-size: 0.8rem;
 }

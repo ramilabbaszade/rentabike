@@ -5,12 +5,12 @@ import './BikeItem.css'
 
 const BikeItem = props => {
     return (
-        <li className="bike-item__container">
-            <div className="bike-item">
-                <div className="bike-item__image">
-                    <Link to={`/${props.id}`}> <img src={props.image} alt={props.title} /></Link>
+        <li style={props.marginR && {marginRight:'.5rem'}} className="bike-item__container">
+            <div className={`bike-item ${props.vertical && 'bike-item_vertical'}`}>
+                <div className={`bike-item__image ${props.vertical && 'bike-item__image_vertical'}`}>
+                    <Link to={`/${props.id}`}> <img className={`${props.vertical && 'bike-item_img_vertical'}`} src={props.image} alt={props.title} /></Link>
                 </div>
-                <div className="bike-item__content">
+                <div className={`bike-item__content ${props.vertical && 'bike-item__content_vertical'}`}>
                     <div className="bike-item__content__header">
                         <small className="bike-item__content__date">01.11.2020</small>
                         <Link to={`/${props.id}`}><h2>{props.title}</h2></Link>
@@ -19,7 +19,7 @@ const BikeItem = props => {
                         <div className="small-text"> Helmet<span aria-hidden="false"> · </span>Light<span aria-hidden="false"> · </span>Horn </div>
                     </div>
 
-                    <div className="bike-item__content__footer">
+                    <div className={`bike-item__content__footer ${props.vertical && 'bike-item__content__footer_vertical'}`}>
                         <div className="small-text bike-item__content__city"><i className="far fa-compass"></i> {props.city} </div>
                         <div className="bike-item__content__price"><b style={{ fontSize: '24px' }}>${props.price}</b>/s</div>
                     </div>

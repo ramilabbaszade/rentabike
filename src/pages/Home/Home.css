@@ -12,30 +12,25 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 70vh;
   background: linear-gradient(
       to bottom,
-      #00050aaf,
-      var(--primarycolor)
+      #00050a7e,
+      rgba(0, 0, 0, 0.116),
+      rgba(34, 34, 34, 0.377)
     ),
-    url("../../assets/img/road-2562568_1920.jpg");
+    url("../../assets/img/dovile-ramoskaite-x8rDSFN2DpY-unsplash.jpg");
     background-size: cover;
 }
 
 .home-header__content {
   position: absolute;
-  top: 10rem;
-  text-align: center;
+  bottom: 40%;
   color: white;
 }
-
-.home-header__search {
-  margin-top: 2rem;
-  outline: none;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 20px;
-  width: 500px;
+.home-header__content__header{
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .home-how_it_works {
@@ -43,19 +38,12 @@
   flex-direction: column;
   text-align: center;
   padding: 2rem 0;
-}
-
-.title-header {
-  margin: 1rem;
-  color: #393f4d;
-}
-
-.small-line-hr {
-  width: 100px;
-  margin: 1rem auto;
+  position: relative;
 }
 
 .home-cards-info {
+  /* position: relative;
+  bottom: 7rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,18 +54,86 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: rgba(167, 167, 167, 0.486) 1px 0px 5px 1px;
+  margin: 1rem;
+  transition: .5s;
+}
+.home-cards-info__card:hover {
+  box-shadow: rgba(105, 105, 105, 0.637) 2px 1px 5px 1px;
+  transition: .5s;
 }
 
 .home-cards-info__card img {
-  width: 180px;
-  height: 130px;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.home-cards-info__card_text{
+  padding: 1rem 1rem;
+}
+.home-bikes{
+  background-color: var(--gray);
+}
+.home-bikes_in{
+  padding: 2rem 0;
+}
+.home-bikes_header{
+  text-align: center;
+  margin: 1rem 0;
+}
+.home-bikes_header h1{
+  font-size: 2rem;
+}
+.home-bikes__body{
+  display: grid;
+}
+.slide-margin{
+  margin-right: 1rem;
+}
+.section-hr{
+  text-align: center;
+  border: 1px solid var(--gray2);
+  width: 4rem;
+  margin: 0 auto;
 }
 
-.map-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+.home-cities-cards{
+  margin: 5rem 0;
+}
+.home-cities-cards_in{
+  margin-top: 1rem;
+}
+.home-city-card{
+  border-bottom: .5px solid var(--gray3);
+  border-radius: 40px;
+  padding: 20px 0px;
+  text-align: center;
+  margin-top: 1rem;
+}
+.home-cities-cards_header{
+  margin-top: 1rem;
+}
+
+
+.rent-your-bike{
+  color: white;
+  background: linear-gradient(var(--black),var(--red));
+}
+.rent-your-bike_in{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 4rem 0;  
+}
+.rent-your-bike_in__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.rent-your-bike_in__text{
+  margin: auto 0;
 }

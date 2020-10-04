@@ -8,8 +8,9 @@ const Button = props => {
     return (
       <a
         className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'}`}
+          'button--inverse'} ${props.danger && 'button--danger'} ${props.white && 'button--white'}`}
         href={props.href}
+        style={props.style}
       >
         {props.children}
       </a>
@@ -20,8 +21,9 @@ const Button = props => {
       <Link
         to={props.to}
         exact={props.exact}
+        style={props.style}
         className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'}`}
+          'button--inverse'} ${props.white && 'button--white'} ${props.danger && 'button--danger'}`}
       >
         {props.children}
       </Link>
@@ -30,10 +32,11 @@ const Button = props => {
   return (
     <button
       className={`button button--${props.size || 'default'} ${props.inverse &&
-        'button--inverse'} ${props.danger && 'button--danger'}`}
+        'button--inverse'} ${props.danger && 'button--danger'} ${props.white && 'button--white'}`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
+      style={props.style}
     >
       {props.children}
     </button>

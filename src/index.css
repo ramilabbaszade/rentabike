@@ -1,12 +1,13 @@
 :root {
-  --primarycolor: #0F9D58;
+  --primarycolor: #f7b731;
   --yellow: #fde24f;
-  --text: #00214d;
+  --text:#222f3e;
   --gray: #f6f6f6;
   --gray2:rgba(116, 116, 116, 0.842);
   --gray3:rgba(194, 194, 194, 0.466);
   --white: #fffffe;
-  --black: black;
+  --black: #0f0e17;
+  --blue: #34ace0;
   --red:#d11a2a;
   --green:#39b549;
 }
@@ -56,7 +57,9 @@ li {
   margin-right: auto;
   margin-left: auto;
 }
-
+.text-center{
+  text-align: center;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -71,6 +74,12 @@ li {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1210px;
+  }
+}
+
+@media (min-width: 1420px) {
+  .container {
+    width: 1510px;
   }
 }
