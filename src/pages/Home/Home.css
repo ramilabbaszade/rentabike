@@ -13,14 +13,12 @@
   display: flex;
   justify-content: center;
   height: 70vh;
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       #00050a7e,
       rgba(0, 0, 0, 0.116),
-      rgba(34, 34, 34, 0.377)
-    ),
+      rgba(34, 34, 34, 0.377)),
     url("../../assets/img/dovile-ramoskaite-x8rDSFN2DpY-unsplash.jpg");
-    background-size: cover;
+  background-size: cover;
 }
 
 .home-header__content {
@@ -28,7 +26,8 @@
   bottom: 40%;
   color: white;
 }
-.home-header__content__header{
+
+.home-header__content__header {
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -42,8 +41,6 @@
 }
 
 .home-cards-info {
-  /* position: relative;
-  bottom: 7rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +57,7 @@
   margin: 1rem;
   transition: .5s;
 }
+
 .home-cards-info__card:hover {
   box-shadow: rgba(105, 105, 105, 0.637) 2px 1px 5px 1px;
   transition: .5s;
@@ -71,29 +69,37 @@
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-.home-cards-info__card_text{
+
+.home-cards-info__card_text {
   padding: 1rem 1rem;
 }
-.home-bikes{
+
+.home-bikes {
   background-color: var(--gray);
 }
-.home-bikes_in{
+
+.home-bikes_in {
   padding: 2rem 0;
 }
-.home-bikes_header{
+
+.home-bikes_header {
   text-align: center;
   margin: 1rem 0;
 }
-.home-bikes_header h1{
+
+.home-bikes_header h1 {
   font-size: 2rem;
 }
-.home-bikes__body{
+
+.home-bikes__body {
   display: grid;
 }
-.slide-margin{
+
+.slide-margin {
   margin-right: 1rem;
 }
-.section-hr{
+
+.section-hr {
   text-align: center;
   border: 1px solid var(--gray2);
   width: 4rem;
@@ -101,39 +107,65 @@
 }
 
 
-.home-cities-cards{
+.home-cities-cards {
   margin: 5rem 0;
 }
-.home-cities-cards_in{
+
+.home-cities-cards_in {
   margin-top: 1rem;
 }
-.home-city-card{
+
+.home-city-card {
   border-bottom: .5px solid var(--gray3);
   border-radius: 40px;
   padding: 20px 0px;
   text-align: center;
   margin-top: 1rem;
 }
-.home-cities-cards_header{
+
+.home-cities-cards_header {
   margin-top: 1rem;
 }
 
 
-.rent-your-bike{
+.rent-your-bike {
   color: white;
-  background: linear-gradient(var(--black),var(--red));
+  background: linear-gradient(var(--black), var(--red));
 }
-.rent-your-bike_in{
+
+.rent-your-bike_in {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 4rem 0;  
+  padding: 4rem 0;
 }
-.rent-your-bike_in__image img{
+
+.rent-your-bike_in__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
-.rent-your-bike_in__text{
+
+.rent-your-bike_in__text {
   margin: auto 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .home-header {
+    height: 60vh;
+  }
+  .home-cards-info {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .home-bikes_in {
+    padding: 1rem;
+  }
+  .rent-your-bike_in {
+    grid-template-columns: 100%;
+    padding: 1rem 1rem;
+  }
+  .rent-your-bike_in__text{
+    margin: 1rem 0;
+  }
 }
