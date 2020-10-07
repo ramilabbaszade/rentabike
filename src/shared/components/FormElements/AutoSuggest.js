@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
 import './AutoSuggest.css'
+import Input from "./Input";
 
 class AutoSuggest extends Component {
   static propTypes = {
@@ -136,18 +137,15 @@ class AutoSuggest extends Component {
 
     return (
       <Fragment>
-        
-        <label>
-          Address
-        </label>
-        <input
+        <Input
           type="text"
+          element='input'
+          label="Address"
+          register={this.props.takeInputValue}
+          name={this.props.name}
           onChange={onChange}
           onKeyDown={onKeyDown}
-          value={userInput}
-          required
-          name={this.props.name}
-          ref={this.props.takeInputValue}
+          errors={this.props.errors}
         />
         {suggestionsListComponent}
       </Fragment>

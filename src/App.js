@@ -20,7 +20,7 @@ const App = () => {
     setIsLoggedIn(true)
   }, [])
   const logout = useCallback(() => {
-    setIsLoggedIn(false)
+    setIsLoggedIn(true)
   }, [])
 
   let routes;

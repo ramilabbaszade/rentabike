@@ -1,6 +1,20 @@
+import helmet from './assets/icons/bike-parts-icons/helmet.png'
+import lock from './assets/icons/bike-parts-icons/lock.png'
+import lights from './assets/icons/bike-parts-icons/lights.png'
+import bell from './assets/icons/bike-parts-icons/bell.png'
+import basket from './assets/icons/bike-parts-icons/basket.png'
+import reflector from './assets/icons/bike-parts-icons/refletor.png'
+
 export const BikeTypes = [["Road", "Yol"], ["Mountain", "Dağ"], ["City", "Şəhər"], ["Electric", "Elektrik"], ["Hybrid", "Hibrid"], ["Folding", "Qatlana bilən"], ["BMX", "BMX"], ["Fat", "Fat"], ["Child", "Uşaq"]]
 export const BikeSize = ["12", "16", "20", "24", "26", "28", "32"]
-export const BikeAccesuares = ["helmet", "lock", 'lights', "bell", "basket", "reflector"]
+export const BikeAccesuares = [
+    {id:1,name:"helmet",value:"Başlıq",icon:helmet}, 
+    {id:2,name:"lock",value:"Kilid",icon:lock}, 
+    {id:3,name:"lights",value:"Fənər",icon:lights}, 
+    {id:4,name:"bell",value:"Siqnal",icon:bell}, 
+    {id:5,name:"basket",value:"Səbət",icon:basket}, 
+    {id:6,name:"reflector",value:"Reflektor",icon:reflector}, 
+]
 export const BikePrices = [1, 2, 3]
 
 export const HomeCityHighlights = [

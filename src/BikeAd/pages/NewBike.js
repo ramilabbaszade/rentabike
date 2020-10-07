@@ -24,10 +24,10 @@ const NewBike = () => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: JSON.stringify({region:'Baku',guid: '979dc109ed404151a50108bf4a61ffd7',lng:'az'})
+      body: JSON.stringify({ region: 'Baku', guid: '979dc109ed404151a50108bf4a61ffd7', lng: 'az' })
     };
     fetch(apiUrl, requestOptions)
-      .then(response => {response.json()})
+      .then(response => { response.json() })
       .then(data => setSuggestions(data))
       .catch(error => console.log(error))
   }, [])
@@ -65,37 +65,43 @@ const NewBike = () => {
           placeholder='Description of the bike'
           errors={errors.description && "Description is required"}
         />
-        <Input
-          element='select'
-          name='type'
-          register={register({ required: true })}
-          label='Type'
-          errors={errors.type && "Type is required"}>
-          {BikeTypes.map((item, i) => {
-            return <option key={i} value={item[0]}> {item[1]} </option>;
-          })}
-        </Input>
-        <Input
-          element='select'
-          name='size'
-          register={register({ required: true })}
-          label='Size'
-          errors={errors.size && "Size is required"}>
-          {BikeSize.map((item, i) => {
-            return <option key={i} value={item}> {item} </option>;
-          })}
-        </Input>
+        <div className="bike-form__selects-div">
+          <Input
+            element='select'
+            name='type'
+            register={register({ required: true })}
+            label='Type'
+            errors={errors.type && "Type is required"}>
+            {BikeTypes.map((item, i) => {
+              return <option key={i} value={item[0]}> {item[1]} </option>;
+            })}
+          </Input>
+          <Input
+            element='select'
+            name='size'
+            register={register({ required: true })}
+            label='Size'
+            errors={errors.size && "Size is required"}>
+            {BikeSize.map((item, i) => {
+              return <option key={i} value={item}> {item} </option>;
+            })}
+          </Input>
+        </div>
+
         <div className="checkbox-container">
-          {BikeAccesuares.map((item, i) => {
-            return (<Input
-              key={i}
-              register={register}
-              id={item}
-              type='checkbox'
-              name="accesuares"
-              label={item}
-              value={item}
-            />)
+          {BikeAccesuares.map((item) => {
+            return (<div className="checkbox-container_in">
+              <img className="accesuares-checkbox-icon-img" src={item.icon} alt={item.value}/>
+              <Input
+                key={item.id}
+                register={register}
+                id={item.name}
+                type='checkbox'
+                name="accesuares"
+                label={item.value}
+                value={item.value}
+              />
+            </div>)
           })}
         </div>
         <input ref={register} type="file" name="picture" />
@@ -154,50 +160,13 @@ const NewBike = () => {
             return <option key={i} value={item.city}> {item.city} </option>;
           })}
         </Input>
-        <Input
-          register={register({ required: true, maxLength: 2 })}
-          element='input'
-          id='address'
-          label='Address:'
-          name='address'
-          type='text'
-          placeholder='Price of bike per hour'
-          errors={errors.address && "Title is required (max 52 character)"}
-        />
-
-        {/* <Controller
-          name="marker"
-          control={control}
-          defaultValue={marker}
-          value={marker}
-          render={() => {
-            return (
-              <DraggableMap
-                markers={marker}
-                value={marker}
-                setMarkers={setMarker}
-              />
-            )
-          }}
-        />
-
-
-        {/* <Search register={register()} name="marker" /> */}
+        
         <AutoSuggest
           takeInputValue={register({ required: true })}
           name="address"
           errors={errors.address && "Address is required"}
-          suggestions={suggestions}
+          suggestions={['Test1','Test2']}
         />
-
-        <div>
-          {/* {suggestions.map(sug => {
-            return <div>
-              {sug}
-            </div>
-          })} */}
-          {console.log(suggestions)}
-        </div>
 
         <Button type='submit'>
           Submit

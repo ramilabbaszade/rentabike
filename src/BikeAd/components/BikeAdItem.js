@@ -3,12 +3,12 @@ import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
 
-import part1 from "../../assets/icons/bike-parts-icons/bike-helmet.png";
-import part2 from "../../assets/icons/bike-parts-icons/bike.png";
-import part3 from "../../assets/icons/bike-parts-icons/delivery-bike.png";
-import part4 from "../../assets/icons/bike-parts-icons/music-and-multimedia.png";
-import part5 from "../../assets/icons/bike-parts-icons/tail-light.png";
-import part6 from "../../assets/icons/bike-parts-icons/refletor.png";
+import helmet from "../../assets/icons/bike-parts-icons/helmet.png";
+import bell from "../../assets/icons/bike-parts-icons/bell.png";
+import basket from "../../assets/icons/bike-parts-icons/basket.png";
+import lights from "../../assets/icons/bike-parts-icons/lights.png";
+import lock from "../../assets/icons/bike-parts-icons/lock.png";
+import reflector from "../../assets/icons/bike-parts-icons/refletor.png";
 
 import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
@@ -76,37 +76,37 @@ const BikeAdItem = (props) => {
           <ul className='bike-ad__body__bike-accesuares'>
             {props.accesuares.helmet && (
               <li htmlFor='iconTitle'>
-                <img src={part1} alt='icon' />
+                <img src={helmet} alt='icon' />
                 Başlıq
               </li>
             )}
             {props.accesuares.lock && (
               <li htmlFor='iconTitle'>
-                <img src={part2} alt='icon' />
+                <img src={lock} alt='icon' />
                 Kilid
               </li>
             )}
             {props.accesuares.basket && (
               <li htmlFor='iconTitle'>
-                <img src={part3} alt='icon' />
+                <img src={basket} alt='icon' />
                 Səbət
               </li>
             )}
             {props.accesuares.bell && (
               <li htmlFor='iconTitle'>
-                <img src={part4} alt='icon' />
+                <img src={bell} alt='icon' />
                 Siqnal
               </li>
             )}
             {props.accesuares.lights && (
               <li htmlFor='iconTitle'>
-                <img src={part5} alt='icon' />
+                <img src={lights} alt='icon' />
                 Fənər
               </li>
             )}
             {props.accesuares.reflector && (
               <li htmlFor='iconTitle'>
-                <img src={part6} alt='icon' />
+                <img src={reflector} alt='icon' />
                 Reflektor
               </li>
             )}

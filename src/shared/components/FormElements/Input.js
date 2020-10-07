@@ -11,6 +11,7 @@ const Input = (props) => {
         name={props.name}
         onChange={props.onChange}
         onBlur={props.onBlur}
+        onKeyDown={props.onKeyDown}
         defaultValue={props.defaultValue}
         type={props.type}
         placeholder={props.placeholder}
