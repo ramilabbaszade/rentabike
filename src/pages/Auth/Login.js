@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
 
-import image1 from "../../assets/illustrations/undraw_sign_in_e6hj.svg";
+import image1 from "../../assets/icons/login-bike.jpg";
 import Button from "../../shared/components/FormElements/Button";
 import "./Auth.css";
 import { AuthContext } from "../../shared/context/auth-context";
@@ -20,7 +20,7 @@ const Login = () => {
         auth.login()
     };
     return (
-        <div className='auth container'>
+        <div className='auth'>
             <div className='auth-page'>
                 <div className='auth-page__vector'>
                     <img src={image1} alt='login' />

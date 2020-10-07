@@ -2,7 +2,7 @@ import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
 import Button from "../../shared/components/FormElements/Button";
-import image1 from "../../assets/illustrations/undraw_fill_forms_yltj.svg";
+import image1 from "../../assets/icons/register-bike.jpg";
 
 import {AuthContext} from '../../shared/context/auth-context'
 
@@ -19,10 +19,10 @@ const Register = () => {
         auth.login()
     };
     return (
-        <div className='auth container'>
+        <div className='auth'>
             <div className='auth-page'>
                 <div className='auth-page__vector'>
-                    <img src={image1} alt='login' />
+                    <img src={image1} alt='register' />
                 </div>
                 <div className='auth-page__login'>
                     <form onSubmit={handleSubmit(onSubmit)} className='form-login form-control'>
