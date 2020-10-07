@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
-
-import image1 from "../../assets/illustrations/undraw_fill_forms_yltj.svg";
 import Button from "../../shared/components/FormElements/Button";
+import image1 from "../../assets/illustrations/undraw_fill_forms_yltj.svg";
+
+import {AuthContext} from '../../shared/context/auth-context'
+
 import "./Auth.css";
 
-const Login = () => {
+const Register = () => {
+    const auth = useContext(AuthContext)
     const { register, handleSubmit, errors } = useForm({
         mode: 'onBlur'
     });
     const onSubmit = (data, e) => {
-        alert(JSON.stringify(data));
+        console.log(JSON.stringify(data));
         e.target.reset();
+        auth.login()
     };
     return (
         <div className='auth container'>
@@ -68,4 +72,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './pages/Home/Home';
 import Bikes from './Bikes/page/Bikes';
@@ -12,47 +12,81 @@ import Login from './pages/Auth/Login';
 import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
+import { AuthContext } from './shared/context/auth-context'
 
 const App = () => {
-  return <Router>
+  const [isLoggedIn, setIsLoggedIn] = useState()
+  const login = useCallback(() => {
+    setIsLoggedIn(true)
+  }, [])
+  const logout = useCallback(() => {
+    setIsLoggedIn(false)
+  }, [])
+
+  let routes;
+  if (isLoggedIn) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/list" exact>
+          <Bikes />
+        </Route>
+        <Route path="/bikes/new" exact>
+          <NewBike />
+        </Route>
+        <Route path="/profile/edit">
+          <ProfileEdit />
+        </Route>
+        <Route path="/inbox">
+          <Inbox />
+        </Route>
+        <Route path="/me">
+          <ProfileDashboard />
+        </Route>
+        <Route path="/:bikeId">
+          <BikeAd />
+        </Route>
+        <Route path="/user/:userId">
+          <User />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    )
+  } else {
+    routes = (<Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/list" exact>
+        <Bikes />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/register">
+        <Register />
+      </Route>
+      <Route path="/:bikeId">
+        <BikeAd />
+      </Route>
+      <Route path="/user/:userId">
+        <User />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+    )
+  }
+  return <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
+    <Router>
       <MainNavigation />
       <main>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/list" exact>
-            <Bikes />
-          </Route>
-          <Route path="/bikes/new" exact>
-            <NewBike />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          <Route path="/profile/edit">
-            <ProfileEdit />
-          </Route>
-          <Route path="/inbox">
-            <Inbox />
-          </Route>
-          <Route path="/me">
-            <ProfileDashboard />
-          </Route>
-          <Route path="/user/:userId">
-            <User />
-          </Route>
-          <Route path="/:bikeId">
-            <BikeAd />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
+        {routes}
       </main>
       <Footer />
-  </Router>
+    </Router>
+  </AuthContext.Provider>
 }
 
 export default App;

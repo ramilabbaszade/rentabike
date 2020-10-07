@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
@@ -6,14 +6,18 @@ import Input from '../../shared/components/FormElements/Input'
 import image1 from "../../assets/illustrations/undraw_sign_in_e6hj.svg";
 import Button from "../../shared/components/FormElements/Button";
 import "./Auth.css";
+import { AuthContext } from "../../shared/context/auth-context";
 
 const Login = () => {
+    const auth = useContext(AuthContext)
+
     const { register, handleSubmit, errors } = useForm({
         mode: 'onBlur'
     });
     const onSubmit = (data, e) => {
-        alert(JSON.stringify(data));
+        console.log(JSON.stringify(data));
         e.target.reset();
+        auth.login()
     };
     return (
         <div className='auth container'>
