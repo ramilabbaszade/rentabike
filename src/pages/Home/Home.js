@@ -135,6 +135,7 @@ const Home = () => {
                 vertical
                 nonLine
                 marginR
+                maxLength={22}
               />
             ))}
           </Slider>

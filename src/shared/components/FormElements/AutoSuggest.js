@@ -145,6 +145,7 @@ class AutoSuggest extends Component {
           name={this.props.name}
           onChange={onChange}
           onKeyDown={onKeyDown}
+          value={userInput}
           errors={this.props.errors}
         />
         {suggestionsListComponent}

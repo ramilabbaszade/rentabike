@@ -20,6 +20,7 @@ const BikesList = (props) => {
                     size={bike.size}
                     price={bike.price.first}
                     creator={bike.creator}
+                    maxLength={24}
                 />
             ))}
         </ul>

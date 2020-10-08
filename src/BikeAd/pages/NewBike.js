@@ -6,31 +6,45 @@ import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
 import cities from '../../az.json'
 import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
 
+
 import "./NewBike.css";
+import FileInput from "../../shared/components/FormElements/FileInput";
 
 // const accessToken = 'getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az'
 
 const NewBike = () => {
-  const [suggestions, setSuggestions] = useState(null)
+  const [suggestions, setSuggestions] = useState([
+    "Alligator",
+    "Bask",
+    "Crocodilian",
+    "Death Roll",
+    "Eggs",
+    "Jaws",
+    "Reptile",
+    "Solitary",
+    "Tail",
+    "Wetlands"
+  ])
   const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew'
 
   // var data = JSON.stringify({
   //   'guid': '979dc109ed404151a50108bf4a61ffd7',
   //   'region': "Baku",
   // });
-  useEffect(() => {
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: JSON.stringify({ region: 'Baku', guid: '979dc109ed404151a50108bf4a61ffd7', lng: 'az' })
-    };
-    fetch(apiUrl, requestOptions)
-      .then(response => { response.json() })
-      .then(data => setSuggestions(data))
-      .catch(error => console.log(error))
-  }, [])
+  // useEffect(() => {
+  //   const requestOptions = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     },
+  //     body: JSON.stringify({ region: 'Baku', guid: '979dc109ed404151a50108bf4a61ffd7', lng: 'az' })
+  //   };
+  //   fetch(apiUrl, requestOptions)
+  //     .then(response => { response.json() })
+  //     .then(data => setSuggestions(data))
+  //     .catch(error => console.log(error))
+  // }, [])
+
 
   const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
@@ -38,7 +52,7 @@ const NewBike = () => {
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
     const formData = new FormData()
-    formData.append("image", data.picture[2])
+    formData.append("images", data.images[1])
     console.log(data);
 
     e.target.reset();
@@ -91,7 +105,7 @@ const NewBike = () => {
         <div className="checkbox-container">
           {BikeAccesuares.map((item) => {
             return (<div className="checkbox-container_in">
-              <img className="accesuares-checkbox-icon-img" src={item.icon} alt={item.value}/>
+              <img className="accesuares-checkbox-icon-img" src={item.icon} alt={item.value} />
               <Input
                 key={item.id}
                 register={register}
@@ -104,7 +118,28 @@ const NewBike = () => {
             </div>)
           })}
         </div>
-        <input ref={register} type="file" name="picture" />
+
+        <div className="file-inputs-div">
+          <FileInput
+            name="images[0]"
+            label="Seç"
+            id="image1"
+            register={register()}
+          />
+          <FileInput
+            name="images[1]"
+            id="image2"
+            label="Seç"
+            register={register()}
+          />
+          <FileInput
+            name="images[2]"
+            id="image3"
+            label="Seç"
+            register={register()}
+          />
+        </div>
+
         <div>
           <Input
             register={register({ required: true, maxLength: 2 })}
@@ -160,12 +195,12 @@ const NewBike = () => {
             return <option key={i} value={item.city}> {item.city} </option>;
           })}
         </Input>
-        
+
         <AutoSuggest
           takeInputValue={register({ required: true })}
           name="address"
           errors={errors.address && "Address is required"}
-          suggestions={['Test1','Test2']}
+          suggestions={suggestions}
         />
 
         <Button type='submit'>

@@ -37,11 +37,28 @@
     width: 20rem;
 }
 
+.file-inputs-div{
+    display: flex;
+    gap: 1rem;
+}
+
 @media only screen and (max-width: 757px) {
     .checkbox-container{
         display: grid;
         grid-template-columns: auto auto auto;
         width: 100%;
         padding: 1rem;
+    }
+    
+}
+@media only screen and (max-width: 540px) {
+    .file-inputs-div{
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .file-inputs-div div{
+        margin-bottom: 1rem;
     }
 }
