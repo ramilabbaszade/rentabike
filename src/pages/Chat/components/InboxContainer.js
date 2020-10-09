@@ -17,7 +17,7 @@ const InboxContainer = () => {
                 <form className='inbox-messages__body__form'>
                     <input type="text" />
                     <button>
-                        <i class="fas fa-arrow-circle-right"></i>
+                        <i className="fas fa-arrow-circle-right"></i>
                     </button>
                 </form>
             </div>

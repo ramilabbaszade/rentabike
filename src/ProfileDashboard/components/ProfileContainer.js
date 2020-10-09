@@ -65,10 +65,10 @@ const ProfileContainer = (props) => {
                                     </div>
                                     <div className="bike-item__children_actions">
                                         <Link className="bike-item__children_actions_remove bike-item_actions_icon">
-                                            <i class="far fa-trash-alt"></i>
+                                            <i className="far fa-trash-alt"></i>
                                         </Link>
                                         <Link to={`/update/${bike.id}`}  className="bike-item__children_actions_edit bike-item_actions_icon">
-                                            <i class="fas fa-wrench"></i>
+                                            <i className="fas fa-wrench"></i>
                                         </Link>
                                     </div>
 

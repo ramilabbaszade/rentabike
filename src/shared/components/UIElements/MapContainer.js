@@ -28,7 +28,7 @@ const MapContainer = (props) => {
                             icon={biker}
                             key={mark.id} >
                             <Popup className="popup">
-                                <Link to={`/${mark.id}`} className="popup-container">
+                                <Link to={`/b/${mark.id}`} className="popup-container">
                                     <img src={mark.images[0]} alt={mark.title} />
                                     <div className="popup-container__title">
                                         <h3> {mark.title} </h3>

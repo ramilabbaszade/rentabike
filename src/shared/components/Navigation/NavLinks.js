@@ -7,7 +7,7 @@ import './NavLinks.css'
 
 const NavLinks = () => {
     const auth = useContext(AuthContext)
-    const onLogOut = ()=>{
+    const onLogOut = () => {
         auth.logout()
     }
     return (
@@ -20,18 +20,22 @@ const NavLinks = () => {
                     <NavLink to='/me'>Me</NavLink>
                 </li>
             }
-            { auth.isLoggedIn && <li>
-                <NavLink to='/inbox'>Inbox</NavLink>
-            </li>
-            }
             <li>
-                <NavLink to={`${auth.isLoggedIn ? '/bikes/new': '/login'}`}>Add bike</NavLink>
+                <NavLink to={`${auth.isLoggedIn ? '/bikes/new' : '/login'}`}>Add bike</NavLink>
             </li>
             { !auth.isLoggedIn && <li>
                 <NavLink to='/register'>Register</NavLink>
             </li>}
             { auth.isLoggedIn && <li>
-                <NavLink onClick={onLogOut} to='/'>Logout</NavLink>
+                <NavLink to='/inbox'>
+                    <i className="fas fa-envelope"></i>
+                </NavLink>
+            </li>
+            }
+            { auth.isLoggedIn && <li>
+                <NavLink onClick={onLogOut} to='/'>
+                    <i className="fas fa-sign-out-alt"></i>
+                </NavLink>
             </li>
             }
         </ul>

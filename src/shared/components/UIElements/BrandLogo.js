@@ -6,11 +6,9 @@ import './BrandLogo.css'
 const BrandLogo = () => {
 return (
     <h1 className="main-navigation__title">
-        <Link to="/" >rentabike</Link>
+        <Link to="/" >velorent</Link>
     </h1>
 )
 }
-
-
 
 export default BrandLogo

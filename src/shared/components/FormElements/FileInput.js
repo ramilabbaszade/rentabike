@@ -21,7 +21,7 @@ const FileInput = (props) => {
                 <img src={props.previewImage || previewImage} alt="" />
             </div>
             <div className="image-uploader_before">
-                <i class="far fa-file-image"></i>
+                <i className="far fa-file-image"></i>
                 <label htmlFor={props.id}> {props.label} </label>
             </div>
             <input onChange={imageHandler} className="image-upload" id={props.id} ref={props.register} type="file" name={props.name} accept="image/*" />
