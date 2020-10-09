@@ -18,6 +18,8 @@ import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
 
 const BikeAdItem = (props) => {
+  document.title=`${props.title} - velorent.az`
+
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const images = props.images;

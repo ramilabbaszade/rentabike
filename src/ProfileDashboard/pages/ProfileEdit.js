@@ -9,6 +9,8 @@ import cities from '../../az.json'
 import './ProfileEdit.css'
 
 const ProfileEdit = () => {
+    document.title='Hesab bilgilərini dəyiş - velorent.az'
+
     const { register, handleSubmit, errors } = useForm({
         mode: "onBlur",
     });

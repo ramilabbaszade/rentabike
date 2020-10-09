@@ -9,6 +9,8 @@ import {AuthContext} from '../../shared/context/auth-context'
 import "./Auth.css";
 
 const Register = () => {
+    document.title="Qeydiyyat - velorent.az"
+
     const auth = useContext(AuthContext)
     const { register, handleSubmit, errors } = useForm({
         mode: 'onBlur'

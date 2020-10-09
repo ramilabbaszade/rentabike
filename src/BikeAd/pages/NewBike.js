@@ -13,6 +13,8 @@ import FileInput from "../../shared/components/FormElements/FileInput";
 // const accessToken = 'getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az'
 
 const NewBike = () => {
+  document.title="Yeni elan yarat"
+
   const [suggestions, setSuggestions] = useState([
     "Alligator",
     "Bask",

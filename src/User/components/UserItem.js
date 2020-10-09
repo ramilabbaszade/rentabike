@@ -6,6 +6,8 @@ import BikeItem from '../../Bikes/components/BikeItem'
 import './UserItem.css'
 
 const UserItem = (props) => {
+  document.title=`${props.fullName} - velorent.az`
+
   return (
     <div className="user_container">
       <div className="user-header">

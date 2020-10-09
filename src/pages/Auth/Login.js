@@ -9,6 +9,8 @@ import "./Auth.css";
 import { AuthContext } from "../../shared/context/auth-context";
 
 const Login = () => {
+    document.title="Giriş - velorent.az"
+
     const auth = useContext(AuthContext)
 
     const { register, handleSubmit, errors } = useForm({

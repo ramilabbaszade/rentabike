@@ -6,6 +6,7 @@ import Button from '../../shared/components/FormElements/Button'
 import './ForgotPassword.css'
 
 const ForgotPassword = () => {
+    document.title="Şifrəni sıfırla"
     const { register, handleSubmit, errors } = useForm({
         mode: 'onBlur'
     });
