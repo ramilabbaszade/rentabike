@@ -60,16 +60,7 @@ const UserItem = (props) => {
                   creator={bike.creator}
                   image={bike.images[0]}
                   actionicons
-                >
-                  <div className="bike-item__action-icons">
-                    <Link to="/" className="bike-item__action-icon icon-edit">
-                      <i className="fas fa-pen"></i>
-                    </Link>
-                    <Link to='/' className="bike-item__action-icon icon-remove">
-                      <i className="fas fa-trash-alt"></i>
-                    </Link>
-                  </div>
-                </BikeItem>
+                />
               }))}
 
         </div>

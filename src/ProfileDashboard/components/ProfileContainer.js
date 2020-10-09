@@ -23,7 +23,7 @@ const ProfileContainer = (props) => {
                     </div>
 
                     <div className="profile-header__editBtn">
-                        <Link to='/'>
+                        <Link to='/me/edit'>
                             Edit Profile
                         </Link>
                     </div>
@@ -47,7 +47,7 @@ const ProfileContainer = (props) => {
                 <div className="profile-body__shared-bikes">
                     <h2 className='profile-body__title'>Aktiv elanlar</h2>
                     {props.bikes.length === 0 ? (
-                        <h4>Bike not found</h4>
+                        <h4>Aktiv elan yoxdur</h4>
                     ) : (
                             props.bikes.map(bike => {
                                 return <BikeItem
@@ -67,7 +67,7 @@ const ProfileContainer = (props) => {
                                         <Link className="bike-item__children_actions_remove bike-item_actions_icon">
                                             <i class="far fa-trash-alt"></i>
                                         </Link>
-                                        <Link to={`${bike.id}`}  className="bike-item__children_actions_edit bike-item_actions_icon">
+                                        <Link to={`/update/${bike.id}`}  className="bike-item__children_actions_edit bike-item_actions_icon">
                                             <i class="fas fa-wrench"></i>
                                         </Link>
                                     </div>

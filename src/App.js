@@ -12,6 +12,7 @@ import Login from './pages/Auth/Login';
 import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
+import UpdateBike from './BikeAd/pages/UpdateBike';
 import { AuthContext } from './shared/context/auth-context'
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
     setIsLoggedIn(true)
   }, [])
   const logout = useCallback(() => {
-    setIsLoggedIn(true)
+    setIsLoggedIn(false)
   }, [])
 
   let routes;
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/bikes/new" exact>
           <NewBike />
         </Route>
-        <Route path="/profile/edit">
+        <Route path="/me/edit">
           <ProfileEdit />
         </Route>
         <Route path="/inbox">
@@ -45,11 +46,14 @@ const App = () => {
         <Route path="/me">
           <ProfileDashboard />
         </Route>
-        <Route path="/:bikeId">
-          <BikeAd />
+        <Route path="/update/:bId">
+          <UpdateBike />
         </Route>
         <Route path="/user/:userId">
           <User />
+        </Route>
+        <Route path="/b/:bikeId">
+          <BikeAd />
         </Route>
         <Redirect to="/" />
       </Switch>
@@ -68,11 +72,11 @@ const App = () => {
       <Route path="/register">
         <Register />
       </Route>
-      <Route path="/:bikeId">
-        <BikeAd />
-      </Route>
       <Route path="/user/:userId">
         <User />
+      </Route>
+      <Route path="/b/:bikeId">
+        <BikeAd />
       </Route>
       <Redirect to="/" />
     </Switch>

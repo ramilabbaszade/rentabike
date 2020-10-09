@@ -60,7 +60,7 @@ const BikeAdItem = (props) => {
                 </h3>
               </div>
                 <Avatar
-                  redirect={`user/${props.creator.id}`}
+                  redirect={`/user/${props.creator.id}`}
                   className='avatar-middle'
                   creatorImg={props.creator.avatar}
                 />

@@ -2,12 +2,13 @@
     border: 1px solid var(--gray3);
     border-radius: 10px;
     width: 15rem;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#image[type=file]{
+.image-upload[type='file']{
     display: none;
 }
 .image-uploader{

@@ -18,7 +18,7 @@ const Input = (props) => {
         value={props.value}
       />
     ) : props.element === "select" ? (
-      <select key={props.key} name={props.name} ref={props.register}>
+      <select key={props.key} defaultValue={props.defaultValue} name={props.name} ref={props.register}>
         <option value="">Seçin</option>
         {props.children}
       </select>
@@ -37,7 +37,9 @@ const Input = (props) => {
               id={props.id}
               ref={props.register}
               rows={props.rows || 3}
+              onChange={props.onChange}
               value={props.value}
+              defaultValue={props.defaultValue}
               name={props.name}
               placeholder={props.placeholder}
             />
