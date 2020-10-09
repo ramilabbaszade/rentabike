@@ -48,7 +48,7 @@ const Login = () => {
                             placeholder='Password'
                             errors={errors.password && "Please type a valid password"}
                         />
-                        <Link to='/'>
+                        <Link to='/restore-account'>
                             <small>
                                 Forgot password?
                             </small>

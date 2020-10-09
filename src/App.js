@@ -14,6 +14,7 @@ import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
 import UpdateBike from './BikeAd/pages/UpdateBike';
 import { AuthContext } from './shared/context/auth-context'
+import ForgotPassword from './pages/Helpers/ForgotPassword';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState()
@@ -71,6 +72,9 @@ const App = () => {
       </Route>
       <Route path="/register">
         <Register />
+      </Route>
+      <Route path="/restore-account">
+        <ForgotPassword />
       </Route>
       <Route path="/user/:userId">
         <User />
