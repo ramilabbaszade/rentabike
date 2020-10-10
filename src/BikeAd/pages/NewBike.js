@@ -67,27 +67,27 @@ const NewBike = () => {
           register={register({ required: true, maxLength: 52 })}
           element='input'
           id='title'
-          label='Title'
+          label='Başlıq'
           name='title'
           type='text'
-          placeholder='Name of bike or model'
-          errors={errors.title && "Title is required (max 52 character)"}
+          placeholder='Velosipedin adı, modeli...'
+          errors={errors.title && "Başlıq tələb olunur (max 52 xarakter)"}
         />
         <Input
           register={register({ required: true })}
           id='description'
-          label='Description'
+          label='Qısa açıqlama'
           name='description'
-          placeholder='Description of the bike'
-          errors={errors.description && "Description is required"}
+          placeholder='Velosipedin vəziyyəti, əlavə məlumatlar...'
+          errors={errors.description && "Açıqlama is required"}
         />
         <div className="bike-form__selects-div">
           <Input
             element='select'
             name='type'
             register={register({ required: true })}
-            label='Type'
-            errors={errors.type && "Type is required"}>
+            label='Növ'
+            errors={errors.type && "Seçim tələb olunur"}>
             {BikeTypes.map((item, i) => {
               return <option key={i} value={item[0]}> {item[1]} </option>;
             })}
@@ -96,8 +96,8 @@ const NewBike = () => {
             element='select'
             name='size'
             register={register({ required: true })}
-            label='Size'
-            errors={errors.size && "Size is required"}>
+            label='Ölçü'
+            errors={errors.size && "Seçim tələb olunur"}>
             {BikeSize.map((item, i) => {
               return <option key={i} value={item}> {item} </option>;
             })}
@@ -124,20 +124,20 @@ const NewBike = () => {
         <div className="file-inputs-div">
           <FileInput
             name="images[0]"
-            label="Seç"
+            label="Əsas şəkil"
             id="image1"
             register={register()}
           />
           <FileInput
             name="images[1]"
             id="image2"
-            label="Seç"
+            label="Əlavə şəkil"
             register={register()}
           />
           <FileInput
             name="images[2]"
             id="image3"
-            label="Seç"
+            label="Əlavə şəkil"
             register={register()}
           />
         </div>
@@ -147,14 +147,14 @@ const NewBike = () => {
             register={register({ required: true, maxLength: 2 })}
             element='input'
             id='price1'
-            label='Price'
+            label='Qiyməti'
             name='price.first'
             type='number'
-            placeholder='Price of bike per hour'
-            errors={errors.price && "Title is required (max 52 character)"}
+            placeholder='Hər saat üçün qiymət'
+            errors={errors.price && "Qiymət tələb olunur"}
           />
           <div className="extra-price-checkbox">
-            <small>Extra Price Choiches</small>
+            <small>Hər saata görə qiymət fərqi təyin et</small>
             <input
               ref={register}
               id="priceExtraHours"
@@ -171,7 +171,7 @@ const NewBike = () => {
                   id='price'
                   name='price.second'
                   type='number'
-                  placeholder='Price of bike per hour'
+                  placeholder='2-ci saatın qiyməti'
                 />
                 <Input
                   register={register({ required: true, maxLength: 2 })}
@@ -179,20 +179,20 @@ const NewBike = () => {
                   id='price'
                   name='price.third'
                   type='number'
-                  placeholder='Price of bike per hour'
+                  placeholder='3-cü və ya sonrakı hər saatın qiyməti'
                 />
               </React.Fragment>
             )
           }
         </div>
 
-        <h2>Location</h2>
+        <h2>Ərazi</h2>
         <Input
           element='select'
           name='city'
           register={register({ required: true })}
-          label='City'
-          errors={errors.city && "City is required"}>
+          label='Şəhər'
+          errors={errors.city && "Seçim tələb olunur"}>
           {cities.map((item, i) => {
             return <option key={i} value={item.city}> {item.city} </option>;
           })}
@@ -201,12 +201,14 @@ const NewBike = () => {
         <AutoSuggest
           takeInputValue={register({ required: true })}
           name="address"
-          errors={errors.address && "Address is required"}
+          errors={errors.address && "Adres tələb olunur"}
           suggestions={suggestions}
         />
 
+        <div className="small-text">Not: Elanın aktiv müddəti 30 gündür. Elan paylaşıldıqdan sonra profilinizdən elanın müddətinə baxa bilərsiniz.</div>
+
         <Button type='submit'>
-          Submit
+          Paylaş
         </Button>
       </form>
     </div>

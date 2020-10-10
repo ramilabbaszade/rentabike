@@ -140,7 +140,7 @@ class AutoSuggest extends Component {
         <Input
           type="text"
           element='input'
-          label="Address"
+          label="Adres"
           register={this.props.takeInputValue}
           name={this.props.name}
           onChange={onChange}

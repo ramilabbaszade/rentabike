@@ -21,7 +21,7 @@ const NavLinks = () => {
                 </li>
             }
             <li>
-                <NavLink to={`${auth.isLoggedIn ? '/bikes/new' : '/login'}`}>Add bike</NavLink>
+                <NavLink to={`${auth.isLoggedIn ? '/bikes/new' : '/login'}`}>Elan yarat</NavLink>
             </li>
             { !auth.isLoggedIn && <li>
                 <NavLink to='/register'>Register</NavLink>
