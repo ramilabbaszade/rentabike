@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/rentabike/static/css/main.6dde9d4e.chunk.css",
-    "main.js": "/rentabike/static/js/main.fc7a7a6b.chunk.js",
-    "main.js.map": "/rentabike/static/js/main.fc7a7a6b.chunk.js.map",
+    "main.css": "/rentabike/static/css/main.cc574d27.chunk.css",
+    "main.js": "/rentabike/static/js/main.897a8fb8.chunk.js",
+    "main.js.map": "/rentabike/static/js/main.897a8fb8.chunk.js.map",
     "runtime-main.js": "/rentabike/static/js/runtime-main.9db3ddf6.js",
     "runtime-main.js.map": "/rentabike/static/js/runtime-main.9db3ddf6.js.map",
     "static/css/2.c51eadb0.chunk.css": "/rentabike/static/css/2.c51eadb0.chunk.css",
     "static/js/2.949160d2.chunk.js": "/rentabike/static/js/2.949160d2.chunk.js",
     "static/js/2.949160d2.chunk.js.map": "/rentabike/static/js/2.949160d2.chunk.js.map",
     "index.html": "/rentabike/index.html",
-    "precache-manifest.b8289651cc7b9b6753603ca204078cd8.js": "/rentabike/precache-manifest.b8289651cc7b9b6753603ca204078cd8.js",
+    "precache-manifest.e0c6c45b74ae6a057188f35ba3a95ff3.js": "/rentabike/precache-manifest.e0c6c45b74ae6a057188f35ba3a95ff3.js",
     "service-worker.js": "/rentabike/service-worker.js",
     "static/css/2.c51eadb0.chunk.css.map": "/rentabike/static/css/2.c51eadb0.chunk.css.map",
-    "static/css/main.6dde9d4e.chunk.css.map": "/rentabike/static/css/main.6dde9d4e.chunk.css.map",
+    "static/css/main.cc574d27.chunk.css.map": "/rentabike/static/css/main.cc574d27.chunk.css.map",
     "static/js/2.949160d2.chunk.js.LICENSE.txt": "/rentabike/static/js/2.949160d2.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/rentabike/static/media/bell.8c1f8aee.png",
     "static/media/bike1con.png": "/rentabike/static/media/bike1con.c5c3a93d.png",
@@ -31,7 +31,7 @@
     "static/js/runtime-main.9db3ddf6.js",
     "static/css/2.c51eadb0.chunk.css",
     "static/js/2.949160d2.chunk.js",
-    "static/css/main.6dde9d4e.chunk.css",
-    "static/js/main.fc7a7a6b.chunk.js"
+    "static/css/main.cc574d27.chunk.css",
+    "static/js/main.897a8fb8.chunk.js"
   ]
 }

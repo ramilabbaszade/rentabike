@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rentabike/precache-manifest.b8289651cc7b9b6753603ca204078cd8.js"
+  "/rentabike/precache-manifest.e0c6c45b74ae6a057188f35ba3a95ff3.js"
 );
 
 self.addEventListener('message', (event) => {
