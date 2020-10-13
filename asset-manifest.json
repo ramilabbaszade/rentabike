@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rentabike/static/css/main.cc574d27.chunk.css",
-    "main.js": "/rentabike/static/js/main.897a8fb8.chunk.js",
-    "main.js.map": "/rentabike/static/js/main.897a8fb8.chunk.js.map",
+    "main.css": "/rentabike/static/css/main.afba476b.chunk.css",
+    "main.js": "/rentabike/static/js/main.f72abc35.chunk.js",
+    "main.js.map": "/rentabike/static/js/main.f72abc35.chunk.js.map",
     "runtime-main.js": "/rentabike/static/js/runtime-main.9db3ddf6.js",
     "runtime-main.js.map": "/rentabike/static/js/runtime-main.9db3ddf6.js.map",
     "static/css/2.c51eadb0.chunk.css": "/rentabike/static/css/2.c51eadb0.chunk.css",
-    "static/js/2.949160d2.chunk.js": "/rentabike/static/js/2.949160d2.chunk.js",
-    "static/js/2.949160d2.chunk.js.map": "/rentabike/static/js/2.949160d2.chunk.js.map",
+    "static/js/2.9788dce8.chunk.js": "/rentabike/static/js/2.9788dce8.chunk.js",
+    "static/js/2.9788dce8.chunk.js.map": "/rentabike/static/js/2.9788dce8.chunk.js.map",
     "index.html": "/rentabike/index.html",
-    "precache-manifest.e0c6c45b74ae6a057188f35ba3a95ff3.js": "/rentabike/precache-manifest.e0c6c45b74ae6a057188f35ba3a95ff3.js",
+    "precache-manifest.6c678b2e9f75fc9e08ff34b6af541a38.js": "/rentabike/precache-manifest.6c678b2e9f75fc9e08ff34b6af541a38.js",
     "service-worker.js": "/rentabike/service-worker.js",
     "static/css/2.c51eadb0.chunk.css.map": "/rentabike/static/css/2.c51eadb0.chunk.css.map",
-    "static/css/main.cc574d27.chunk.css.map": "/rentabike/static/css/main.cc574d27.chunk.css.map",
-    "static/js/2.949160d2.chunk.js.LICENSE.txt": "/rentabike/static/js/2.949160d2.chunk.js.LICENSE.txt",
+    "static/css/main.afba476b.chunk.css.map": "/rentabike/static/css/main.afba476b.chunk.css.map",
+    "static/js/2.9788dce8.chunk.js.LICENSE.txt": "/rentabike/static/js/2.9788dce8.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/rentabike/static/media/bell.8c1f8aee.png",
     "static/media/bike1con.png": "/rentabike/static/media/bike1con.c5c3a93d.png",
     "static/media/cruiser-bikes-at-university-bicycles.jpg": "/rentabike/static/media/cruiser-bikes-at-university-bicycles.6015e3e9.jpg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.9db3ddf6.js",
     "static/css/2.c51eadb0.chunk.css",
-    "static/js/2.949160d2.chunk.js",
-    "static/css/main.cc574d27.chunk.css",
-    "static/js/main.897a8fb8.chunk.js"
+    "static/js/2.9788dce8.chunk.js",
+    "static/css/main.afba476b.chunk.css",
+    "static/js/main.f72abc35.chunk.js"
   ]
 }

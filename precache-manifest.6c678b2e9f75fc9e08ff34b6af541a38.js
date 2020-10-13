@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3193dcba1590dfad47a62a0683831fa7",
+    "revision": "08891e09a6e10966dce970b975612f51",
     "url": "/rentabike/index.html"
   },
   {
-    "revision": "9861eddafb4f3697a87a",
+    "revision": "78193a5974d06d1689a3",
     "url": "/rentabike/static/css/2.c51eadb0.chunk.css"
   },
   {
-    "revision": "7bc4744214638ee1ad5b",
-    "url": "/rentabike/static/css/main.cc574d27.chunk.css"
+    "revision": "ffcb69c9def5bcbd1fbd",
+    "url": "/rentabike/static/css/main.afba476b.chunk.css"
   },
   {
-    "revision": "9861eddafb4f3697a87a",
-    "url": "/rentabike/static/js/2.949160d2.chunk.js"
+    "revision": "78193a5974d06d1689a3",
+    "url": "/rentabike/static/js/2.9788dce8.chunk.js"
   },
   {
     "revision": "505e002534c075711a91ecfadf0b15cd",
-    "url": "/rentabike/static/js/2.949160d2.chunk.js.LICENSE.txt"
+    "url": "/rentabike/static/js/2.9788dce8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7bc4744214638ee1ad5b",
-    "url": "/rentabike/static/js/main.897a8fb8.chunk.js"
+    "revision": "ffcb69c9def5bcbd1fbd",
+    "url": "/rentabike/static/js/main.f72abc35.chunk.js"
   },
   {
     "revision": "53c23ff2f8c01f1e4c5e",
