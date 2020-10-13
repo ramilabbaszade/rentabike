@@ -18,7 +18,7 @@ import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
 
 const BikeAdItem = (props) => {
-  document.title=`${props.title} - velorent.az`
+  document.title = `${props.title} - velorent.az`
 
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -58,55 +58,55 @@ const BikeAdItem = (props) => {
               <div className='bike-ad__details-in__left'>
                 <h1>{props.title}</h1>
                 <h3>
-                  Velosiped - {props.type} - {props.size}"
+                  {props.type} - {props.size}"
                 </h3>
               </div>
-                <Avatar
-                  redirect={`/user/${props.creator.id}`}
-                  className='avatar-middle'
-                  creatorImg={props.creator.avatar}
-                />
+              <Avatar
+                redirect={`/user/${props.creator.id}`}
+                className='avatar-middle'
+                creatorImg={props.creator.avatar}
+              />
             </div>
           </div>
 
 
           <div className='bike-ad__description'>
-            <h3 className="small-text"> <i className="far fa-compass"></i> {props.city} </h3>
+            <h3 className="small-text"> <i className="far fa-compass"></i> {props.city} <span aria-hidden="false"> · </span> {props.date} </h3>
             <p> {props.description} </p>
           </div>
 
-          <ul className='bike-ad__body__bike-accesuares'>
-            {props.accesuares.helmet && (
+          <ul className='bike-ad__body__bike-accessories'>
+            {props.accessories.helmet && (
               <li htmlFor='iconTitle'>
                 <img src={helmet} alt='icon' />
                 Başlıq
               </li>
             )}
-            {props.accesuares.lock && (
+            {props.accessories.lock && (
               <li htmlFor='iconTitle'>
                 <img src={lock} alt='icon' />
                 Kilid
               </li>
             )}
-            {props.accesuares.basket && (
+            {props.accessories.basket && (
               <li htmlFor='iconTitle'>
                 <img src={basket} alt='icon' />
                 Səbət
               </li>
             )}
-            {props.accesuares.bell && (
+            {props.accessories.bell && (
               <li htmlFor='iconTitle'>
                 <img src={bell} alt='icon' />
                 Siqnal
               </li>
             )}
-            {props.accesuares.lights && (
+            {props.accessories.lights && (
               <li htmlFor='iconTitle'>
                 <img src={lights} alt='icon' />
                 Fənər
               </li>
             )}
-            {props.accesuares.reflector && (
+            {props.accessories.reflector && (
               <li htmlFor='iconTitle'>
                 <img src={reflector} alt='icon' />
                 Reflektor
@@ -142,18 +142,45 @@ const BikeAdItem = (props) => {
             </div>
           </div>
           <Link to='/' className="write-btn">
-                Müraciət et
+            Müraciət et
           </Link>
         </div>
       </div>
-
       <div className='bike-ad__recommendation_cont'>
         <div className='bike-ad__recommendation'>
           <div className='bike-ad__recommendation__title'>
-            <h2>Latest bikes</h2>
-            <Link to='/list'>View more</Link>
+            <h2> Müəllifin başqa elanları </h2>
+            <Link to='/list'>Ətraflı bax</Link>
           </div>
-          <hr className="bike-bottom-line"/>
+          <hr className="bike-bottom-line" />
+          <div className='bike-ad__last-bikes'>
+            {props.creator.bikes.slice(0, 2).map((item) => {
+              return (
+                <BikeItem
+                  id={item.id}
+                  key={item.id}
+                  image={item.images[0]}
+                  title={item.title}
+                  type={item.type}
+                  price={item.price.first}
+                  accessories={item.accessories}
+                  size={item.size}
+                  creator={item.creator}
+                  city={item.city}
+                  nonLine
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div className='bike-ad__recommendation_cont'>
+        <div className='bike-ad__recommendation'>
+          <div className='bike-ad__recommendation__title'>
+            <h2>Ən son elanlar</h2>
+            <Link to='/list'>Ətraflı bax</Link>
+          </div>
+          <hr className="bike-bottom-line" />
           <div className='bike-ad__last-bikes'>
             {BIKES.slice(0, 4).map((item) => {
               return (
@@ -162,8 +189,11 @@ const BikeAdItem = (props) => {
                   key={item.id}
                   image={item.images[0]}
                   title={item.title}
+                  date={item.date}
                   price={item.price.first}
+                  type={item.type}
                   size={item.size}
+                  accessories={item.accessories}
                   creator={item.creator}
                   city={item.city}
                   nonLine

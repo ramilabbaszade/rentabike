@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
-import { BikeTypes, BikeSize, BikeAccesuares } from "../../data";
+import { BikeTypes, BikeSize, BikeAccessories } from "../../data";
 import cities from '../../az.json'
 import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
 
@@ -105,17 +105,17 @@ const NewBike = () => {
         </div>
 
         <div className="checkbox-container">
-          {BikeAccesuares.map((item) => {
+          {BikeAccessories.map((item) => {
             return (<div className="checkbox-container_in">
-              <img className="accesuares-checkbox-icon-img" src={item.icon} alt={item.value} />
+              <img className="accessories-checkbox-icon-img" src={item.icon} alt={item.value} />
               <Input
                 key={item.id}
                 register={register}
                 id={item.name}
                 type='checkbox'
-                name="accesuares"
+                name="accessories"
                 label={item.value}
-                value={item.value}
+                value={item.name}
               />
             </div>)
           })}

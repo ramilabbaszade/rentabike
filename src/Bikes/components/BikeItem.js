@@ -13,11 +13,17 @@ const BikeItem = props => {
                 </div>
                 <div className={`bike-item__content ${props.vertical && 'bike-item__content_vertical'}`}>
                     <div className="bike-item__content__header">
-                        <small className="bike-item__content__date">01.11.2020</small>
+                        <small className="bike-item__content__date"> {props.date} </small>
                         <Link to={`/b/${props.id}`}><h2>{props.title.length < MAX_LENGTH ? props.title : `${props.title.substring(0, MAX_LENGTH)}...`} </h2></Link>
                         <hr className="bike-item-title__bottom-line" />
-                        <div className="small-text">Bike<span aria-hidden="false"> · </span>Road<span aria-hidden="false"> · </span>{props.size}" </div>
-                        <div className="small-text"> Helmet<span aria-hidden="false"> · </span>Light<span aria-hidden="false"> · </span>Horn </div>
+                        <div className="small-text">
+                            {
+                                props.accessories.map(acc => {
+                                    return <span id={acc.id} className="small-text"> {acc.value} · </span>
+                                })
+                            }
+                        </div>
+                        <div className="small-text">Velosiped<span aria-hidden="false"> · </span> {props.type} <span aria-hidden="false"> · </span>{props.size}" </div>
                     </div>
 
                     <div className={`bike-item__content__footer ${props.vertical && 'bike-item__content__footer_vertical'}`}>
@@ -26,11 +32,12 @@ const BikeItem = props => {
                     </div>
                 </div>
             </div >
-            {props.children}
-            {!props.nonLine &&
+            { props.children}
+            {
+                !props.nonLine &&
                 <hr className="bike-bottom-line" />
             }
-        </li>
+        </li >
     )
 }
 

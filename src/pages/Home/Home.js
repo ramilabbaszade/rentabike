@@ -129,7 +129,9 @@ const Home = () => {
                 image={bike.images[0]}
                 title={bike.title}
                 city={bike.city}
+                type={bike.type}
                 size={bike.size}
+                accessories={bike.accessories}
                 price={bike.price.first}
                 creator={bike.creator}
                 vertical
@@ -163,7 +165,7 @@ const Home = () => {
       <section className="home-cities-cards">
         <div className="home-cities-cards_header container">
           <h2>Önə çıxan şəhərlər</h2>
-          <hr className="bike-item-title__bottom-line"/>
+          <hr className="bike-item-title__bottom-line" />
         </div>
         <div className="container">
           <Slider className="home-cities-cards_in" {...settings1}>

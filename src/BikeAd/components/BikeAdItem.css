@@ -49,7 +49,7 @@
 }
 
 /* Accesuare icons */
-.bike-ad__body__bike-accesuares {
+.bike-ad__body__bike-accessories {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 18px;
@@ -57,13 +57,13 @@
     margin-top: 2rem;
 }
 
-.bike-ad__body__bike-accesuares li {
+.bike-ad__body__bike-accessories li {
     display: flex;
     align-items: center;
     margin-right: 8px;
 }
 
-.bike-ad__body__bike-accesuares li img {
+.bike-ad__body__bike-accessories li img {
     width: 25px;
     height: 25px;
     object-fit: cover;
@@ -154,7 +154,7 @@
         text-align: center;
     }
 
-    .bike-ad__body__bike-accesuares {
+    .bike-ad__body__bike-accessories {
         grid-template-columns: 50% 50%;
         justify-content: center;
         margin-top: 2rem;

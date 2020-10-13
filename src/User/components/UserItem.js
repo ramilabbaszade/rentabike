@@ -6,7 +6,7 @@ import BikeItem from '../../Bikes/components/BikeItem'
 import './UserItem.css'
 
 const UserItem = (props) => {
-  document.title=`${props.fullName} - velorent.az`
+  document.title = `${props.fullName} - velorent.az`
 
   return (
     <div className="user_container">
@@ -35,7 +35,7 @@ const UserItem = (props) => {
       <div className="user-body">
         <section className="user-body__section1">
           <h1> {props.fullName} </h1>
-          <small className="small-text">Qoşuldu: 01.08.2020</small>
+          <small className="small-text">Qoşuldu: {props.date} </small>
         </section>
         <section className="user-body__section2">
           <h1 className="user-body__section2_title">Haqqında</h1>
@@ -47,7 +47,7 @@ const UserItem = (props) => {
         </section>
         <hr className="bike-bottom-line" />
         <div className="user-body__shared-bikes">
-          <h2 className='user-body__title'>Aktiv elanlar</h2>
+          <h2 className='user-body__title'>Aktiv elanlar ({props.bikes.length})</h2>
           {props.bikes.length === 0 ? (
             <h4>Elan tapılmadı</h4>
           ) : (
@@ -56,7 +56,9 @@ const UserItem = (props) => {
                   id={bike.id}
                   key={bike.id}
                   title={bike.title}
+                  type={bike.type}
                   size={bike.size}
+                  accessories={bike.accessories}
                   city={bike.city}
                   price={bike.price.first}
                   creator={bike.creator}

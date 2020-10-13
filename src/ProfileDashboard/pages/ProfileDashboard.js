@@ -14,6 +14,7 @@ const ProfileDashboard = () => {
                 bio={USER.bio}
                 avatar={USER.avatar}
                 city={USER.city}
+                date={USER.date}
                 bikes={USER.bikes}
             />
         </div>

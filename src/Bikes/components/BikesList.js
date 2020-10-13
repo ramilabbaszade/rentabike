@@ -17,9 +17,12 @@ const BikesList = (props) => {
                     image={bike.images[0]}
                     title={bike.title}
                     city={bike.city}
+                    type={bike.type}
                     size={bike.size}
+                    accessories={bike.accessories}
                     price={bike.price.first}
                     creator={bike.creator}
+                    date={bike.date}
                     maxLength={24}
                 />
             ))}

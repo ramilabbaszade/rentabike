@@ -33,7 +33,7 @@ const ProfileContainer = (props) => {
             <div className="profile-body">
                 <section className="profile-body__section1">
                     <h1> {props.name} </h1>
-                    <small className="small-text">Qoşuldu: 01.08.2020</small>
+                    <small className="small-text">Qoşuldu: {props.date} </small>
                 </section>
                 <section className="profile-body__section2">
                     <h1 className="profile-body__section2_title">Haqqında</h1>
@@ -55,6 +55,8 @@ const ProfileContainer = (props) => {
                                     key={bike.id}
                                     title={bike.title}
                                     size={bike.size}
+                                    accessories={bike.accessories}
+                                    type={bike.type}
                                     city={bike.city}
                                     price={bike.price.first}
                                     creator={bike.creator}
@@ -67,7 +69,7 @@ const ProfileContainer = (props) => {
                                         <Link className="bike-item__children_actions_remove bike-item_actions_icon">
                                             <i className="far fa-trash-alt"></i>
                                         </Link>
-                                        <Link to={`/update/${bike.id}`}  className="bike-item__children_actions_edit bike-item_actions_icon">
+                                        <Link to={`/update/${bike.id}`} className="bike-item__children_actions_edit bike-item_actions_icon">
                                             <i className="fas fa-wrench"></i>
                                         </Link>
                                     </div>
