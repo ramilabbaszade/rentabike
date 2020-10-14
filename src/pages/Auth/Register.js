@@ -1,15 +1,18 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
 import Button from "../../shared/components/FormElements/Button";
 import image1 from "../../assets/icons/register-bike.jpg";
 
-import {AuthContext} from '../../shared/context/auth-context'
+import { AuthContext } from '../../shared/context/auth-context'
 
 import "./Auth.css";
 
 const Register = () => {
-    document.title="Qeydiyyat - velorent.az"
+    useEffect(() => {
+        document.title = "Qeydiyyat - velorent.az"
+    }, [])
+
 
     const auth = useContext(AuthContext)
     const { register, handleSubmit, errors } = useForm({

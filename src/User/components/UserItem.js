@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
 import { Link } from 'react-router-dom'
 import BikeItem from '../../Bikes/components/BikeItem'
@@ -6,7 +6,11 @@ import BikeItem from '../../Bikes/components/BikeItem'
 import './UserItem.css'
 
 const UserItem = (props) => {
-  document.title = `${props.fullName} - velorent.az`
+  useEffect(()=>{
+    document.title = `${props.fullName} - velorent.az`
+
+  },[])
+
 
   return (
     <div className="user_container">

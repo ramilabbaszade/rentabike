@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
@@ -18,7 +18,9 @@ import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
 
 const BikeAdItem = (props) => {
-  document.title = `${props.title} - velorent.az`
+  useEffect(() => {
+    document.title = `${props.title} - velorent.az`
+  }, [])
 
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);

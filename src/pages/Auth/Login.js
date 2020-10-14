@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Input from '../../shared/components/FormElements/Input'
@@ -9,7 +9,10 @@ import "./Auth.css";
 import { AuthContext } from "../../shared/context/auth-context";
 
 const Login = () => {
-    document.title="Giriş - velorent.az"
+    useEffect(() => {
+        document.title = "Giriş - velorent.az"
+    }, [])
+
 
     const auth = useContext(AuthContext)
 
