@@ -9,7 +9,7 @@ const UserItem = (props) => {
   useEffect(()=>{
     document.title = `${props.fullName} - velorent.az`
 
-  },[])
+  },[props.fullName])
 
 
   return (

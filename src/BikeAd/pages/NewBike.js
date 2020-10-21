@@ -109,10 +109,9 @@ const NewBike = () => {
 
         <div className="checkbox-container">
           {BikeAccessories.map((item) => {
-            return (<div className="checkbox-container_in">
+            return (<div key={item.id} className="checkbox-container_in">
               <img className="accessories-checkbox-icon-img" src={item.icon} alt={item.value} />
               <Input
-                key={item.id}
                 register={register}
                 id={item.name}
                 type='checkbox'

@@ -20,7 +20,7 @@ import "react-image-lightbox/style.css";
 const BikeAdItem = (props) => {
   useEffect(() => {
     document.title = `${props.title} - velorent.az`
-  }, [])
+  }, [props.title])
 
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);

@@ -71,19 +71,23 @@
     top: 0;
     right: 0;
     display: flex;
+    flex-direction: column;
     gap: 5px;
+    background-color: white;
+    z-index: 99;
 }
-.bike-item__children_actions_remove{
-    background-color: var(--red);
-}
-.bike-item__children_actions_edit{
-    background-color: var(--green);
+.bike-item__actions_nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
 }
 .bike-item_actions_icon{
-    text-align: center;
-    padding: 2px 5px;
-    color: white;
-    border-radius: 50%;
+    text-align: right;
+    padding: 5px 20px;
+    border-right: 1px solid var(--gray2);
+    border-left: 1px solid var(--gray);
 }
 
 .bike-item__children_expired-time {

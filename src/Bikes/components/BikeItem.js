@@ -6,7 +6,7 @@ import './BikeItem.css'
 const BikeItem = props => {
     const MAX_LENGTH = props.maxLength || 24;
     return (
-        <li style={props.marginR && { marginRight: '.5rem' }} className="bike-item__container">
+        <li key={props.id} style={props.marginR && { marginRight: '.5rem' }} className="bike-item__container">
             <div className={`bike-item ${props.vertical && 'bike-item_vertical'}`}>
                 <div className={`bike-item__image ${props.vertical && 'bike-item__image_vertical'}`}>
                     <Link to={`/b/${props.id}`}> <img className={`${props.vertical && 'bike-item_img_vertical'}`} src={props.image} alt={props.title} /></Link>
@@ -19,7 +19,7 @@ const BikeItem = props => {
                         <div className="small-text">
                             {
                                 props.accessories.map(acc => {
-                                    return <span id={acc.id} className="small-text"> {acc.value} · </span>
+                                    return <span key={acc.id} id={acc.id} className="small-text"> {acc.value} · </span>
                                 })
                             }
                         </div>
@@ -32,7 +32,9 @@ const BikeItem = props => {
                     </div>
                 </div>
             </div >
-            { props.children}
+            <div key={props.id}>
+                {props.children}
+            </div>
             {
                 !props.nonLine &&
                 <hr className="bike-bottom-line" />

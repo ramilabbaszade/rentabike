@@ -124,8 +124,8 @@ const Home = () => {
           <Slider className="home-bikes__body" {...settings}>
             {BIKES.map((bike) => (
               <BikeItem
-                key={bike.id}
                 id={bike.id}
+                key={bike.id}
                 image={bike.images[0]}
                 title={bike.title}
                 city={bike.city}

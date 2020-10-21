@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
 import { Link } from 'react-router-dom'
 import BikeItem from '../../Bikes/components/BikeItem'
+import Backdrop from '../../shared/components/UIElements/Backdrop'
 
 import './ProfileContainer.css'
 
 const ProfileContainer = (props) => {
+    const [drawerIsOpen, setDrawerIsOpen] = useState(null);
+
+    const closeDrawer = () => {
+        setDrawerIsOpen(null)
+    }
+
+    const openDrawer = (b) => {
+        setDrawerIsOpen(b);
+    }
     return (
         <div className="profile_container">
             <div className="profile-header">
@@ -48,35 +58,42 @@ const ProfileContainer = (props) => {
                     <h2 className='profile-body__title'>Aktiv elanlar</h2>
                     {props.bikes.length === 0 ? (
                         <h4>Aktiv elan yoxdur</h4>
-                    ) : (
-                            props.bikes.map(bike => {
-                                return <BikeItem
-                                    id={bike.id}
-                                    key={bike.id}
-                                    title={bike.title}
-                                    size={bike.size}
-                                    accessories={bike.accessories}
-                                    type={bike.type}
-                                    city={bike.city}
-                                    price={bike.price.first}
-                                    creator={bike.creator}
-                                    image={bike.images[0]}
-                                >
-                                    <div className="bike-item__children_expired-time">
-                                        <small>15 gün</small>
-                                    </div>
-                                    <div className="bike-item__children_actions">
-                                        <Link className="bike-item__children_actions_remove bike-item_actions_icon">
-                                            <i className="far fa-trash-alt"></i>
-                                        </Link>
-                                        <Link to={`/update/${bike.id}`} className="bike-item__children_actions_edit bike-item_actions_icon">
-                                            <i className="fas fa-wrench"></i>
-                                        </Link>
-                                    </div>
-
-                                </BikeItem>
-                            }))}
-
+                    ) : <ul>
+                            {
+                                props.bikes.map(bike => {
+                                    return (<BikeItem
+                                        id={bike.id}
+                                        key={bike.id}
+                                        title={bike.title}
+                                        size={bike.size}
+                                        accessories={bike.accessories}
+                                        type={bike.type}
+                                        city={bike.city}
+                                        price={bike.price.first}
+                                        creator={bike.creator}
+                                        image={bike.images[0]}
+                                    >
+                                        <div className="bike-item__children_expired-time">
+                                            <small>15 gün</small>
+                                        </div>
+                                        <div onClick={() => openDrawer(bike.id)} className="bike-item__actions_nav">
+                                            <i className="fas fa-ellipsis-v"></i>
+                                        </div>
+                                        {
+                                            drawerIsOpen === bike.id &&
+                                            <div className={`bike-item__children_actions`}>
+                                                <Link to={`/update/${bike.id}`} className="bike-item_actions_icon">
+                                                    Düzəliş et
+                                                </Link>
+                                                <Link to='me' className="bike-item_actions_icon">
+                                                    Sil
+                                                </Link>
+                                                {drawerIsOpen && <Backdrop transparent onClick={closeDrawer} />}
+                                            </div>
+                                        }
+                                    </BikeItem>)
+                                })}
+                        </ul>}
                 </div>
             </div>
 
