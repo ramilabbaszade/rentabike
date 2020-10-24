@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rentabike/static/css/main.afba476b.chunk.css",
-    "main.js": "/rentabike/static/js/main.f72abc35.chunk.js",
-    "main.js.map": "/rentabike/static/js/main.f72abc35.chunk.js.map",
+    "main.css": "/rentabike/static/css/main.f51e48a6.chunk.css",
+    "main.js": "/rentabike/static/js/main.0844715a.chunk.js",
+    "main.js.map": "/rentabike/static/js/main.0844715a.chunk.js.map",
     "runtime-main.js": "/rentabike/static/js/runtime-main.9db3ddf6.js",
     "runtime-main.js.map": "/rentabike/static/js/runtime-main.9db3ddf6.js.map",
     "static/css/2.c51eadb0.chunk.css": "/rentabike/static/css/2.c51eadb0.chunk.css",
-    "static/js/2.9788dce8.chunk.js": "/rentabike/static/js/2.9788dce8.chunk.js",
-    "static/js/2.9788dce8.chunk.js.map": "/rentabike/static/js/2.9788dce8.chunk.js.map",
+    "static/js/2.65d9aaf6.chunk.js": "/rentabike/static/js/2.65d9aaf6.chunk.js",
+    "static/js/2.65d9aaf6.chunk.js.map": "/rentabike/static/js/2.65d9aaf6.chunk.js.map",
     "index.html": "/rentabike/index.html",
-    "precache-manifest.6c678b2e9f75fc9e08ff34b6af541a38.js": "/rentabike/precache-manifest.6c678b2e9f75fc9e08ff34b6af541a38.js",
+    "precache-manifest.69649607ba38384108689d03e3c45b31.js": "/rentabike/precache-manifest.69649607ba38384108689d03e3c45b31.js",
     "service-worker.js": "/rentabike/service-worker.js",
     "static/css/2.c51eadb0.chunk.css.map": "/rentabike/static/css/2.c51eadb0.chunk.css.map",
-    "static/css/main.afba476b.chunk.css.map": "/rentabike/static/css/main.afba476b.chunk.css.map",
-    "static/js/2.9788dce8.chunk.js.LICENSE.txt": "/rentabike/static/js/2.9788dce8.chunk.js.LICENSE.txt",
+    "static/css/main.f51e48a6.chunk.css.map": "/rentabike/static/css/main.f51e48a6.chunk.css.map",
+    "static/js/2.65d9aaf6.chunk.js.LICENSE.txt": "/rentabike/static/js/2.65d9aaf6.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/rentabike/static/media/bell.8c1f8aee.png",
     "static/media/bike1con.png": "/rentabike/static/media/bike1con.c5c3a93d.png",
     "static/media/cruiser-bikes-at-university-bicycles.jpg": "/rentabike/static/media/cruiser-bikes-at-university-bicycles.6015e3e9.jpg",
@@ -21,6 +21,7 @@
     "static/media/helmet.png": "/rentabike/static/media/helmet.f3634250.png",
     "static/media/login-bike.jpg": "/rentabike/static/media/login-bike.57b93b43.jpg",
     "static/media/main.jpg": "/rentabike/static/media/main.5bf9087a.jpg",
+    "static/media/manat.png": "/rentabike/static/media/manat.b4d110b6.png",
     "static/media/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg": "/rentabike/static/media/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.eb68d1b5.jpg",
     "static/media/refletor.png": "/rentabike/static/media/refletor.270487e0.png",
     "static/media/register-bike.jpg": "/rentabike/static/media/register-bike.31f72747.jpg",
@@ -30,8 +31,8 @@
   "entrypoints": [
     "static/js/runtime-main.9db3ddf6.js",
     "static/css/2.c51eadb0.chunk.css",
-    "static/js/2.9788dce8.chunk.js",
-    "static/css/main.afba476b.chunk.css",
-    "static/js/main.f72abc35.chunk.js"
+    "static/js/2.65d9aaf6.chunk.js",
+    "static/css/main.f51e48a6.chunk.css",
+    "static/js/main.0844715a.chunk.js"
   ]
 }
