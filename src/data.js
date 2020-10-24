@@ -71,12 +71,8 @@ export const USER = {
             size: 26,
             type: "Road",
             accessories: [
-                { id: 1, name: "helmet", value: "Başlıq", icon: helmet },
                 { id: 2, name: "lock", value: "Kilid", icon: lock },
-                { id: 3, name: "lights", value: "Fənər", icon: lights },
                 { id: 4, name: "bell", value: "Siqnal", icon: bell },
-                { id: 5, name: "basket", value: "Səbət", icon: basket },
-                { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
             ],
             price: { first: 2, second: 3, third: 2 },
             address: "CWC8+JP Baku, Azerbaijan",
@@ -103,8 +99,6 @@ export const USER = {
             type: "Road",
             accessories: [
                 { id: 3, name: "lights", value: "Fənər", icon: lights },
-                { id: 4, name: "bell", value: "Siqnal", icon: bell },
-                { id: 5, name: "basket", value: "Səbət", icon: basket },
                 { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
             ],
             price: { first: 3, second: 2, third: 2 },
@@ -130,8 +124,6 @@ export const USER = {
             type: "Road",
             accessories: [
                 { id: 3, name: "lights", value: "Fənər", icon: lights },
-                { id: 4, name: "bell", value: "Siqnal", icon: bell },
-                { id: 5, name: "basket", value: "Səbət", icon: basket },
                 { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
             ],
             price: { first: 2, second: 3, third: 2 },
@@ -159,9 +151,7 @@ export const BIKES = [
         type: "Road",
         accessories: [
             { id: 3, name: "lights", value: "Fənər", icon: lights },
-            { id: 4, name: "bell", value: "Siqnal", icon: bell },
-            { id: 5, name: "basket", value: "Səbət", icon: basket },
-            { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
+            { id: 4, name: "bell", value: "Siqnal", icon: bell }
         ],
         price: { first: 2, second: 3, third: 2 },
         address: "CWC8+JP Baku, Azerbaijan",
@@ -187,7 +177,6 @@ export const BIKES = [
                         { id: 3, name: "lights", value: "Fənər", icon: lights },
                         { id: 4, name: "bell", value: "Siqnal", icon: bell },
                         { id: 5, name: "basket", value: "Səbət", icon: basket },
-                        { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
                     ],
                     price: { first: 2, second: 3, third: 2 },
                     address: "CWC8+JP Baku, Azerbaijan",
@@ -213,8 +202,6 @@ export const BIKES = [
                     size: 26,
                     type: "Road",
                     accessories: [
-                        { id: 3, name: "lights", value: "Fənər", icon: lights },
-                        { id: 4, name: "bell", value: "Siqnal", icon: bell },
                         { id: 5, name: "basket", value: "Səbət", icon: basket },
                         { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
                     ],
@@ -240,10 +227,7 @@ export const BIKES = [
                     size: 26,
                     type: "Road",
                     accessories: [
-                        { id: 3, name: "lights", value: "Fənər", icon: lights },
-                        { id: 4, name: "bell", value: "Siqnal", icon: bell },
-                        { id: 5, name: "basket", value: "Səbət", icon: basket },
-                        { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
+                        { id: 3, name: "lights", value: "Fənər", icon: lights }
                     ],
                     price: { first: 2, second: 3, third: 2 },
                     location: {
@@ -270,10 +254,6 @@ export const BIKES = [
         size: "28",
         type: "Mountain",
         accessories: [
-            { id: 3, name: "lights", value: "Fənər", icon: lights },
-            { id: 4, name: "bell", value: "Siqnal", icon: bell },
-            { id: 5, name: "basket", value: "Səbət", icon: basket },
-            { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
         ],
         price: { first: 3, second: 2, third: 2 },
         location: {
@@ -299,9 +279,7 @@ export const BIKES = [
         type: "Fat",
         accessories: [
             { id: 3, name: "lights", value: "Fənər", icon: lights },
-            { id: 4, name: "bell", value: "Siqnal", icon: bell },
             { id: 5, name: "basket", value: "Səbət", icon: basket },
-            { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
         ],
         price: { first: 2, second: 3, third: 2 },
         location: {
@@ -325,9 +303,7 @@ export const BIKES = [
         city: "Sumqayıt",
         type: "Road",
         accessories: [
-            { id: 3, name: "lights", value: "Fənər", icon: lights },
             { id: 4, name: "bell", value: "Siqnal", icon: bell },
-            { id: 5, name: "basket", value: "Səbət", icon: basket },
             { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
         ],
         price: { first: 2, second: 3, third: 2 },
@@ -354,9 +330,6 @@ export const BIKES = [
         size: "12",
         type: "BMX",
         accessories: [
-            { id: 3, name: "lights", value: "Fənər", icon: lights },
-            { id: 4, name: "bell", value: "Siqnal", icon: bell },
-            { id: 5, name: "basket", value: "Səbət", icon: basket },
             { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
         ],
         price: { first: 2, second: 3, third: 2 },
@@ -383,8 +356,6 @@ export const BIKES = [
         type: "Child",
         accessories: [
             { id: 3, name: "lights", value: "Fənər", icon: lights },
-            { id: 4, name: "bell", value: "Siqnal", icon: bell },
-            { id: 5, name: "basket", value: "Səbət", icon: basket },
             { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
         ],
         price: { first: 2, second: 3, third: 2 },
@@ -535,9 +506,7 @@ export const USERS = [
                 type: "Road",
                 accessories: [
                     { id: 3, name: "lights", value: "Fənər", icon: lights },
-                    { id: 4, name: "bell", value: "Siqnal", icon: bell },
                     { id: 5, name: "basket", value: "Səbət", icon: basket },
-                    { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
                 ],
                 price: { first: 2, second: 3, third: 2 },
                 location: {
@@ -563,7 +532,6 @@ export const USERS = [
                 accessories: [
                     { id: 3, name: "lights", value: "Fənər", icon: lights },
                     { id: 4, name: "bell", value: "Siqnal", icon: bell },
-                    { id: 5, name: "basket", value: "Səbət", icon: basket },
                     { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
                 ],
                 price: { first: 3, second: 2, third: 2 },
@@ -588,8 +556,6 @@ export const USERS = [
                 size: 26,
                 type: "Road",
                 accessories: [
-                    { id: 3, name: "lights", value: "Fənər", icon: lights },
-                    { id: 4, name: "bell", value: "Siqnal", icon: bell },
                     { id: 5, name: "basket", value: "Səbət", icon: basket },
                     { id: 6, name: "reflector", value: "Reflektor", icon: reflector },
                 ],

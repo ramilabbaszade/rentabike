@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import manat from '../../assets/icons/mini-icons/manat.png'
 
 import './BikeItem.css'
 
@@ -18,7 +19,8 @@ const BikeItem = props => {
                         <hr className="bike-item-title__bottom-line" />
                         <div className="small-text">
                             {
-                                props.accessories.map(acc => {
+                                props.accessories.length === 0 ? <span className="small-text">...</span> 
+                                : props.accessories.map(acc => {
                                     return <span key={acc.id} id={acc.id} className="small-text"> {acc.value} · </span>
                                 })
                             }
@@ -28,7 +30,7 @@ const BikeItem = props => {
 
                     <div className={`bike-item__content__footer ${props.vertical && 'bike-item__content__footer_vertical'}`}>
                         <div className="small-text bike-item__content__city"><i className="far fa-compass"></i> {props.city} </div>
-                        <div className="bike-item__content__price"><b style={{ fontSize: '24px' }}>${props.price}</b>/s</div>
+                        <div className="bike-item__content__price"><b style={{ fontSize: '24px' }}>{props.price}</b><img className="azn-manat" src={manat} alt="azn"/>/s</div>
                     </div>
                 </div>
             </div >

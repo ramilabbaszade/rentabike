@@ -19,7 +19,7 @@ const Home = () => {
     speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 3,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
       {

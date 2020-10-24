@@ -60,6 +60,11 @@ li {
 .text-center{
   text-align: center;
 }
+.azn-manat{
+  width: 15px;
+  height: auto;
+  object-fit: cover;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;

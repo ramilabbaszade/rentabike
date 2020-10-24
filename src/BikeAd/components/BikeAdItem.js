@@ -3,12 +3,7 @@ import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
 
-import helmet from "../../assets/icons/bike-parts-icons/helmet.png";
-import bell from "../../assets/icons/bike-parts-icons/bell.png";
-import basket from "../../assets/icons/bike-parts-icons/basket.png";
-import lights from "../../assets/icons/bike-parts-icons/lights.png";
-import lock from "../../assets/icons/bike-parts-icons/lock.png";
-import reflector from "../../assets/icons/bike-parts-icons/refletor.png";
+import manat from '../../assets/icons/mini-icons/manat.png'
 
 import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
@@ -78,42 +73,12 @@ const BikeAdItem = (props) => {
           </div>
 
           <ul className='bike-ad__body__bike-accessories'>
-            {props.accessories.helmet && (
-              <li htmlFor='iconTitle'>
-                <img src={helmet} alt='icon' />
-                Başlıq
-              </li>
-            )}
-            {props.accessories.lock && (
-              <li htmlFor='iconTitle'>
-                <img src={lock} alt='icon' />
-                Kilid
-              </li>
-            )}
-            {props.accessories.basket && (
-              <li htmlFor='iconTitle'>
-                <img src={basket} alt='icon' />
-                Səbət
-              </li>
-            )}
-            {props.accessories.bell && (
-              <li htmlFor='iconTitle'>
-                <img src={bell} alt='icon' />
-                Siqnal
-              </li>
-            )}
-            {props.accessories.lights && (
-              <li htmlFor='iconTitle'>
-                <img src={lights} alt='icon' />
-                Fənər
-              </li>
-            )}
-            {props.accessories.reflector && (
-              <li htmlFor='iconTitle'>
-                <img src={reflector} alt='icon' />
-                Reflektor
-              </li>
-            )}
+            {props.accessories.map(acc => {
+              return <li htmlFor='iconTitle'>
+                <img src={acc.icon} alt={acc.name} />
+              {acc.value}
+            </li>
+            })}
           </ul>
 
           <div className='bike-ad__map'>
@@ -129,16 +94,16 @@ const BikeAdItem = (props) => {
           <div className='write-renter_price'>
             <div className='bike-ad__details-in__right'>
               <div className='bike-ad__details-price'>
-                <b>{props.price.first}</b>azn/1s
+                <b>{props.price.first}</b><img className="azn-manat" src={manat} alt="azn" />/1s
                 </div>
               {props.price.second > 0 && (
                 <div className='bike-ad__details-price'>
-                  <b>{props.price.second}</b>azn/2s
+                  <b>{props.price.second}</b><img className="azn-manat" src={manat} alt="azn" />/2s
                 </div>
               )}
               {props.price.third > 0 && (
                 <div className='bike-ad__details-price'>
-                  <b>{props.price.third}</b>azn/3s
+                  <b>{props.price.third}</b><img className="azn-manat" src={manat} alt="azn" />/3s
                 </div>
               )}
             </div>

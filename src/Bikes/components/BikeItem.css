@@ -32,7 +32,10 @@
     border: .2px solid var(--gray3);
     object-fit: cover;
 }
-
+.bike-item__content__price{
+    display: flex;
+    align-items: baseline;
+}
 /* Bike Item Content */
 
 .bike-item__content {
