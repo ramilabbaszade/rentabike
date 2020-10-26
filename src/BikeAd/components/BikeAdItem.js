@@ -74,7 +74,7 @@ const BikeAdItem = (props) => {
 
           <ul className='bike-ad__body__bike-accessories'>
             {props.accessories.map(acc => {
-              return <li htmlFor='iconTitle'>
+              return <li key={acc.id} htmlFor='iconTitle'>
                 <img src={acc.icon} alt={acc.name} />
               {acc.value}
             </li>
@@ -85,6 +85,10 @@ const BikeAdItem = (props) => {
             <MapContainer
               singleCoord={props.location}
               title={props.title}
+              id={props.id}
+              images={props.images}
+              size={props.size}
+              price={props.price}
               mapStyle={{ height: "30vh" }}
             />
           </div>

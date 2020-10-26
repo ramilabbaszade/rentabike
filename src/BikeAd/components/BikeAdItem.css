@@ -93,8 +93,8 @@
 
 .bike-ad__last-bikes {
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
+    grid-template-columns: 50% 50%;
+    column-gap: 20px;
 }
 
 .bike-ad__recommendation {

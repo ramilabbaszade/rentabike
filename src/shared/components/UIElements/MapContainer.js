@@ -14,6 +14,7 @@ const biker = new Icon({
 const MapContainer = (props) => {
     const DEFAULT_LATITUDE = 40.500;
     const DEFUALT_LANGITUDE = 49.500;
+    const MAX_LENGTH = 24;
     return (
         <Map style={props.mapStyle} center={[DEFAULT_LATITUDE, DEFUALT_LANGITUDE]} zoom={props.mapZoom || 7} >
             <TileLayer
@@ -31,7 +32,7 @@ const MapContainer = (props) => {
                                 <Link to={`/b/${mark.id}`} className="popup-container">
                                     <img src={mark.images[0]} alt={mark.title} />
                                     <div className="popup-container__title">
-                                        <h3> {mark.title} </h3>
+                                        <h3> {mark.title.length < MAX_LENGTH ? mark.title : `${mark.title.substring(0, MAX_LENGTH)}...`} </h3>
                                         {mark.size}" · {mark.price.first}azn/s
                                     </div>
                                 </Link>
@@ -44,9 +45,16 @@ const MapContainer = (props) => {
                     <Marker
                         position={[props.singleCoord.lat, props.singleCoord.lng]}
                         icon={biker}
+                        key={props.id}
                     >
-                        <Popup>
-                            <div> {props.title} </div>
+                        <Popup className="popup">
+                            <div className="popup-container">
+                                <img src={props.images[0]} alt={props.title} />
+                                <div className="popup-container__title">
+                                    <h3> {props.title.length < MAX_LENGTH ? props.title : `${props.title.substring(0, MAX_LENGTH)}...`} </h3>
+                                    {props.size}" · {props.price.first}azn/s
+                            </div>
+                            </div>
                         </Popup>
                     </Marker> : null
             }
