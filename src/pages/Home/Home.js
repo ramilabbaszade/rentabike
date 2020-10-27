@@ -4,6 +4,7 @@ import illus1 from "../../assets/img/road-2562568_1920.jpg";
 import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
 import illus3 from "../../assets/img/cruiser-bikes-at-university-bicycles.jpg";
 import rentImage from "../../assets/img/main.jpg";
+import headerpic from "../../assets/img/headerpic.jpg";
 import Button from '../../shared/components/FormElements/Button'
 import { BIKES, HomeCityHighlights } from "../../data";
 
@@ -81,10 +82,11 @@ const Home = () => {
   return (
     <div>
       <div className='home-header'>
+        <img src={headerpic} alt="home-header" />
         <div className='home-header__content container'>
-          <h1 className="home-header__content__header">Ən yaxın velosipedi tap</h1>
+          <h1 className="home-header__content__header">Ən yaxın iki təkərlini tap</h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam.
+            Sizə ən yaxın, rahat velosipedi burdan tapın, dostlarınızla birgə əylənin.
           </p>
           <Button to='/list' style={{ borderRadius: '20px' }} white >
             Axtar
@@ -95,21 +97,21 @@ const Home = () => {
       <section className='home-how_it_works container'>
         <div className='home-cards-info'>
           <Link to="/list" className='home-cards-info__card'>
-            <img src={illus1} alt='' />
+            <img src={illus3} alt='info' />
             <div className="home-cards-info__card_text">
-              <h4>Search for the nearest location to you</h4>
+              <h4>İstədiyin növ velosipedi seç</h4>
             </div>
           </Link>
           <Link to="/list" className='home-cards-info__card'>
-            <img src={illus2} alt='' />
+            <img src={illus2} alt='info' />
             <div className="home-cards-info__card_text">
-              <h4>Search for the nearest location to you</h4>
+              <h4>Ən yaxın iki təkərlini tap</h4>
             </div>
           </Link>
           <Link to="/list" className='home-cards-info__card'>
-            <img src={illus3} alt='' />
+            <img src={illus1} alt='info' />
             <div className="home-cards-info__card_text">
-              <h4>Search for the nearest location to you</h4>
+              <h4>Və keyfini çıxar</h4>
             </div>
           </Link>
         </div>

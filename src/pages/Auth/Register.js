@@ -31,16 +31,16 @@ const Register = () => {
                 </div>
                 <div className='auth-page__login'>
                     <form onSubmit={handleSubmit(onSubmit)} className='form-login form-control'>
-                        <h1>Sign Up</h1>
+                        <h1>Qeydiyyat</h1>
                         <Input
                             register={register({ required: true, maxLength: 20, minLength: 3 })}
                             element="input"
                             id='userName'
-                            label="Username"
+                            label="İstifadəçi adı"
                             name='userName'
                             type='text'
-                            placeholder="Your name"
-                            errors={errors.userName && "(min 3, max 20 character must use)"}
+                            placeholder="İstifadəçi adını daxil edin"
+                            errors={errors.userName && "Adı düzgün daxil edin (min 3, max 20 xarakter olmalıdır)"}
                         />
                         <Input
                             register={register({ required: true })}
@@ -50,25 +50,25 @@ const Register = () => {
                             name='email'
                             type='email'
                             placeholder='Email'
-                            errors={errors.email && "Please type a valid email"}
+                            errors={errors.email && "Emaili düzgün daxil edin"}
                         />
                         <Input
                             register={register({ required: true })}
                             element="input"
                             id='password'
-                            label="Password"
+                            label="Şifrə"
                             name='password'
                             type='password'
-                            placeholder='Password'
-                            errors={errors.password && "Please type a valid password"}
+                            placeholder='Şifrəni daxil edin'
+                            errors={errors.password && "Şifrəni düzgün daxil edin"}
                         />
-                        <Button inverse type='submit'>Register</Button>
+                        <Button type='submit'>Təsdiqlə</Button>
                     </form>
 
                     <div className='form-bottom'>
-                        <p>OR</p>
-                        <Button to="/login">
-                            Switch to Login
+                        <p>ya da</p>
+                        <Button inverse to="/login">
+                            Giriş et
                         </Button>
                     </div>
                 </div>

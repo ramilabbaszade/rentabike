@@ -13,12 +13,13 @@
   display: flex;
   justify-content: center;
   height: 70vh;
-  background: linear-gradient(to bottom,
-      #00050a7e,
-      rgba(0, 0, 0, 0.116),
-      rgba(34, 34, 34, 0.377)),
-    url("../../assets/img/dovile-ramoskaite-x8rDSFN2DpY-unsplash.jpg");
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.931),black,rgb(0, 0, 0))
+}
+.home-header img {
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  object-fit: cover;
 }
 
 .home-header__content {
@@ -154,18 +155,22 @@
   .home-header {
     height: 60vh;
   }
+
   .home-cards-info {
     flex-direction: column;
     padding: 1rem;
   }
+
   .home-bikes_in {
     padding: 1rem;
   }
+
   .rent-your-bike_in {
     grid-template-columns: 100%;
     padding: 1rem 1rem;
   }
-  .rent-your-bike_in__text{
+
+  .rent-your-bike_in__text {
     margin: 1rem 0;
   }
 }

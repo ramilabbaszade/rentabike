@@ -31,7 +31,7 @@ const Login = () => {
                     <img src={image1} alt='login' />
                 </div>
                 <div className='auth-page__login'>
-                    <h1>Log In</h1>
+                    <h1>Giriş</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className='form-login'>
                         <Input
                             register={register({ required: true })}
@@ -41,30 +41,30 @@ const Login = () => {
                             name='email'
                             type='email'
                             placeholder='Email'
-                            errors={errors.email && "Please type a valid email"}
+                            errors={errors.email && "Emaili düzgün daxil edin"}
                         />
                         <Input
                             register={register({ required: true })}
                             element="input"
                             id='password'
-                            label="Password"
+                            label="Şifrə"
                             name='password'
                             type='password'
-                            placeholder='Password'
-                            errors={errors.password && "Please type a valid password"}
+                            placeholder='Şifrəni daxil edin'
+                            errors={errors.password && "Şifrəni düzgün daxil edin"}
                         />
                         <Link to='/restore-account'>
                             <small>
-                                Forgot password?
+                                Şifrəni unutdun?
                             </small>
                         </Link>
-                        <Button inverse type='submit'>Login</Button>
+                        <Button type='submit'>Daxil ol</Button>
                     </form>
 
                     <div className='form-bottom'>
-                        <p>OR</p>
-                        <Button to="/register">
-                            Switch to SignUp
+                        <p>ya da</p>
+                        <Button inverse to="/register">
+                            Qeydiyyatdan keç
                         </Button>
                     </div>
                 </div>
