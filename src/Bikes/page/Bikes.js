@@ -8,6 +8,7 @@ import './Bikes.css'
 
 const Bikes = () => {
     const [filteredDataState, setFilteredDataState] = useState(BIKES)
+    const [isHovered, setIsHovered] = useState(null)
     const handleTypeFilter = e => {
         console.log(e.target.value)
         let filteredData;
@@ -17,6 +18,9 @@ const Bikes = () => {
             filteredData = BIKES.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
         }
         setFilteredDataState(filteredData)
+    }
+    const handleHoverMarker = (id) => {
+        setIsHovered(id)
     }
 
     return <div className="bikes-page">
@@ -53,10 +57,10 @@ const Bikes = () => {
                 </select>
             </div>
             <hr className="bike-bottom-line" />
-            <BikesList items={filteredDataState} />
+            <BikesList handleHoverMarker={handleHoverMarker} items={filteredDataState} />
         </div>
         <div className="bikes-map">
-            <MapContainer style={{ height: '50rem' }} coords={BIKES} mapZoom={9} />
+            <MapContainer isHovered={isHovered} style={{ height: '50rem' }} coords={BIKES} mapZoom={9} />
         </div>
     </div>
 }

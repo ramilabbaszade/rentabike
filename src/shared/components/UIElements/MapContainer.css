@@ -1,22 +1,31 @@
-.popup{
+.popup {
     width: 200px;
     color: black;
 }
-.popup-container img{
+
+.popup-container img {
     width: 200px;
     height: 150px;
     border-radius: 10px 10px 0 0;
     object-fit: cover;
 }
-.popup-container__title{
+
+.popup-container__title {
     display: flex;
     flex-direction: column;
     padding: 5px 2px;
     color: black;
 }
-.leaflet-popup-content-wrapper{
+
+.leaflet-popup-content-wrapper {
     text-align: center;
 }
-.leaflet-popup-content{
+
+.leaflet-popup-content {
     margin: 0;
+}
+
+.marker-onhover {
+    -webkit-filter: brightness(0.8)contrast(2)hue-rotate(250deg)saturate(5);
+    filter: brightness(0.8)contrast(2)hue-rotate(250deg)saturate(5);
 }

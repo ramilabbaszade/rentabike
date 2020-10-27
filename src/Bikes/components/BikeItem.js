@@ -7,7 +7,7 @@ import './BikeItem.css'
 const BikeItem = props => {
     const MAX_LENGTH = props.maxLength || 24;
     return (
-        <li key={props.id} style={props.marginR && { marginRight: '.5rem' }} className="bike-item__container">
+        <li onMouseEnter={()=> props.handleHoverMarker(props.id)} onMouseLeave={()=>props.handleHoverMarker(null)} key={props.id} style={props.marginR && { marginRight: '.5rem' }} className="bike-item__container">
             <div className={`bike-item ${props.vertical && 'bike-item_vertical'}`}>
                 <div className={`bike-item__image ${props.vertical && 'bike-item__image_vertical'}`}>
                     <Link to={`/b/${props.id}`}> <img className={`${props.vertical && 'bike-item_img_vertical'}`} src={props.image} alt={props.title} /></Link>

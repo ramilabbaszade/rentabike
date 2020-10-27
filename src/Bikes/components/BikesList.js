@@ -24,6 +24,7 @@ const BikesList = (props) => {
                     creator={bike.creator}
                     date={bike.date}
                     maxLength={24}
+                    handleHoverMarker={props.handleHoverMarker}
                 />
             ))}
         </ul>
