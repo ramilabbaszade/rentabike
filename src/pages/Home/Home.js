@@ -48,7 +48,8 @@ const Home = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrows:false
         }
       }
     ]
@@ -78,7 +79,8 @@ const Home = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrows:false
         }
       }
     ]
@@ -143,7 +145,7 @@ const Home = () => {
                 vertical
                 nonLine
                 marginR
-                maxLength={22}
+                maxLength={18}
               />
             ))}
           </Slider>

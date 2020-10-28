@@ -20,7 +20,7 @@ const NavLinks = () => {
                     <NavLink to='/me'>Me</NavLink>
                 </li>
             }
-            <li>
+            <li className="styled-navlink">
                 <NavLink to={`${isAuth ? '/bikes/new' : '/login'}`}>Elan yarat</NavLink>
             </li>
             { !isAuth && <li>
