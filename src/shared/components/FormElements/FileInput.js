@@ -24,7 +24,7 @@ const FileInput = (props) => {
                 <i className="far fa-file-image"></i>
                 <label htmlFor={props.id}> {props.label} </label>
             </div>
-            <input onChange={imageHandler} className="image-upload" id={props.id} ref={props.register} type="file" name={props.name} accept="image/*" />
+            <input onChange={imageHandler} className="image-upload" id={props.id} ref={props.register} type="file" name={props.name}  />
         </div>
     )
 }

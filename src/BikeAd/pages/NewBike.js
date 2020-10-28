@@ -13,10 +13,9 @@ import FileInput from "../../shared/components/FormElements/FileInput";
 // const accessToken = 'getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az'
 
 const NewBike = () => {
-  useEffect(()=>{
-    document.title="Yeni elan yarat"
-  },[])
-
+  useEffect(() => {
+    document.title = "Yeni elan yarat - velorent.az"
+  }, [])
 
   const [suggestions, setSuggestions] = useState([
     "Alligator",
@@ -56,12 +55,11 @@ const NewBike = () => {
   });
   const priceExtraHours = watch("priceExtraHours")
   const onSubmit = (data, e) => {
-    const formData = new FormData()
-    formData.append("images", data.images[1])
     console.log(data);
 
-    e.target.reset();
+    // e.target.reset();
   };
+
 
   return (
     <div className='new-bike_form container'>
@@ -122,25 +120,24 @@ const NewBike = () => {
             </div>)
           })}
         </div>
-
         <div className="file-inputs-div">
           <FileInput
-            name="images[0]"
+            name="picture[0]"
             label="Əsas şəkil"
             id="image1"
-            register={register()}
+            register={register({ required: true })}
+          /> 
+          <FileInput
+            name="picture[1]"
+            label="Ikinci şəkil"
+            id="picture2"
+            register={register}
           />
           <FileInput
-            name="images[1]"
-            id="image2"
-            label="Əlavə şəkil"
-            register={register()}
-          />
-          <FileInput
-            name="images[2]"
-            id="image3"
-            label="Əlavə şəkil"
-            register={register()}
+            name="picture[2]"
+            label="Ucuncu şəkil"
+            id="picture3"
+            register={register}
           />
         </div>
 
