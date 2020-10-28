@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './pages/Home/Home';
 import Bikes from './Bikes/page/Bikes';
@@ -13,20 +13,13 @@ import ProfileDashboard from './ProfileDashboard/pages/ProfileDashboard';
 import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
 import UpdateBike from './BikeAd/pages/UpdateBike';
-import { AuthContext } from './shared/context/auth-context'
 import ForgotPassword from './pages/Helpers/ForgotPassword';
+import { AuthContext } from './shared/context/auth-context';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState()
-  const login = useCallback(() => {
-    setIsLoggedIn(true)
-  }, [])
-  const logout = useCallback(() => {
-    setIsLoggedIn(false)
-  }, [])
-
+  const {isAuth} = useContext(AuthContext)
   let routes;
-  if (isLoggedIn) {
+  if (isAuth) {
     routes = (
       <Switch>
         <Route path="/" exact>
@@ -86,7 +79,7 @@ const App = () => {
     </Switch>
     )
   }
-  return <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
+  return <React.Fragment>
     <Router>
       <MainNavigation />
       <main>
@@ -94,7 +87,7 @@ const App = () => {
       </main>
       <Footer />
     </Router>
-  </AuthContext.Provider>
+  </React.Fragment>
 }
 
 export default App;

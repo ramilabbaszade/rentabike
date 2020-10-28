@@ -14,14 +14,14 @@ const Register = () => {
     }, [])
 
 
-    const auth = useContext(AuthContext)
+    const {logInAuth} = useContext(AuthContext)
     const { register, handleSubmit, errors } = useForm({
         mode: 'onBlur'
     });
     const onSubmit = (data, e) => {
         console.log(JSON.stringify(data));
         e.target.reset();
-        auth.login()
+        logInAuth()
     };
     return (
         <div className='auth'>

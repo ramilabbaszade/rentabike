@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import BikesList from '../components/BikesList'
 import MapContainer from '../../shared/components/UIElements/MapContainer'
 import { BIKES, BikeTypes, BikeSize } from '../../data'
@@ -7,6 +7,10 @@ import cities from '../../az.json'
 import './Bikes.css'
 
 const Bikes = () => {
+    useEffect(() => {
+        document.title = "Velorent - sizə ən yaxın iki təkər :)"
+    }, [])
+
     const [filteredDataState, setFilteredDataState] = useState(BIKES)
     const [isHovered, setIsHovered] = useState(null)
     const handleTypeFilter = e => {

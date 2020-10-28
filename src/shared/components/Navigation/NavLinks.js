@@ -6,9 +6,9 @@ import { AuthContext } from '../../context/auth-context'
 import './NavLinks.css'
 
 const NavLinks = () => {
-    const auth = useContext(AuthContext)
+    const {logOutAuth, isAuth} = useContext(AuthContext)
     const onLogOut = () => {
-        auth.logout()
+        logOutAuth()
     }
     return (
         <ul className="nav-links">
@@ -16,23 +16,23 @@ const NavLinks = () => {
                 <NavLink to='/list' exact>List</NavLink>
             </li>
             {
-                auth.isLoggedIn && <li>
+                isAuth && <li>
                     <NavLink to='/me'>Me</NavLink>
                 </li>
             }
             <li>
-                <NavLink to={`${auth.isLoggedIn ? '/bikes/new' : '/login'}`}>Elan yarat</NavLink>
+                <NavLink to={`${isAuth ? '/bikes/new' : '/login'}`}>Elan yarat</NavLink>
             </li>
-            { !auth.isLoggedIn && <li>
+            { !isAuth && <li>
                 <NavLink to='/register'>Qeydiyyat</NavLink>
             </li>}
-            { auth.isLoggedIn && <li>
+            { isAuth && <li>
                 <NavLink to='/inbox'>
                     <i className="fas fa-envelope"></i>
                 </NavLink>
             </li>
             }
-            { auth.isLoggedIn && <li>
+            { isAuth && <li>
                 <NavLink onClick={onLogOut} to='/'>
                     <i className="fas fa-sign-out-alt"></i>
                 </NavLink>

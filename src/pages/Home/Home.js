@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from 'react-router-dom'
 import illus1 from "../../assets/img/road-2562568_1920.jpg";
 import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
@@ -13,6 +13,10 @@ import Slider from "react-slick";
 import "./Home.css";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Əsas səhifə - velorent.az"
+  }, [])
+
   const settings = {
     dots: false,
     infinite: true,
