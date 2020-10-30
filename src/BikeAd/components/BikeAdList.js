@@ -12,6 +12,7 @@ const BikeAdList = (props) => {
                     description={bike.description}
                     images={bike.images}
                     price={bike.price}
+                    views={bike.views}
                     type={bike.type}
                     size={bike.size}
                     date={bike.date}

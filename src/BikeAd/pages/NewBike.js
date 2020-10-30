@@ -17,19 +17,8 @@ const NewBike = () => {
     document.title = "Yeni elan yarat - velorent.az"
   }, [])
 
-  const [suggestions, setSuggestions] = useState([
-    "Alligator",
-    "Bask",
-    "Crocodilian",
-    "Death Roll",
-    "Eggs",
-    "Jaws",
-    "Reptile",
-    "Solitary",
-    "Tail",
-    "Wetlands"
-  ])
-  const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew'
+  const [suggestions, setSuggestions] = useState([])
+  const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew?region=Baku&lng=az&guid=979dc109ed404151a50108bf4a61ffd7'
 
   // var data = JSON.stringify({
   //   'guid': '979dc109ed404151a50108bf4a61ffd7',
@@ -48,6 +37,15 @@ const NewBike = () => {
   //     .then(data => setSuggestions(data))
   //     .catch(error => console.log(error))
   // }, [])
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res=>res.json())
+    .then((datas)=>{
+      setSuggestions(datas)
+      console.log(datas)
+    })
+    .catch(err=>console.log(err))
+  },[])
 
 
   const { register, handleSubmit, errors, watch } = useForm({
@@ -197,12 +195,17 @@ const NewBike = () => {
           })}
         </Input>
 
-        <AutoSuggest
+        {/* <AutoSuggest
           takeInputValue={register({ required: true })}
           name="address"
           errors={errors.address && "Adres tələb olunur"}
           suggestions={suggestions}
-        />
+        /> */}
+        {
+          suggestions.map(s=>{
+            return <div key={s.id}> {s.title} </div>
+          })
+        }
 
         <div className="small-text">Not: Elanın aktiv müddəti 30 gündür. Elan paylaşıldıqdan sonra profilinizdən elanın müddətinə baxa bilərsiniz.</div>
 

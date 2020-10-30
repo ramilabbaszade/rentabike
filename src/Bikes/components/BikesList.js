@@ -18,6 +18,7 @@ const BikesList = (props) => {
                     title={bike.title}
                     city={bike.city}
                     type={bike.type}
+                    views={bike.views}
                     size={bike.size}
                     accessories={bike.accessories}
                     price={bike.price.first}

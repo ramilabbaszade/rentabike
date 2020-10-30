@@ -26,6 +26,7 @@ const BikeItem = props => {
                             }
                         </div>
                         <div className="small-text">Velosiped<span aria-hidden="false"> · </span> {props.type} <span aria-hidden="false"> · </span>{props.size}" </div>
+                        <div className="small-text bike-item_views"><i className="fas fa-eye"></i> {props.views}</div>
                     </div>
 
                     <div className={`bike-item__content__footer ${props.vertical && 'bike-item__content__footer_vertical'}`}>

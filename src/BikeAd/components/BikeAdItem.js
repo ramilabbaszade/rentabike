@@ -68,7 +68,8 @@ const BikeAdItem = (props) => {
 
 
           <div className='bike-ad__description'>
-            <h3 className="small-text"> <i className="far fa-compass"></i> {props.city} <span aria-hidden="false"> · </span> {props.date} </h3>
+            <div className="small-text bike-item_views"></div>
+            <div className="small-text"> <i className="far fa-compass"></i> {props.city} <span aria-hidden="false"> · </span> {props.views} baxış <span aria-hidden="false"> · </span>{props.date} </div>
             <p> {props.description} </p>
           </div>
 
@@ -76,8 +77,8 @@ const BikeAdItem = (props) => {
             {props.accessories.map(acc => {
               return <li key={acc.id} htmlFor='iconTitle'>
                 <img src={acc.icon} alt={acc.name} />
-              {acc.value}
-            </li>
+                {acc.value}
+              </li>
             })}
           </ul>
 
@@ -117,34 +118,40 @@ const BikeAdItem = (props) => {
           </Link>
         </div>
       </div>
-      <div className='bike-ad__recommendation_cont'>
-        <div className='bike-ad__recommendation'>
-          <div className='bike-ad__recommendation__title'>
-            <h2> Müəllifin başqa elanları </h2>
-            <Link to='/list'>Ətraflı bax</Link>
+      {
+        props.creator.bikes.length !== 0 && (
+          <div className='bike-ad__recommendation_cont'>
+            <div className='bike-ad__recommendation'>
+              <div className='bike-ad__recommendation__title'>
+                <h2> Müəllifin başqa elanları </h2>
+                <Link to='/list'>Ətraflı bax</Link>
+              </div>
+              <hr className="bike-bottom-line" />
+              <div className='bike-ad__last-bikes'>
+                {props.creator.bikes.slice(0, 2).map((item) => {
+                  return (
+                    <BikeItem
+                      id={item.id}
+                      key={item.id}
+                      image={item.images[0]}
+                      title={item.title}
+                      type={item.type}
+                      views={item.views}
+                      price={item.price.first}
+                      accessories={item.accessories}
+                      size={item.size}
+                      creator={item.creator}
+                      city={item.city}
+                      nonLine
+                    />
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <hr className="bike-bottom-line" />
-          <div className='bike-ad__last-bikes'>
-            {props.creator.bikes.slice(0, 2).map((item) => {
-              return (
-                <BikeItem
-                  id={item.id}
-                  key={item.id}
-                  image={item.images[0]}
-                  title={item.title}
-                  type={item.type}
-                  price={item.price.first}
-                  accessories={item.accessories}
-                  size={item.size}
-                  creator={item.creator}
-                  city={item.city}
-                  nonLine
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
+        )
+      }
+
       <div className='bike-ad__recommendation_cont'>
         <div className='bike-ad__recommendation'>
           <div className='bike-ad__recommendation__title'>
@@ -161,6 +168,7 @@ const BikeAdItem = (props) => {
                   image={item.images[0]}
                   title={item.title}
                   date={item.date}
+                  views={item.views}
                   price={item.price.first}
                   type={item.type}
                   size={item.size}
