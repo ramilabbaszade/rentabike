@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+
 import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
 
 import manat from '../../assets/icons/mini-icons/manat.png'
 
-import { Link } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
-import { BIKES } from "../../data";
 
 import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
+import { BikesContext } from "../../shared/context/BikesContext";
 
 const BikeAdItem = (props) => {
+  const {bikes} = useContext(BikesContext)
   useEffect(() => {
     document.title = `${props.title} - velorent.az`
   }, [props.title])
@@ -160,7 +162,7 @@ const BikeAdItem = (props) => {
           </div>
           <hr className="bike-bottom-line" />
           <div className='bike-ad__last-bikes'>
-            {BIKES.slice(0, 4).map((item) => {
+            {bikes.slice(0, 4).map((item) => {
               return (
                 <BikeItem
                   id={item.id}

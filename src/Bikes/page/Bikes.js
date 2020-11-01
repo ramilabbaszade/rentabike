@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import BikesList from '../components/BikesList'
 import MapContainer from '../../shared/components/UIElements/MapContainer'
-import { BIKES, BikeTypes, BikeSize } from '../../data'
+import { BikeTypes, BikeSize } from '../../data'
 import cities from '../../az.json'
 
+import { BikesContext } from '../../shared/context/BikesContext'
 import './Bikes.css'
 
 const Bikes = () => {
+    const {bikes} = useContext(BikesContext)
     useEffect(() => {
         document.title = "Velorent - sizə ən yaxın iki təkər :)"
     }, [])
 
-    const [filteredDataState, setFilteredDataState] = useState(BIKES)
+    const [filteredDataState, setFilteredDataState] = useState(bikes)
     const [isHovered, setIsHovered] = useState(null)
     const handleTypeFilter = e => {
         console.log(e.target.value)
         let filteredData;
         if (e.target.value === 'All') {
-            filteredData = BIKES;
+            filteredData = bikes;
         } else {
-            filteredData = BIKES.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
+            filteredData = bikes.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
         }
         setFilteredDataState(filteredData)
     }
@@ -64,7 +66,7 @@ const Bikes = () => {
             <BikesList handleHoverMarker={handleHoverMarker} items={filteredDataState} />
         </div>
         <div className="bikes-map">
-            <MapContainer isHovered={isHovered} style={{ height: '50rem' }} coords={BIKES} mapZoom={9} />
+            <MapContainer isHovered={isHovered} style={{ height: '50rem' }} coords={bikes} mapZoom={9} />
         </div>
     </div>
 }

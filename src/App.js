@@ -14,10 +14,13 @@ import ProfileEdit from './ProfileDashboard/pages/ProfileEdit';
 import Inbox from './pages/Chat/pages/Inbox';
 import UpdateBike from './BikeAd/pages/UpdateBike';
 import ForgotPassword from './pages/Helpers/ForgotPassword';
-import { AuthContext } from './shared/context/auth-context';
+import { AuthContext } from './shared/context/AuthContext';
+import BikesContextProvider from './shared/context/BikesContext';
+import UsersContextProvider from './shared/context/UsersContext';
+import UserContextProvider from './shared/context/UserContext';
 
 const App = () => {
-  const {isAuth} = useContext(AuthContext)
+  const { isAuth } = useContext(AuthContext)
   let routes;
   if (isAuth) {
     routes = (
@@ -81,10 +84,16 @@ const App = () => {
   }
   return <React.Fragment>
     <Router>
-      <MainNavigation />
-      <main>
-        {routes}
-      </main>
+      <UserContextProvider>
+        <MainNavigation />
+        <BikesContextProvider>
+          <UsersContextProvider>
+            <main>
+              {routes}
+            </main>
+          </UsersContextProvider>
+        </BikesContextProvider>
+      </UserContextProvider>
       <Footer />
     </Router>
   </React.Fragment>

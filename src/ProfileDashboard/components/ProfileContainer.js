@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Avatar from '../../shared/components/UIElements/Avatar'
 import { Link } from 'react-router-dom'
 import BikeItem from '../../Bikes/components/BikeItem'
 import Backdrop from '../../shared/components/UIElements/Backdrop'
 
 import './ProfileContainer.css'
+import { BikesContext } from '../../shared/context/BikesContext'
 
 const ProfileContainer = (props) => {
+    const {removeBike} = useContext(BikesContext)
     const [drawerIsOpen, setDrawerIsOpen] = useState(null);
 
     const closeDrawer = () => {
@@ -85,7 +87,7 @@ const ProfileContainer = (props) => {
                                                 <Link to={`/update/${bike.id}`} className="bike-item_actions_icon">
                                                     Düzəliş et
                                                 </Link>
-                                                <Link to='me' className="bike-item_actions_icon">
+                                                <Link onClick={()=> removeBike(bike.id)} to='me' className="bike-item_actions_icon">
                                                     Sil
                                                 </Link>
                                                 {drawerIsOpen && <Backdrop transparent onClick={closeDrawer} />}

@@ -6,7 +6,7 @@ import Input from '../../shared/components/FormElements/Input'
 import image1 from "../../assets/icons/login-bike.jpg";
 import Button from "../../shared/components/FormElements/Button";
 import "./Auth.css";
-import { AuthContext } from "../../shared/context/auth-context";
+import { AuthContext } from "../../shared/context/AuthContext";
 
 const Login = () => {
     useEffect(() => {

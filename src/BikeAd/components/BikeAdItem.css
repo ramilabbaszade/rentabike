@@ -54,7 +54,7 @@
     grid-template-columns: auto auto auto;
     gap: 18px;
     justify-content: flex-start;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .bike-ad__body__bike-accessories li {

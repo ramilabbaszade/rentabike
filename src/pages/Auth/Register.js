@@ -4,7 +4,7 @@ import Input from '../../shared/components/FormElements/Input'
 import Button from "../../shared/components/FormElements/Button";
 import image1 from "../../assets/icons/register-bike.jpg";
 
-import { AuthContext } from '../../shared/context/auth-context'
+import { AuthContext } from '../../shared/context/AuthContext'
 
 import "./Auth.css";
 

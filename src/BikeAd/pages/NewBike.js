@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import { BikeTypes, BikeSize, BikeAccessories } from "../../data";
 import cities from '../../az.json'
 import AutoSuggest from "../../shared/components/FormElements/AutoSuggest";
+import FileInput from "../../shared/components/FormElements/FileInput";
 
+import { BikesContext } from "../../shared/context/BikesContext";
 
 import "./NewBike.css";
-import FileInput from "../../shared/components/FormElements/FileInput";
 
 // const accessToken = 'getFreeWaysList&guid=979dc109ed404151a50108bf4a61ffd7&lng=az'
 
 const NewBike = () => {
+  const {addBike} = useContext(BikesContext)
   useEffect(() => {
     document.title = "Yeni elan yarat - velorent.az"
   }, [])
 
-  const [suggestions, setSuggestions] = useState([])
-  const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew?region=Baku&lng=az&guid=979dc109ed404151a50108bf4a61ffd7'
+  const [suggestions, setSuggestions] = useState(['hll','asd'])
+  // const apiUrl = 'http://api.gomap.az/Main.asmx/getRegionsNew?region=Baku&lng=az&guid=979dc109ed404151a50108bf4a61ffd7'
 
   // var data = JSON.stringify({
   //   'guid': '979dc109ed404151a50108bf4a61ffd7',
@@ -37,24 +39,24 @@ const NewBike = () => {
   //     .then(data => setSuggestions(data))
   //     .catch(error => console.log(error))
   // }, [])
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res=>res.json())
-    .then((datas)=>{
-      setSuggestions(datas)
-      console.log(datas)
-    })
-    .catch(err=>console.log(err))
-  },[])
+  // useEffect(() => {
+  //   fetch('https://jsonplaceholder.typicode.com/posts')
+  //   .then(res => res.json())
+  //     .then((options) => {
+  //       setSuggestions(options)
+  //       console.log(options)
+  //     })
+  //     .catch(err => console.log(err))
+  // }, [])
 
 
   const { register, handleSubmit, errors, watch } = useForm({
     mode: "onBlur",
   });
   const priceExtraHours = watch("priceExtraHours")
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     console.log(data);
-
+    addBike(data)
     // e.target.reset();
   };
 
@@ -124,7 +126,7 @@ const NewBike = () => {
             label="Əsas şəkil"
             id="image1"
             register={register({ required: true })}
-          /> 
+          />
           <FileInput
             name="picture[1]"
             label="Ikinci şəkil"
@@ -195,17 +197,17 @@ const NewBike = () => {
           })}
         </Input>
 
-        {/* <AutoSuggest
+        <AutoSuggest
           takeInputValue={register({ required: true })}
           name="address"
           errors={errors.address && "Adres tələb olunur"}
           suggestions={suggestions}
-        /> */}
-        {
-          suggestions.map(s=>{
+        />
+        {/* {
+          suggestions.map(s => {
             return <div key={s.id}> {s.title} </div>
           })
-        }
+        } */}
 
         <div className="small-text">Not: Elanın aktiv müddəti 30 gündür. Elan paylaşıldıqdan sonra profilinizdən elanın müddətinə baxa bilərsiniz.</div>
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import { Link } from 'react-router-dom'
 import illus1 from "../../assets/img/road-2562568_1920.jpg";
 import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
@@ -6,13 +6,15 @@ import illus3 from "../../assets/img/cruiser-bikes-at-university-bicycles.jpg";
 import rentImage from "../../assets/img/main.jpg";
 import headerpic from "../../assets/img/headerpic.jpg";
 import Button from '../../shared/components/FormElements/Button'
-import { BIKES, HomeCityHighlights } from "../../data";
+import { HomeCityHighlights } from "../../data";
 
 import BikeItem from "../../Bikes/components/BikeItem";
 import Slider from "react-slick";
 import "./Home.css";
+import { BikesContext } from "../../shared/context/BikesContext";
 
 const Home = () => {
+  const {bikes} = useContext(BikesContext) 
   useEffect(() => {
     document.title = "Əsas səhifə - velorent.az"
   }, [])
@@ -130,7 +132,7 @@ const Home = () => {
             <hr className="section-hr" />
           </div>
           <Slider className="home-bikes__body" {...settings}>
-            {BIKES.map((bike) => (
+            {bikes.map((bike) => (
               <BikeItem
                 id={bike.id}
                 key={bike.id}
@@ -187,8 +189,6 @@ const Home = () => {
           </Slider>
         </div>
       </section>
-
-
     </div>
   );
 };
