@@ -7,7 +7,8 @@ export const BikesContext = createContext()
 const BikesContextProvider = (props) => {
     const [bikes, setBikes] = useState(BIKES)
     const removeBike = (id) =>{
-        setBikes(bikes.filter(bike => bike.id !== id))
+        let result = window.confirm("Əminsiniz?")
+        return result && setBikes(bikes.filter(bike => bike.id !== id))
     }
     const addBike = (data) =>{
         setBikes([...bikes,data])
