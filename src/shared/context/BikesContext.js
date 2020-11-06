@@ -11,7 +11,7 @@ const BikesContextProvider = (props) => {
         return result && setBikes(bikes.filter(bike => bike.id !== id))
     }
     const addBike = (data) =>{
-        setBikes([...bikes,data])
+        // setBikes([...bikes,data])
     }
     return (
         <BikesContext.Provider value={{ bikes, removeBike, addBike }}>
