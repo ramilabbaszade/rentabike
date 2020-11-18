@@ -139,6 +139,7 @@ const Home = () => {
                 image={bike.images[0]}
                 title={bike.title}
                 city={bike.city}
+                views={bike.views}
                 type={bike.type}
                 size={bike.size}
                 accessories={bike.accessories}
