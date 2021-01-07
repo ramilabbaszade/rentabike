@@ -48,7 +48,7 @@ export const HomeCityHighlights = [
     },
     {
         id: 8,
-        city: 'Xankəndi'
+        city: 'Şuşa'
     },
 ]
 
