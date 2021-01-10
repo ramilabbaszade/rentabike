@@ -10,7 +10,7 @@ import "./Auth.css";
 
 const Register = () => {
     useEffect(() => {
-        document.title = "Qeydiyyat - velorent.az"
+        document.title = "Qeydiyyat - veloorent.com"
     }, [])
 
 

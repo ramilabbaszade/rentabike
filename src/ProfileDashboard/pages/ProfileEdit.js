@@ -10,7 +10,7 @@ import './ProfileEdit.css'
 
 const ProfileEdit = () => {
     useEffect(() => {
-        document.title = 'Hesab bilgilərini dəyiş - velorent.az'
+        document.title = 'Hesab bilgilərini dəyiş - veloorent.com'
     }, [])
 
 

@@ -10,7 +10,7 @@ import { AuthContext } from "../../shared/context/AuthContext";
 
 const Login = () => {
     useEffect(() => {
-        document.title = "Giriş - velorent.az"
+        document.title = "Giriş - veloorent.com"
     }, [])
 
 

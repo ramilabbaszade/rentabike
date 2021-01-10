@@ -16,7 +16,7 @@ import { BikesContext } from "../../shared/context/BikesContext";
 const BikeAdItem = (props) => {
   const {bikes} = useContext(BikesContext)
   useEffect(() => {
-    document.title = `${props.title} - velorent.az`
+    document.title = `${props.title} - veloorent.com`
   }, [props.title])
 
   const [isOpen, setIsOpen] = useState(false);

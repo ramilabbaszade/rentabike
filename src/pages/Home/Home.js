@@ -16,7 +16,7 @@ import { BikesContext } from "../../shared/context/BikesContext";
 const Home = () => {
   const {bikes} = useContext(BikesContext) 
   useEffect(() => {
-    document.title = "Əsas səhifə - velorent.az"
+    document.title = "Əsas səhifə - veloorent.com"
   }, [])
 
   const settings = {

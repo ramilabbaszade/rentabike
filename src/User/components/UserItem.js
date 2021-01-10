@@ -7,7 +7,7 @@ import './UserItem.css'
 
 const UserItem = (props) => {
   useEffect(()=>{
-    document.title = `${props.fullName} - velorent.az`
+    document.title = `${props.fullName} - veloorent.com`
 
   },[props.fullName])
 
