@@ -5,91 +5,91 @@ import Avatar from "../../shared/components/UIElements/Avatar";
 import MapContainer from "../../shared/components/UIElements/MapContainer";
 import BikeItem from "../../Bikes/components/BikeItem";
 
-import manat from '../../assets/icons/mini-icons/manat.png'
+import manat from "../../assets/icons/mini-icons/manat.png";
 
 import Lightbox from "react-image-lightbox";
 
 import "./BikeAdItem.css";
 import "react-image-lightbox/style.css";
-import { BikesContext } from "../../shared/context/BikesContext";
 
 const BikeAdItem = (props) => {
-  const {bikes} = useContext(BikesContext)
-  useEffect(() => {
-    document.title = `${props.title} - veloorent.com`
-  }, [props.title])
-
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const images = props.images;
-
   return (
     <>
-      <div className='bike-ad__header'>
-        <div className='bike-ad__header-image'>
-          <img src={props.images[0]} alt={props.title} />
+      <div className="bike-ad__header">
+        <div className="bike-ad__header-image">
+          {props.image && (
+            <img src={props.image[0]?.image_path} alt={props.title} />
+          )}
         </div>
         <div
           className='bike-ad__header__gradient'
           onClick={() => setIsOpen(true)}></div>
         {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            mainSrc={props.image[photoIndex].image_path}
+            nextSrc={props.image[(photoIndex + 1) % props.image.length]?.image_path}
+            prevSrc={props.image[(photoIndex + props.image.length - 1) % props.image.length]?.image_path}
             onCloseRequest={() => {
               setIsOpen(false);
             }}
             onMovePrevRequest={() =>
-              setPhotoIndex((photoIndex + images.length - 1) % images.length)
+              setPhotoIndex((photoIndex + props.image.length - 1) % props.image.length)
             }
             onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % images.length)
+              setPhotoIndex((photoIndex + 1) % props.image.length)
             }
           />
         )}
       </div>
 
-      <div className='bike-ad__grid'>
-        <div className='bike-ad__body'>
-          <div className='bike-ad__details '>
-            <div className='bike-ad__details-in'>
-              <div className='bike-ad__details-in__left'>
+      <div className="bike-ad__grid">
+        <div className="bike-ad__body">
+          <div className="bike-ad__details ">
+            <div className="bike-ad__details-in">
+              <div className="bike-ad__details-in__left">
                 <h1>{props.title}</h1>
                 <h3>
-                  {props.type} - {props.size}"
+                  {props.type && props.type?.name_az} - {props.size}"
                 </h3>
               </div>
-              <Avatar
-                redirect={`/user/${props.creator.id}`}
-                className='avatar-middle'
-                creatorImg={props.creator.avatar}
-              />
+              {props.creator && (
+                <Avatar
+                  redirect={`/user/${props.creator.username}`}
+                  className="avatar-middle"
+                  creatorImg={props.creator.avatar}
+                />
+              )}
             </div>
           </div>
 
-
-          <div className='bike-ad__description'>
-            <div className="small-text bike-item_views"></div>
-            <div className="small-text"> <i className="far fa-compass"></i> {props.city} <span aria-hidden="false"> · </span> {props.views} baxış <span aria-hidden="false"> · </span>{props.date} </div>
+          <div className="bike-ad__description">
+            <div className="small-text">
+              {" "}
+              <i className="far fa-compass"></i> {props.city?.name_az}{" "}
+              <span aria-hidden="false"> · </span> {props.views} baxış{" "}
+              <span aria-hidden="false"> · </span>
+              {props.date}{" "}
+            </div>
             <p> {props.description} </p>
           </div>
 
-          <ul className='bike-ad__body__bike-accessories'>
-            {props.accessories.map(acc => {
+          <ul className="bike-ad__body__bike-accessories">
+            {/* {props.accessories.map(acc => {
               return <li key={acc.id} htmlFor='iconTitle'>
-                <img src={acc.icon} alt={acc.name} />
-                {acc.value}
+                <img src={acc.png_url} alt={acc.name_en} />
+                {acc.name_az}
               </li>
-            })}
+            })} */}
           </ul>
 
-          <div className='bike-ad__map'>
+          <div className="bike-ad__map">
             <MapContainer
               singleCoord={props.location}
               title={props.title}
               id={props.id}
-              images={props.images}
+              images={props.image}
               size={props.size}
               price={props.price}
               mapStyle={{ height: "30vh" }}
@@ -98,29 +98,37 @@ const BikeAdItem = (props) => {
         </div>
 
         <div className="write-renter">
-          <div className='write-renter_price'>
-            <div className='bike-ad__details-in__right'>
-              <div className='bike-ad__details-price'>
-                <b>{props.price.first}</b><img className="azn-manat" src={manat} alt="azn" />/1s
+          <div className="write-renter_price">
+            { props.price &&
+              <div className="bike-ad__details-in__right">
+                <div className="bike-ad__details-price">
+                  <b>{props.price.first}</b>
+                  <img className="azn-manat" src={manat} alt="azn" />
+                  /1s
                 </div>
-              {props.price.second > 0 && (
-                <div className='bike-ad__details-price'>
-                  <b>{props.price.second}</b><img className="azn-manat" src={manat} alt="azn" />/2s
-                </div>
-              )}
-              {props.price.third > 0 && (
-                <div className='bike-ad__details-price'>
-                  <b>{props.price.third}</b><img className="azn-manat" src={manat} alt="azn" />/3s
-                </div>
-              )}
-            </div>
+                {props.price.second > 0 && (
+                  <div className="bike-ad__details-price">
+                    <b>{props.price.second}</b>
+                    <img className="azn-manat" src={manat} alt="azn" />
+                    /2s
+                  </div>
+                )}
+                {props.price.third > 0 && (
+                  <div className="bike-ad__details-price">
+                    <b>{props.price.third}</b>
+                    <img className="azn-manat" src={manat} alt="azn" />
+                    /3s
+                  </div>
+                )}
+              </div>
+            }
           </div>
-          <Link to='/' className="write-btn">
+          <Link to="/" className="write-btn">
             Müraciət et
           </Link>
         </div>
       </div>
-      {
+      {/* {
         props.creator.bikes.length !== 0 && (
           <div className='bike-ad__recommendation_cont'>
             <div className='bike-ad__recommendation'>
@@ -183,7 +191,7 @@ const BikeAdItem = (props) => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

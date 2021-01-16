@@ -51,8 +51,8 @@ const UserItem = (props) => {
         </section>
         <hr className="bike-bottom-line" />
         <div className="user-body__shared-bikes">
-          <h2 className='user-body__title'>Aktiv elanlar ({props.bikes.length})</h2>
-          {props.bikes.length === 0 ? (
+          <h2 className='user-body__title'>Aktiv elanlar ({props.bikes && props.bikes.length})</h2>
+          {!props.bikes ? (
             <h4>Elan tapılmadı</h4>
           ) : (
               props.bikes.map(bike => {
@@ -60,16 +60,16 @@ const UserItem = (props) => {
                   id={bike.id}
                   key={bike.id}
                   title={bike.title}
-                  type={bike.type}
+                  type={bike.bike_type}
+                  views={bike.view_count}
                   size={bike.size}
                   accessories={bike.accessories}
                   city={bike.city}
                   price={bike.price.first}
-                  creator={bike.creator}
                   image={bike.images[0]}
                   actionicons
                 />
-              }))}
+              }))} 
 
         </div>
       </div>

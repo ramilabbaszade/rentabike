@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useState,useEffect} from "react";
 import { Link } from 'react-router-dom'
 import illus1 from "../../assets/img/road-2562568_1920.jpg";
 import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
@@ -11,17 +11,25 @@ import { HomeCityHighlights } from "../../data";
 import BikeItem from "../../Bikes/components/BikeItem";
 import Slider from "react-slick";
 import "./Home.css";
-import { BikesContext } from "../../shared/context/BikesContext";
 
 const Home = () => {
-  const {bikes} = useContext(BikesContext) 
+  const [bikes, setBikes] = useState([])
   useEffect(() => {
     document.title = "Əsas səhifə - veloorent.com"
   }, [])
+  useEffect(()=>{
+    fetch('http://velorent-api.herokuapp.com/api/v1/latestBikes')
+    .then(res=>res.json())
+    .then((data)=> {
+        setBikes(data)
+        console.log(data)
+    })
+    .catch(err=>console.log(err))
+},[])
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     draggable: true,
     speed: 1000,
     slidesToShow: 4,

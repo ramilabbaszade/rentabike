@@ -4,34 +4,42 @@ import MapContainer from '../../shared/components/UIElements/MapContainer'
 import { BikeTypes, BikeSize } from '../../data'
 import cities from '../../az.json'
 
-import { BikesContext } from '../../shared/context/BikesContext'
 import './Bikes.css'
 
 const Bikes = () => {
-    const {bikes} = useContext(BikesContext)
+    const [bikes, setBikes] = useState([])
     useEffect(() => {
         document.title = "Velorent - sizə ən yaxın iki təkər :)"
     }, [])
 
-    const [filteredDataState, setFilteredDataState] = useState(bikes)
+    useEffect(()=>{
+        fetch('http://velorent-api.herokuapp.com/api/v1/latestBikes')
+        .then(res=>res.json())
+        .then((data)=> {
+            setBikes(data)
+            console.log(data)
+        })
+        .catch(err=>console.log(err))
+    },[])
+
     const [isHovered, setIsHovered] = useState(null)
-    const handleTypeFilter = e => {
-        console.log(e.target.value)
-        let filteredData;
-        if (e.target.value === 'All') {
-            filteredData = bikes;
-        } else {
-            filteredData = bikes.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
-        }
-        setFilteredDataState(filteredData)
-    }
+    // const handleTypeFilter = e => {
+    //     console.log(e.target.value)
+    //     let filteredData;
+    //     if (e.target.value === 'All') {
+    //         filteredData = bikes;
+    //     } else {
+    //         filteredData = bikes.filter(item => { return (item.type === e.target.value) || (item.size === e.target.value) || (item.city === e.target.value) })
+    //     }
+    //     setFilteredDataState(filteredData)
+    // }
     const handleHoverMarker = (id) => {
         setIsHovered(id)
     }
 
     return <div className="bikes-page">
         <div>
-            <div className="bike-filter">
+            {/* <div className="bike-filter">
                 <select name="" id="">
                     <option value="s">Sıralama..</option>
                     <option value="Hey">Ən çox baxılan</option>
@@ -61,9 +69,9 @@ const Bikes = () => {
                         })
                     }
                 </select>
-            </div>
+            </div> */}
             <hr className="bike-bottom-line" />
-            <BikesList handleHoverMarker={handleHoverMarker} items={filteredDataState} />
+            <BikesList handleHoverMarker={handleHoverMarker} items={bikes} />
         </div>
         <div className="bikes-map">
             <MapContainer isHovered={isHovered} style={{ height: '50rem' }} coords={bikes} mapZoom={9} />
