@@ -1,11 +1,11 @@
-import React, {useState,useEffect} from "react";
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import illus1 from "../../assets/img/road-2562568_1920.jpg";
 import illus2 from "../../assets/img/metal-sculpture-bicycle-flower-beds-seaside-park-boulevard-baku-azerbaijan-132426699.jpg";
 import illus3 from "../../assets/img/cruiser-bikes-at-university-bicycles.jpg";
 import rentImage from "../../assets/img/main.jpg";
 import headerpic from "../../assets/img/headerpic.jpg";
-import Button from '../../shared/components/FormElements/Button'
+import Button from "../../shared/components/FormElements/Button";
 import { HomeCityHighlights } from "../../data";
 
 import BikeItem from "../../Bikes/components/BikeItem";
@@ -13,19 +13,18 @@ import Slider from "react-slick";
 import "./Home.css";
 
 const Home = () => {
-  const [bikes, setBikes] = useState([])
+  const [bikes, setBikes] = useState([]);
   useEffect(() => {
-    document.title = "Əsas səhifə - veloorent.com"
-  }, [])
-  useEffect(()=>{
-    fetch('http://velorent-api.herokuapp.com/api/v1/latestBikes')
-    .then(res=>res.json())
-    .then((data)=> {
-        setBikes(data)
-        console.log(data)
-    })
-    .catch(err=>console.log(err))
-},[])
+    document.title = "Əsas səhifə - veloorent.com";
+  }, []);
+  useEffect(() => {
+    fetch("http://velorent-api.herokuapp.com/api/v1/latestBikes")
+      .then((res) => res.json())
+      .then((data) => {
+        setBikes(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const settings = {
     dots: false,
@@ -43,26 +42,26 @@ const Home = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          draggable: true
-        }
+          draggable: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows:false
-        }
-      }
-    ]
+          arrows: false,
+        },
+      },
+    ],
   };
   const settings1 = {
     dots: false,
@@ -74,58 +73,61 @@ const Home = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          draggable: true
-        }
+          draggable: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows:false
-        }
-      }
-    ]
-  }
+          arrows: false,
+        },
+      },
+    ],
+  };
   return (
     <div>
-      <div className='home-header'>
+      <div className="home-header">
         <img src={headerpic} alt="home-header" />
-        <div className='home-header__content container'>
-          <h1 className="home-header__content__header">Ən yaxın iki təkərlini tap</h1>
+        <div className="home-header__content container">
+          <h1 className="home-header__content__header">
+            Ən yaxın iki təkərlini tap
+          </h1>
           <p>
-            Sizə ən yaxın, rahat velosipedi burdan tapın, dostlarınızla birgə əylənin.
+            Sizə ən yaxın, rahat velosipedi burdan tapın, dostlarınızla birgə
+            əylənin.
           </p>
-          <Button to='/list' style={{ borderRadius: '20px' }} white >
+          <Button to="/list" style={{ borderRadius: "20px" }} white>
             Axtar
           </Button>
         </div>
       </div>
 
-      <section className='home-how_it_works container'>
-        <div className='home-cards-info'>
-          <Link to="/list" className='home-cards-info__card'>
-            <img src={illus3} alt='info' />
+      <section className="home-how_it_works container">
+        <div className="home-cards-info">
+          <Link to="/list" className="home-cards-info__card">
+            <img src={illus3} alt="info" />
             <div className="home-cards-info__card_text">
               <h4>İstədiyin növ velosipedi seç</h4>
             </div>
           </Link>
-          <Link to="/list" className='home-cards-info__card'>
-            <img src={illus2} alt='info' />
+          <Link to="/list" className="home-cards-info__card">
+            <img src={illus2} alt="info" />
             <div className="home-cards-info__card_text">
               <h4>Ən yaxın iki təkərlini tap</h4>
             </div>
           </Link>
-          <Link to="/list" className='home-cards-info__card'>
-            <img src={illus1} alt='info' />
+          <Link to="/list" className="home-cards-info__card">
+            <img src={illus1} alt="info" />
             <div className="home-cards-info__card_text">
               <h4>Və keyfini çıxar</h4>
             </div>
@@ -148,7 +150,7 @@ const Home = () => {
                 title={bike.title}
                 city={bike.city}
                 views={bike.views}
-                type={bike.type}
+                type={bike.bike_type}
                 size={bike.size}
                 accessories={bike.accessories}
                 price={bike.price.first}
@@ -168,18 +170,18 @@ const Home = () => {
           <div className="rent-your-bike_in__text">
             <h1>Velosipedinizi icarəyə verin</h1>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, quis!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Aspernatur, quis!
             </p>
-            <Button to="/register" style={{ borderRadius: '20px' }} white >
+            <Button to="/register" style={{ borderRadius: "20px" }} white>
               Elan yerləşdir
-          </Button>
+            </Button>
           </div>
           <div className="rent-your-bike_in__image">
             <img src={rentImage} alt="" />
           </div>
         </div>
       </section>
-
 
       <section className="home-cities-cards">
         <div className="home-cities-cards_header container">
@@ -188,13 +190,13 @@ const Home = () => {
         </div>
         <div className="container">
           <Slider className="home-cities-cards_in" {...settings1}>
-            {
-              HomeCityHighlights.map(item => {
-                return <Link to="/" key={item.id} className="home-city-card">
+            {HomeCityHighlights.map((item) => {
+              return (
+                <Link to="/" key={item.id} className="home-city-card">
                   <h3>{item.city}</h3>
                 </Link>
-              })
-            }
+              );
+            })}
           </Slider>
         </div>
       </section>

@@ -1,20 +1,15 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const AuthContext = createContext()
 
 const AuthContextProvider = (props) => {
-  const [isAuth, setIsAuth] = useState(false)
-  const logInAuth = () => {
-    setIsAuth(true)
-  }
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('jwtToken'))
   const logOutAuth = () => {
-    setIsAuth(false)
+      localStorage.removeItem('jwtToken')
+      setIsAuth(null)
   }
-  useEffect(() => {
-    localStorage.setItem('isAuth', isAuth)
-  }, [isAuth])
   return (
-    <AuthContext.Provider value={{ isAuth, logInAuth, logOutAuth }}>
+    <AuthContext.Provider value={{ isAuth, logOutAuth }}>
       {props.children}
     </AuthContext.Provider>
   )

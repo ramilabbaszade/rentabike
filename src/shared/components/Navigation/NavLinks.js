@@ -1,15 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { AuthContext } from '../../context/AuthContext'
 
 import './NavLinks.css'
 
 const NavLinks = () => {
-    const {logOutAuth, isAuth} = useContext(AuthContext)
+    const isAuth = localStorage.getItem('jwtToken')
+
     const onLogOut = () => {
-        logOutAuth()
+        localStorage.removeItem('jwtToken')
+        window.location.reload();
     }
+
     return (
         <ul className="nav-links">
             <li>
@@ -26,12 +28,6 @@ const NavLinks = () => {
             { !isAuth && <li>
                 <NavLink to='/register'>Qeydiyyat</NavLink>
             </li>}
-            { isAuth && <li>
-                <NavLink to='/inbox'>
-                    <i className="fas fa-envelope"></i>
-                </NavLink>
-            </li>
-            }
             { isAuth && <li>
                 <NavLink onClick={onLogOut} to='/'>
                     <i className="fas fa-sign-out-alt"></i>

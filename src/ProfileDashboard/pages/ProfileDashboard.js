@@ -1,23 +1,34 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../../shared/context/UserContext'
+import React, { useState , useEffect} from 'react'
 import ProfileContainer from '../components/ProfileContainer'
 
 import '../components/ProfileContainer.css'
 
 const ProfileDashboard = () => {
-    const {user} = useContext(UserContext)
+    const [user,setUser] = useState()
+    useEffect(()=>{
+        fetch('http://velorent-api.herokuapp.com/api/v1/profile/',{
+            headers:{
+                'Authorization':`Bearer ${localStorage.getItem('jwtToken')}`
+            }
+        })
+        .then(res=>res.json())
+        .then((data)=> {
+            setUser(data)
+        })
+        .catch(err=>console.log(err))
+    },[])
     return (
         <div className="profile-dashboard container">
-            <ProfileContainer
+            {user ? <ProfileContainer
                 id={user.id}
                 key={user.id}
-                name={user.name}
+                name={user.user_name}
                 bio={user.bio}
                 avatar={user.avatar}
                 city={user.city}
-                date={user.date}
+                date={user.created_at}
                 bikes={user.bikes}
-            />
+            /> : 'not found'}
         </div>
     )
 }

@@ -10,7 +10,7 @@ const BikeItem = props => {
         <li onMouseEnter={props.handleHoverMarker ? ()=> props.handleHoverMarker(props.id):null} onMouseLeave={props.handleHoverMarker ?()=>props.handleHoverMarker(null):null} key={props.id} style={props.marginR && { marginRight: '.5rem' }} className="bike-item__container">
             <div className={`bike-item ${props.vertical && 'bike-item_vertical'}`}>
                 <div className={`bike-item__image ${props.vertical && 'bike-item__image_vertical'}`}>
-                    <Link to={`/b/${props.id}`}> <img className={`${props.vertical && 'bike-item_img_vertical'}`} src={props.image?.image_path} alt={props.title} /></Link>
+                    <Link to={`/b/${props.id}`}> <img className={`${props.vertical && 'bike-item_img_vertical'}`} src={props.image && props.image?.image_path} alt={props.title} /></Link>
                 </div>
                 <div className={`bike-item__content ${props.vertical && 'bike-item__content_vertical'}`}>
                     <div className="bike-item__content__header">

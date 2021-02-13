@@ -30,7 +30,7 @@ const MapContainer = (props) => {
                                 key={mark.id} >
                                 <Popup className="popup">
                                     <Link to={`/b/${mark.id}`} className="popup-container">
-                                        <img src={mark.images[0].image_path} alt={mark.title} />
+                                        <img src={mark.images && mark.images[0].image_path} alt={mark.title} />
                                         <div className="popup-container__title">
                                             <h3> {mark.title.length < MAX_LENGTH ? mark.title : `${mark.title.substring(0, MAX_LENGTH)}...`} </h3>
                                             {mark.size}" · {mark.price.first}azn/s
@@ -50,7 +50,7 @@ const MapContainer = (props) => {
                     >
                         <Popup className="popup">
                             <div className="popup-container">
-                                <img src={props.images[0].image_path} alt={props.title} />
+                                <img src={props.images && props.images[0].image_path} alt={props.title} />
                                 <div className="popup-container__title">
                                     <h3> {props.title.length < MAX_LENGTH ? props.title : `${props.title.substring(0, MAX_LENGTH)}...`} </h3>
                                     {props.size}" · {props.price.first}azn/s

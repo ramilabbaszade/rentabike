@@ -9,7 +9,7 @@ const BikesList = (props) => {
     }
 
     return (
-        <ul className="bikes-list">
+        <ul  className="bikes-list">
             {props.items.map((bike) => (
                 <BikeItem
                     key={bike.id}

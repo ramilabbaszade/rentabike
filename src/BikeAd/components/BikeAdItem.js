@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Avatar from "../../shared/components/UIElements/Avatar";
@@ -76,12 +76,12 @@ const BikeAdItem = (props) => {
           </div>
 
           <ul className="bike-ad__body__bike-accessories">
-            {/* {props.accessories.map(acc => {
+            {props.accessories && props.accessories.map(acc => {
               return <li key={acc.id} htmlFor='iconTitle'>
                 <img src={acc.png_url} alt={acc.name_en} />
                 {acc.name_az}
               </li>
-            })} */}
+            })}
           </ul>
 
           <div className="bike-ad__map">
@@ -128,8 +128,8 @@ const BikeAdItem = (props) => {
           </Link>
         </div>
       </div>
-      {/* {
-        props.creator.bikes.length !== 0 && (
+      {
+        props.creator?.creator_bikes.length !== 0 && (
           <div className='bike-ad__recommendation_cont'>
             <div className='bike-ad__recommendation'>
               <div className='bike-ad__recommendation__title'>
@@ -138,19 +138,18 @@ const BikeAdItem = (props) => {
               </div>
               <hr className="bike-bottom-line" />
               <div className='bike-ad__last-bikes'>
-                {props.creator.bikes.slice(0, 2).map((item) => {
+                {props.creator && props.creator?.creator_bikes.slice(0, 2).map((item) => {
                   return (
                     <BikeItem
                       id={item.id}
                       key={item.id}
-                      image={item.images[0]}
+                      image={item.bike_images[0]}
                       title={item.title}
-                      type={item.type}
-                      views={item.views}
+                      type={item.bike_type}
                       price={item.price.first}
+                      views={item.view_count}
                       accessories={item.accessories}
                       size={item.size}
-                      creator={item.creator}
                       city={item.city}
                       nonLine
                     />
@@ -170,28 +169,27 @@ const BikeAdItem = (props) => {
           </div>
           <hr className="bike-bottom-line" />
           <div className='bike-ad__last-bikes'>
-            {bikes.slice(0, 4).map((item) => {
+            {props.latest_bikes && props.latest_bikes.slice(0, 4).map((item) => {
               return (
                 <BikeItem
                   id={item.id}
                   key={item.id}
-                  image={item.images[0]}
+                  image={item.bike_images[0]}
                   title={item.title}
                   date={item.date}
-                  views={item.views}
                   price={item.price.first}
-                  type={item.type}
+                  type={item.bike_type}
                   size={item.size}
+                  views={item.view_count}
                   accessories={item.accessories}
-                  creator={item.creator}
                   city={item.city}
                   nonLine
                 />
               );
-            })}
+            })} 
           </div>
         </div>
-      </div> */}
+      </div> 
     </>
   );
 };
