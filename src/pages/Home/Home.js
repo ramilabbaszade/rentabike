@@ -29,7 +29,7 @@ const Home = () => {
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     draggable: true,
     speed: 1000,
     slidesToShow: 4,
