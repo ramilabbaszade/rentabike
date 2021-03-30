@@ -13,7 +13,6 @@ export default class MapExample extends Component {
     };
 
     addMarker = event => {
-        const {markerData} = this.state;
         const coords = event.latlng;
         this.setState({
             markerData: [coords]
