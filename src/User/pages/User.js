@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserItem from "../components/UserItem";
+import '../components/UserContainer.css'
 
 const User = () => {
   const [users, setUsers] = useState({});
@@ -26,6 +27,7 @@ const User = () => {
         avatar={users.avatar}
         city={users.city}
         date={users.created_at}
+        users_accounts={users.users_accounts}
         bikes={users.bikes}
       />
     </div>

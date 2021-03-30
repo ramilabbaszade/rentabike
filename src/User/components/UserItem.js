@@ -14,6 +14,7 @@ const UserItem = (props) => {
 
   return (
     <div className="user_container">
+      <div>
       <div className="user-header">
         <div className="user-header__i">
           <Avatar redirect="#" creatorImg={props.avatar} className="avatar-large" />
@@ -29,13 +30,22 @@ const UserItem = (props) => {
           </div>
 
           <div className="user-header__editBtn">
-            <Link to='/'>
-              Mesaj yaz
-            </Link>
+              Əlaqə saxla
           </div>
         </div>
       </div>
-
+      <div className="user-header user-header__social">
+        { props.users_accounts ?
+            <>
+              <div><Link to={`${props.users_accounts?.instagram_url}`}><i className="fab fa-instagram"></i></Link></div>
+              <div><Link to={`${props.users_accounts?.fb_url}`}><i className="fab fa-facebook-square"></i></Link> </div>
+              <div><a href={`tel:${props.users_accounts?.mobile_num}`}><i className="fas fa-phone"></i></a> </div>
+            </>
+          :
+            `Əlaqə vasitəsi tapılmadı`
+        }
+      </div>
+      </div>
       <div className="user-body">
         <section className="user-body__section1">
           <h1> {props.fullName} </h1>

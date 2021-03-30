@@ -11,6 +11,7 @@ import { HomeCityHighlights } from "../../data";
 import BikeItem from "../../Bikes/components/BikeItem";
 import Slider from "react-slick";
 import "./Home.css";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const [bikes, setBikes] = useState([]);
@@ -200,6 +201,7 @@ const Home = () => {
           </Slider>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };
